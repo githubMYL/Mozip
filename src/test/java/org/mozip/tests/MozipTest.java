@@ -6,8 +6,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class MozipTest {
-    private static final String DRIVER = "oracle.jdbc.OracleDriver"; //Connection을 구현한 클래스의 이름
-    private static final String URL = "jdbc:oracle:thin:@localhost:1521:ORCL"; //mysql 서버 주소
+    private static final String DRIVER = "oracle.jdbc.OracleDriver"; //Connection 을 구현한 클래스의 이름
+    private static final String URL = "jdbc:oracle:thin:@localhost:1521:ORCL"; // Oracle 서버 주소
     private static final String USER = "mozip"; //계정
     private static final String PW = "aA123456"; // 비밀번호
 
