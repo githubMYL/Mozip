@@ -62,4 +62,10 @@ public class BoardSaveTest {
     void saveDeleteSuccess() throws Exception {
 
     }
+
+    @Test
+    @DisplayName("파일이 등록 되면 성공")
+    void saveFileSuccess() throws Exception {
+
+    }
 }
