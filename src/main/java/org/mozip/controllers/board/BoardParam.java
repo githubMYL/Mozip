@@ -1,5 +1,6 @@
 package org.mozip.controllers.board;
 
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -9,9 +10,11 @@ import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.mozip.entities.BoardData;
 
+
 @Data @Builder
 @NoArgsConstructor @AllArgsConstructor
 public class BoardParam {
+
 
     private Long id;
 
