@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.koreait</groupId>
-	<artifactId>board</artifactId>
+	<artifactId>mozip</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>board</name>
 	<description>Board for Test</description>

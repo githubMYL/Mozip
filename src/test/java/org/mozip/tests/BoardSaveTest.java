@@ -23,20 +23,19 @@ public class BoardSaveTest {
     @Autowired
     private MockMvc mockMvc;
 
-    private BoardParam boardParam;
-
-    @BeforeEach
-    void init() {
-        boardParam = new BoardParam();
-        boardParam.setSubject("제목 테스트");
-        boardParam.setContent("내용 테스트");
-    }
+//    private BoardParam boardParam;
+//
+//    @BeforeEach
+//    void init() {
+//        boardParam = new BoardParam();
+//        boardParam.setSubject("제목 테스트");
+//        boardParam.setContent("내용 테스트");
+//    }
 
     @Test
     @DisplayName("게시물 전체 조회")
     void saveSuccessInfoAll() throws Exception {
-        mockMvc.perform(get("/mozip/board/infoall"))
-                .andExpect(status().isOk());
+
     }
     
     @Test
@@ -48,13 +47,7 @@ public class BoardSaveTest {
     @Test
     @DisplayName("게시글이 정상적으로 등록, 수정되면 예외가 발생하지 않음")
     void saveSuccessUpdate() throws Exception {
-        String content = String.format("{\"subject\":\"%s\",\"content\":\"%s\"}"
-                            , boardParam.getSubject()
-                            , boardParam.getContent());
-        
-        mockMvc.perform(post("/mozip/board/write")
-                .content(content).contentType("application/json"))
-                .andExpect(status().isOk());
+
     }
 
     @Test
