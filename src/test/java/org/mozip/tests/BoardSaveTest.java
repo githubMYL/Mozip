@@ -51,14 +51,15 @@ public class BoardSaveTest {
     }
 
     @Test
+    @DisplayName("파일이 등록 되면 성공")
+    void saveFileSuccess() throws Exception {
+
+    }
+
+    @Test
     @DisplayName("게시글 삭제되면 성공")
     void saveDeleteSuccess() throws Exception {
 
     }
 
-    @Test
-    @DisplayName("파일이 등록 되면 성공")
-    void saveFileSuccess() throws Exception {
-
-    }
 }
