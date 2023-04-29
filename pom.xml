@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.koreait</groupId>
-	<artifactId>board</artifactId>
+	<artifactId>mozip</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>board</name>
+	<name>mozip</name>
 	<description>Board for Test</description>
 	<properties>
 		<java.version>20</java.version>
