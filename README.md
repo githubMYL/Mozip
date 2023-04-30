@@ -2,7 +2,7 @@
 사용언어 : Java / HTML /CSS /JavaScript<br>
 개발환경 : SpringBoot<br>
 데이터베이스 : Oracle DataBase / dbbeaver<br>
-<프로젝트 목표><br> 
+<프로젝트 목표> <br>
 ① 관리자<br>
 ② 회원가입 , 로그인<br>
 ③ 모임 생성, 가입<br>
@@ -20,6 +20,8 @@
 ![Mozip 마인드맵](https://user-images.githubusercontent.com/129242618/235331911-1926cc0a-b031-4047-97db-4daad711a46c.jpg)
 
 <h1>화면 설계서</h1>
+<br>
+
 ![스크린샷 2023-04-30 110016](https://user-images.githubusercontent.com/118729050/235332139-180a2857-f5d6-42b8-b834-2becc32f95a2.png)
 
 ![스크린샷 2023-04-30 110200](https://user-images.githubusercontent.com/118729050/235332149-b8ff93d8-e123-4e70-a57a-b404f57c7391.png)
