@@ -7,4 +7,9 @@
 ② 회원가입 , 로그인<br>
 ③ 모임 생성, 가입<br>
 ⑤ 게시글 (등록, 수정, 댓글)<br>
-⑥ 마미페이지 (개설 및 가입된 모임)<br>
+⑥ 마이페이지 (개설 및 가입된 모임)<br>
+
+<h1>Mozip 사이트맵</h2>
+<br>
+
+![Mozip 사이트맵](https://user-images.githubusercontent.com/129242618/235331848-895dd583-0d0f-48e6-8e94-bef5c54396d3.jpg)
