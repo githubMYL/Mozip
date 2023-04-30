@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<main>
+    <form method="post" th:action="@{/member}" autocomplete="off" th:object="${joinParam}">
+        <dl>
+            <dt>아이디</dt>
+            <dd>
+                <input type="email" name="email" th:field="*{email}" placeholder="이메일 형식입니다.">
+            </dd>
+        </dl>
+        <dl>
+            <dt>비밀번호</dt>
+            <dd>
+                <input type="password" name="memberPw" th:field="*{memberPw}">
+            </dd>
+        </dl>
+        <dl>
+            <dt>비밀번호 확인</dt>
+            <dd>
+                <input type="password" name="memberPwRe" th:field="*{memberPwRe}">
+            </dd>
+        </dl>
+        <dl>
+            <dt>닉네임</dt>
+            <dd>
+                <input type="text" name="memberNick" th:field="*{memberNick}">
+            </dd>
+        </dl>
+        <dl>
+            <dt>회원명</dt>
+            <dd>
+                <input type="text" name="memberNm" th:field="*{memberNm}">
+            </dd>
+        </dl>
+        <dl>
+            <dt>핸드폰</dt>
+            <dd>
+                <input type="text" name="mobile" th:field="*{mobile}">
+            </dd>
+        </dl>
+        <div class="btns">
+            <button type="submit">가입하기</button>
+        </div>
+    </form>
+</main>
+</html>
