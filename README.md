@@ -9,17 +9,19 @@
 ⑤ 게시글 (등록, 수정, 댓글)<br>
 ⑥ 마이페이지 (개설 및 가입된 모임)<br>
 
-<h1>Mozip 사이트맵</h2>
+<h1>사이트맵</h1>
 <br>
 
 ![Mozip 사이트맵](https://user-images.githubusercontent.com/129242618/235331848-895dd583-0d0f-48e6-8e94-bef5c54396d3.jpg)
 
-<h1>Mozip 마인드맵</h2>
+<h1>마인드맵</h1>
 <br>
 
 ![Mozip 마인드맵](https://user-images.githubusercontent.com/129242618/235331911-1926cc0a-b031-4047-97db-4daad711a46c.jpg)
 
 <h1>화면 설계서</h1>
+<br>
+
 ![스크린샷 2023-04-30 110016](https://user-images.githubusercontent.com/118729050/235332139-180a2857-f5d6-42b8-b834-2becc32f95a2.png)
 
 ![스크린샷 2023-04-30 110200](https://user-images.githubusercontent.com/118729050/235332149-b8ff93d8-e123-4e70-a57a-b404f57c7391.png)
