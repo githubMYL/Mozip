@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <main>
-    <form method="post" th:action="@{/member}" autocomplete="off" th:object="${joinParam}">
+    <form method="post" th:action="@{/member/join}" autocomplete="off" th:object="${joinParam}">
         <dl>
-            <dt>아이디</dt>
+            <dt>아이디(이메일)</dt>
             <dd>
                 <input type="email" name="email" th:field="*{email}" placeholder="이메일 형식입니다.">
             </dd>
@@ -38,6 +38,13 @@
                 <input type="text" name="mobile" th:field="*{mobile}">
             </dd>
         </dl>
+        <div>
+            <dt>약관동의</dt>
+            <dd>
+                <div class="terms"></div>
+                <input type="checkbox" name="agree" value="true" id="agree" th:field="*{agree}">
+            </dd>
+        </div>
         <div class="btns">
             <button type="submit">가입하기</button>
         </div>
