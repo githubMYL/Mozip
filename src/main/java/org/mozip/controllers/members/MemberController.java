@@ -30,7 +30,7 @@ public class MemberController {
     }
 
     /** 회원가입 저장 */
-    @PostMapping
+    @PostMapping("/join")
     public String joinPs(@Valid JoinParam joinParam, Errors errors){
 
         validator.validate(joinParam, errors);
