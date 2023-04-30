@@ -91,12 +91,6 @@
 			<classifier>jakarta</classifier>
 		</dependency>
 		<dependency>
-			<groupId>com.mysema.commons</groupId>
-			<artifactId>mysema-commons-lang</artifactId>
-			<version>0.2.4</version>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
 			<groupId>org.modelmapper</groupId>
 			<artifactId>modelmapper</artifactId>
 			<version>3.1.1</version>

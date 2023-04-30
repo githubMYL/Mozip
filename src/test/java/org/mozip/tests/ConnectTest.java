@@ -8,7 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 @SpringBootTest
-public class MozipTest {
+public class ConnectTest {
     private static final String DRIVER = "oracle.jdbc.OracleDriver"; //Connection 을 구현한 클래스의 이름
     private static final String URL = "jdbc:oracle:thin:@localhost:1521:ORCL"; // Oracle 서버 주소
     private static final String USER = "mozip"; //계정
@@ -26,4 +26,11 @@ public class MozipTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    @DisplayName("메인페이지에서 각페이지로 이동하면 성공")
+    public void loginConnection() throws Exception{
+
+    }
+
 }
