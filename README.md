@@ -34,5 +34,7 @@
 
 ![스크린샷 2023-04-30 110240](https://user-images.githubusercontent.com/118729050/235332164-9e784667-6995-40ed-9a5c-f1fda63a65fd.png)
 
+![스크린샷 2023-04-30 142152](https://user-images.githubusercontent.com/118729050/235337122-d1ee2762-2e7e-41f7-af07-1c59d570d64c.png)
+
 ![스크린샷 2023-04-30 110257](https://user-images.githubusercontent.com/118729050/235332169-d0f9238a-93b6-4e22-907c-ae9ddae9e6f0.png)
 
