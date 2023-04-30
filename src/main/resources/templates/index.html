@@ -1,5 +1,20 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-        xmlns:th>
+<html   xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head th:fragment="mainHeader">
+        <meta name="_csrf" th:content="${_csrf.token}">
+        <meta name="_csrf_header" th:content="${_csrf.headerName}">
+
+    </head>
+    <body>
+        <div class="container-fluid">
+            <!-- 상단 바 필요한코드 넣기 -->
+            <!-- 사이드 바 필요한코드 넣기-->
+            <div layout:fragment="content">
+                공통 레이아웃
+            </div>
+        </div>
+    </body>
 
 </html>
