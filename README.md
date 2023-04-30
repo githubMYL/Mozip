@@ -13,3 +13,8 @@
 <br>
 
 ![Mozip 사이트맵](https://user-images.githubusercontent.com/129242618/235331848-895dd583-0d0f-48e6-8e94-bef5c54396d3.jpg)
+
+<h1>Mozip 마인드맵</h2>
+<br>
+
+![Mozip 마인드맵](https://user-images.githubusercontent.com/129242618/235331911-1926cc0a-b031-4047-97db-4daad711a46c.jpg)
