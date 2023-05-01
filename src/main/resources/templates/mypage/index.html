@@ -1,1 +1,15 @@
-마이페이지
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<main>
+    마이페이지
+    <from method="post" th:action="@{/mypage/index}" autocomplete="off" th:object="${joinParam}">
+        <dl>
+            <dt>PROFILE</dt>
+            <dd>
+                <input type="file" name="file">
+                <input type="text" name="intro" placeholder="자기소개">
+            </dd>
+        </dl>
+    </from>
+
+</main>

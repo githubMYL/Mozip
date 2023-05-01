@@ -1,2 +1,4 @@
-package org.mozip.models.mypages;public class mypageService {
+package org.mozip.models.mypages;
+
+public class MyPageService {
 }
