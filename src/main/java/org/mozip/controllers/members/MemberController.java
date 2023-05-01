@@ -41,4 +41,11 @@ public class MemberController {
         service.save(joinParam);
         return "redirect:/member/login";
     }
+
+    /** 회원 로그인 처리 */
+    @GetMapping("/login")
+    public String login() {
+        return "member/login";
+    }
+
 }

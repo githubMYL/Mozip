@@ -22,6 +22,9 @@ public class LoginFailureHandler implements AuthenticationFailureHandler {
         String email = request.getParameter("email");
         String memberPw = request.getParameter("memberPw");
 
+        session.removeAttribute("field");
+        session.removeAttribute("message");
+        session.removeAttribute("email");
         try {
             if(email == null || email.isBlank()) {
                 throw new LoginValidationException(bundle.getString("NotBlank.email"), "email");
@@ -39,7 +42,6 @@ public class LoginFailureHandler implements AuthenticationFailureHandler {
             session.setAttribute("message", message);
         }
         session.setAttribute("email", email);
-        session.setAttribute("memberPw", memberPw);
 
         String url = request.getContextPath() + "/member/login";
         response.sendRedirect(url);
