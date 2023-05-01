@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<body>
+<div th:replace="fragments/nav :: fragment-nav"></div>
+
+<th:block th:insert="fragments/mypage-body :: mypage-body"/>
+<div class="col-lg-4">
+    <div class="useredit">
+        <div class="fa-user">개인정보 수정</div>
+        <form role="form" th:action="@{/mypage/me}" th:object="${memberForm}" method="post">
+            <div class="form-group">
+                <label th:for="name">닉네임</label>
+                <input type="text" th:field="*{name}" class="form-control"
+                       placeholder="닉네임을 입력하세요"
+                       th:class="${#fields.hasErrors('name')}? 'form-control fieldError' : 'form-control'">
+                <p th:if="${#fields.hasErrors('name')}"
+                   th:errors="*{name}">Incorrect input</p>
+            </div>
+            <div class="form-group">
+                <label th:for="email">이메일</label>
+                <input type="email" th:field="*{email}" class="form-control"
+                       placeholder="None" th:class="${#fields.hasErrors('email')}? 'form-control fieldError' : 'form-control'">
+                <p th:if="${#fields.hasErrors('email')}"
+                   th:errors="*{email}">Incorrect input</p>
+            </div>
+            <button type="submit" class="btn btn-primary">수정</button>
+        </form>
+        <br/>
+    </div>
+</div>
+</body>
