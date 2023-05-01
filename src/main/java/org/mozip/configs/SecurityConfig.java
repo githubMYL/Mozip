@@ -7,12 +7,26 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-
+        http.formLogin()
+                .loginPage("/member/login")
+                .defaultSuccessUrl("/")
+                .usernameParameter("email")
+                .passwordParameter("memberPw")
+                .failureUrl("/user/login?success=false")
+                .and()
+                .logout()
+                .logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))
+                .logoutSuccessUrl("/");
+        http.authorizeHttpRequests()
+                .requestMatchers("/mypage/**").authenticated()
+                .requestMatchers("/admin/**").hasAuthority("ADMIN")
+                .anyRequest().permitAll();
         return http.build();
     }
 
