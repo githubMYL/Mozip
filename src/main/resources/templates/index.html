@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{cmmn/adminLayout}">
-    <body>
-        <div layout:fragment="content">
-            본문입니다
-        </div>
-    </body>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main}">
+
+<main layout:fragment="content">
+    <th:block th:if="${session.member == null }">
+        <a th:href="@{/member/join}">회원가입</a>
+        <a th:href="@{/member/login}">로그인</a>
+    </th:block>
+    <th:block th:unless="${session.member == null }">
+        [[${session.member.userNm}]]([[${session.member.userId}]])님 로그인...
+        <a th:href="@{/member/logout}">로그아웃</a>
+    </th:block>
+</main>
 </html>
