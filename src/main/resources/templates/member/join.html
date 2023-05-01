@@ -1,57 +1,60 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layouts/main}">
-
-<main layout:fragment="content">
-    <h1 th:text="#{member.join}"></h1>
-    <form method="post" th:action="@{/user}" autocomplete="off" th:object="${joinParam}">
-        <dl>
-            <dt th:text="#{memberId}"></dt>
-            <dd>
-                <input type="email" name="email" th:field="*{email}" placeholder="이메일 형식입니다.">
-            </dd>
-        </dl>
-        <dl>
-            <dt th:text="#{memberPw}"></dt>
-            <dd>
-                <input type="password" name="memberPw" th:field="*{memberPw}">
-            </dd>
-        </dl>
-        <dl>
-            <dt th:text="#{memberPwRe}"></dt>
-            <dd>
-                <input type="password" name="memberPwRe" th:field="*{memberPwRe}">
-            </dd>
-        </dl>
-        <dl>
-            <dt th:text="#{memberNick}"></dt>
-            <dd>
-                <input type="text" name="memberNick" th:field="*{memberNick}">
-            </dd>
-        </dl>
-        <dl>
-            <dt th:text="#{memberNm}"></dt>
-            <dd>
-                <input type="text" name="memberNm" th:field="*{memberNm}">
-            </dd>
-        </dl>
-        <dl>
-            <dt th:text="#{mobile}"></dt>
-            <dd>
-                <input type="text" name="mobile" th:field="*{mobile}">
-            </dd>
-        </dl>
-        <div>
-            <dt>약관동의</dt>
-            <dd>
-                <div class="terms"></div>
-                <input type="checkbox" name="agree" value="true" id="agree" th:field="*{agree}">
-            </dd>
-        </div>
-        <div class="btns">
-            <button type="submit">가입하기</button>
-        </div>
-    </form>
-</main>
+<html xmlns:th="http://www.thymeleaf.org">
+    <main>
+        <form method="post" th:action="@{/member/join}" autocomplete="off" th:object="${joinParam}">
+            <dl>
+                <dt th:text="#{email}"></dt>
+                <dd>
+                    <input type="email" name="email" th:field="*{email}" placeholder="이메일 형식입니다.">
+                    <div class="error" th:each="err : ${#fields.errors('email')}" th:text="${err}"></div>
+                </dd>
+            </dl>
+            <dl>
+                <dt th:text="#{memberPw}"></dt>
+                <dd>
+                    <input type="password" name="memberPw" th:field="*{memberPw}">
+                    <div class="error" th:each="err : ${#fields.errors('memberPw')}" th:text="${err}"></div>
+                </dd>
+            </dl>
+            <dl>
+                <dt th:text="#{memberPwRe}"></dt>
+                <dd>
+                    <input type="password" name="memberPwRe" th:field="*{memberPwRe}">
+                    <div class="error" th:each="err : ${#fields.errors('memberPwRe')}" th:text="${err}"></div>
+                </dd>
+            </dl>
+            <dl>
+                <dt th:text="#{memberNick}"></dt>
+                <dd>
+                    <input type="text" name="memberNick" th:field="*{memberNick}">
+                    <div class="error" th:each="err : ${#fields.errors('memberNick')}" th:text="${err}"></div>
+                </dd>
+            </dl>
+            <dl>
+                <dt th:text="#{memberNm}"></dt>
+                <dd>
+                    <input type="text" name="memberNm" th:field="*{memberNm}">
+                    <div class="error" th:each="err : ${#fields.errors('memberNm')}" th:text="${err}"></div>
+                </dd>
+            </dl>
+            <dl>
+                <dt th:text="#{mobile}"></dt>
+                <dd>
+                    <input type="text" name="mobile" th:field="*{mobile}">
+                    <div class="error" th:each="err : ${#fields.errors('mobile')}" th:text="${err}"></div>
+                </dd>
+            </dl>
+            <div>
+                <dt th:text="#{agree.terms}"></dt>
+                <dd>
+                    <div class="terms"></div>
+                    <input type="checkbox" name="agree" value="true" id="agree" th:field="*{agree}">
+                    <div class="error" th:each="err : ${#fields.errors('agree')}" th:text="${err}"></div>
+                </dd>
+            </div>
+            <div class="btns">
+                <button type="submit">가입하기</button>
+            </div>
+        </form>
+    </main>
 </html>
