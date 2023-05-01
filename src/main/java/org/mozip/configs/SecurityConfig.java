@@ -1,5 +1,7 @@
 package org.mozip.configs;
 
+import org.mozip.models.member.LoginFailureHandler;
+import org.mozip.models.member.LoginSuccessHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,10 +17,10 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.formLogin()
                 .loginPage("/member/login")
-                .defaultSuccessUrl("/")
+                .successHandler(new LoginSuccessHandler())
                 .usernameParameter("email")
                 .passwordParameter("memberPw")
-                .failureUrl("/user/login?success=false")
+                .failureHandler(new LoginFailureHandler())
                 .and()
                 .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))
