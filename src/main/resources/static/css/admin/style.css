@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap');
+* {
+    font-family: 'Gowun Dodum', sans-serif;
+    box-sizing: border-box;
+    color: #000; outline: none;
+}
+body {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+dl, dt, dd, ul, ol, li {
+    margin: 0; padding: 0;
+}
+ul, ol {
+    list-style: none;
+}
+img {
+    border: 0;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='password'],
+input[type='email'] {
+    width: 100%;
+    height: 45px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+.dn {
+    display: none !important;
+}
+
+.error {
+    box-shadow: 2px 5px 5px #414141;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 5px 0;
+    color : red;
+}
+
+.form dl{
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.form dl dt{
+    width: 150px;
+}
+
+.form dl dd{
+    flex-grow: 1;
+}
+
+/** 공통 버튼 */
+.btn1, .btn2{
+    border: 1px solid #000;
+    display: inline-block;
+    padding: 7px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.btn2{
+    background: #fff;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn1:hover{
+    background: #000;
+    color: #fff;
+}
+
+.btn2:hover{
+    background: orange;
+}
+
+.submit_btn{
+    color: #fff;
+    border-radius: 5px;
+    min-width: 250px;
+    background: #000;
+    height: 45px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border: 0;
+    margin: 10px auto;
+    display: block;
+    line-height: 45px;
+}
+
+
+/** 관리자 헤더 영역  S */
+header{
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    background: #ffffff;
+    border-bottom: 2px solid #000;
+}
+header > section{
+    display: flex;
+    align-items: center;
+}
+header .btn1{
+    margin-left: 5px;
+}
+/** 관리자 헤더 영역 E */
+
+
+/** 관리자 메인 영역 > side 부분 S */
+main{
+    display: flex;
+    min-height: 900px;
+}
+main > aside{
+    width: 200px;
+    background: #e0e0e0;
+    border-right: 2px solid #000;
+}
+main > aside a{
+    display: block;
+    padding: 25px 20px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    font-size: 20px;
+    font-weight: bold;
+    background: #fff;
+}
+main > aside a *{
+    font-size: 20px;
+}
+main > aside a:hover,
+main > aside a.on,
+main > aside a:hover *,
+main > aside a.on *{
+    background: #000;
+    color: #fff;
+}
+
+main > section{
+    flex-grow: 1;
+    padding: 50px 20px 20px 50px;
+    background: #fff;
+}
+
+main nav{
+    margin-bottom: 25px;
+}
+main nav.sub_menus{
+    margin-bottom: 20px;
+}
+/** 관리자 메인 영역  > side 부분 E */
+
+/** 관리자 테이블 공통 부분 S */
+.primary {
+    display: inline-block;
+    overflow: auto;
+    /* 스크롤을 부드럽게 하는 속성 */
+    scroll-snap-type: both mandatory;
+    margin: auto;
+    max-height: 400px;
+    border-bottom: 1px solid #aaa;
+}
+
+table {
+    border-collapse: collapse;
+    border: 0;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #aaa;
+    background-clip: padding-box;
+    scroll-snap-align: start;
+    padding: 0.6rem;
+    min-width: 6rem;
+    text-align: center; /* 가로 중앙 정렬 */
+    vertical-align: middle; /* 세로 중앙 정렬 */
+    margin: 0;
+}
+thead {
+    z-index: 1000;
+    position: relative;
+}
+th::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px solid #aaa;
+}
+thead th {
+    position: sticky;
+    z-index: 1000;
+    height: 55px;
+    top: 0;
+    background-clip: padding-box;
+    background-color: #f8f8f8;
+    border: 1px solid #aaa;
+}
+tbody {
+    z-index: 10;
+    position: relative;
+}
+tbody tr:last-child th,
+tbody tr:last-child td {
+    border-bottom: 0;
+}
+thead tr .checkbox,
+tbody tr td:first-child{
+    min-width: 4rem;
+}
+
+/** 관리자 테이블 공통 부분 E */
