@@ -1,39 +1,43 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<main>
-    <form method="post" th:action="@{/member/join}" autocomplete="off" th:object="${joinParam}">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main}">
+
+<main layout:fragment="content">
+    <h1 th:text="#{member.join}"></h1>
+    <form method="post" th:action="@{/user}" autocomplete="off" th:object="${joinParam}">
         <dl>
-            <dt>아이디(이메일)</dt>
+            <dt th:text="#{memberId}"></dt>
             <dd>
                 <input type="email" name="email" th:field="*{email}" placeholder="이메일 형식입니다.">
             </dd>
         </dl>
         <dl>
-            <dt>비밀번호</dt>
+            <dt th:text="#{memberPw}"></dt>
             <dd>
                 <input type="password" name="memberPw" th:field="*{memberPw}">
             </dd>
         </dl>
         <dl>
-            <dt>비밀번호 확인</dt>
+            <dt th:text="#{memberPwRe}"></dt>
             <dd>
                 <input type="password" name="memberPwRe" th:field="*{memberPwRe}">
             </dd>
         </dl>
         <dl>
-            <dt>닉네임</dt>
+            <dt th:text="#{memberNick}"></dt>
             <dd>
                 <input type="text" name="memberNick" th:field="*{memberNick}">
             </dd>
         </dl>
         <dl>
-            <dt>회원명</dt>
+            <dt th:text="#{memberNm}"></dt>
             <dd>
                 <input type="text" name="memberNm" th:field="*{memberNm}">
             </dd>
         </dl>
         <dl>
-            <dt>핸드폰</dt>
+            <dt th:text="#{mobile}"></dt>
             <dd>
                 <input type="text" name="mobile" th:field="*{mobile}">
             </dd>
