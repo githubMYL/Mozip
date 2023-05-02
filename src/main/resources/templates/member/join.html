@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-    <main>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main}">
+    <main layout:fragment="content">
         <form method="post" th:action="@{/member/join}" autocomplete="off" th:object="${joinParam}">
             <dl>
                 <dt th:text="#{email}"></dt>
@@ -45,16 +47,15 @@
                 </dd>
             </dl>
             <div>
-                <dt th:text="#{agree.terms}"></dt>
+                <dt th:text="#{terms.agree}"></dt>
                 <dd>
                     <div class="terms"></div>
                     <input type="checkbox" name="agree" value="true" id="agree" th:field="*{agree}">
-                    <label for="agree" th:text="#{member.agree}"></label>
                     <div class="error" th:each="err : ${#fields.errors('agree')}" th:text="${err}"></div>
                 </dd>
             </div>
             <div class="btns">
-                <button type="submit">가입하기</button>
+                <button type="submit" th:text="#{member.action}"></button>
             </div>
         </form>
     </main>

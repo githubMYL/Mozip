@@ -23,8 +23,8 @@ public class SecurityConfig {
                 .failureHandler(new LoginFailureHandler())
                 .and()
                 .logout()
-                .logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))
-                .logoutSuccessUrl("/");
+                .logoutRequestMatcher(new AntPathRequestMatcher("/member/logout"))
+                .logoutSuccessUrl("/mozip");
         http.authorizeHttpRequests()
                 .requestMatchers("/mypage/**").authenticated()
                 .requestMatchers("/admin/**").hasAuthority("ADMIN")
