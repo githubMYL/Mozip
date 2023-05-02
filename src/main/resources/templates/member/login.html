@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>MoZip</title>
+    </head>
     <main>
-        <th:block>
-            <div class="error" th:if="${field == 'global' }" th:text="${message}"></div>
-            <form method="post" th:action="@{/member/login}" autocomplete="off">
-                <dl>
-                    <dt th:text="#{email}"></dt>
-                    <dd>
-                        <input type="text" name="email">
-                        <div class="error" th:if="${field == 'email' }" th:text="${message}"></div>
-                    </dd>
-                </dl>
-                <dl>
-                    <dt th:text="#{memberPw}"></dt>
-                    <dd>
-                        <input type="password" name="memberPw">
-                        <div class="error" th:if="${field == 'memberPw' }" th:text="${message}"></div>
-                    </dd>
-                 </dl>
-                <button type="submit" th:text="#{member.login}"></button>
-            </form>
-        </th:block>
+        <div class="error" th:if="${field == 'global' }" th:text="${message}"></div>
+        <form method="post" th:action="@{/member/login}" autocomplete="off">
+            <dl>
+                <dt th:text="#{email}"></dt>
+                <dd>
+                    <input type="text" name="email">
+                    <div class="error" th:if="${field == 'email' }" th:text="${message}"></div>
+                </dd>
+            </dl>
+            <dl>
+                <dt th:text="#{memberPw}"></dt>
+                <dd>
+                    <input type="password" name="memberPw">
+                    <div class="error" th:if="${field == 'memberPw' }" th:text="${message}"></div>
+                </dd>
+             </dl>
+            <button type="submit" th:text="#{member.login}"></button>
+        </form>
     </main>
 </html>

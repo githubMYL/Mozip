@@ -10,4 +10,15 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @RequiredArgsConstructor
 public class MvcConfig implements WebMvcConfigurer {
 
+
+    @Bean
+    public MessageSource messageSource() {
+
+        ResourceBundleMessageSource ms = new ResourceBundleMessageSource();
+        ms.setDefaultEncoding("UTF-8");
+        ms.addBasenames("messages.commons", "messages.errors", "messages.validations");
+        return ms;
+    }
 }
+
+
