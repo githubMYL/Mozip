@@ -108,7 +108,7 @@ textarea {
 
 /** 관리자 헤더 영역  S */
 header{
-    padding: 0 20px;
+    padding: 0px;
     display: flex;
     justify-content: space-between;
     height: 70px;
@@ -119,8 +119,13 @@ header > section{
     display: flex;
     align-items: center;
 }
+header > section.left img {
+    margin-top:35px;
+    height: 300px;
+}
 header .btn1{
-    margin-left: 5px;
+    margin-left: 0px;
+    margin-right: 20px;
 }
 /** 관리자 헤더 영역 E */
 

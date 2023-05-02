@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-        xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <header th:fragment="header">
-        <section class="left">로고</section>
+        <section class="left" id="logo">
+            <img  src="../../css/img/leftTopLogo.png" alt="왼쪽Mozip로고"/>
+        </section>
+
         <section class="right">
             <a th:href="@{/}" target="_blank" class="btn1">사용자페이지</a>
         </section>
