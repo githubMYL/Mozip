@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<main>
+    마이페이지
+    <from method="post" th:action="@{/mypage/index}" autocomplete="off" th:object="${joinParam}">
+        <dl>
+            <dt>PROFILE</dt>
+            <dd>
+                <input type="file" name="file">
+                <input type="text" placeholder="자기소개">
+            </dd>
+                <button>정보수정</button>
+        </dl>
+
+        <dl>
+            <dt>LIST</dt>
+            <dd>
+                <input type="file" name="file" >
+            </dd>
+        </dl>
+
+        <dl>
+            <dt>모임 생성하기</dt>
+            <dd>
+                <input type="file" name="file" >
+            </dd>
+        </dl>
+
+    </from>
+
+</main>
