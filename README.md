@@ -22,19 +22,24 @@
 <h1>화면 설계서</h1>
 <br>
 
-![스크린샷 2023-04-30 110016](https://user-images.githubusercontent.com/118729050/235332139-180a2857-f5d6-42b8-b834-2becc32f95a2.png)
+![스크린샷 2023-05-03 161655.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161655.png)
 
-![스크린샷 2023-04-30 150602](https://user-images.githubusercontent.com/118729050/235338483-d3b3ccbc-0a56-47ea-96e2-c6997bbd4d85.png)
+![스크린샷 2023-05-03 161703.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161703.png)
 
-![스크린샷 2023-04-30 150300](https://user-images.githubusercontent.com/118729050/235338425-f6a5ca3d-2d45-411c-9b7f-78f122da1553.png)
+![스크린샷 2023-05-03 161740.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161740.png)
 
-![스크린샷 2023-04-30 110220](https://user-images.githubusercontent.com/118729050/235332158-06f37e37-4c8c-4383-a5f5-f2ff06dc4da1.png)
+![스크린샷 2023-05-03 161749.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161749.png)
 
-![스크린샷 2023-04-30 110229](https://user-images.githubusercontent.com/118729050/235332161-be14e092-edba-4865-8166-e13523371ece.png)
+![스크린샷 2023-05-03 161754.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161754.png)
 
-![스크린샷 2023-04-30 110240](https://user-images.githubusercontent.com/118729050/235332164-9e784667-6995-40ed-9a5c-f1fda63a65fd.png)
+![스크린샷 2023-05-03 161800.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161800.png)
 
-![스크린샷 2023-04-30 142152](https://user-images.githubusercontent.com/118729050/235337122-d1ee2762-2e7e-41f7-af07-1c59d570d64c.png)
+![스크린샷 2023-05-03 161804.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161804.png)
 
-![스크린샷 2023-04-30 110257](https://user-images.githubusercontent.com/118729050/235332169-d0f9238a-93b6-4e22-907c-ae9ddae9e6f0.png)
+![스크린샷 2023-05-03 161809.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161809.png)
 
+![스크린샷 2023-05-03 161815.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161815.png)
+
+![스크린샷 2023-05-03 161819.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161819.png)
+
+![스크린샷 2023-05-03 161823.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161823.png)
