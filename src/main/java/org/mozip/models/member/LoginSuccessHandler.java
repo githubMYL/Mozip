@@ -33,7 +33,9 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         }else { // 쿠키 등록
             cookie.setMaxAge(60 * 60 * 24 * 365);
         }
+
         //String url = request.getContextPath();
         response.sendRedirect("/mozip");
+
     }
 }

@@ -7,9 +7,9 @@ public class CommonException extends RuntimeException{
 
     private HttpStatus status;  //상태소스
 
-    //상태 코드가 없으면 500
+
     public CommonException(String message){
-        this(message, HttpStatus.INTERNAL_SERVER_ERROR);
+        this(message, HttpStatus.INTERNAL_SERVER_ERROR); // error 500
     }
 
     public CommonException(String message, HttpStatus status){
@@ -17,7 +17,7 @@ public class CommonException extends RuntimeException{
         this.status = status;
     }
 
-    //응답
+    // 응답
     public HttpStatus getStatus(){
         return status;
     }
