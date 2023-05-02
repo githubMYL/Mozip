@@ -27,5 +27,5 @@ public class Members extends BaseEntity {
 
     @Enumerated(EnumType.STRING) // 권한설정
     @Column(length=20, nullable = false)
-    private MemberType type = MemberType.ADMIN;
+    private MemberType type = MemberType.MEMBER;
 }
