@@ -10,6 +10,4 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @RequiredArgsConstructor
 public class MvcConfig implements WebMvcConfigurer {
 
-
-
 }
