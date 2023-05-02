@@ -1,22 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
-    <title>Mozip 관리자페이지 입니다🤔</title>
-</head>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+    <header th:fragment="header">
+        <section class="left" id="logo">
+            <img  src="../../css/img/leftTopLogo.png" alt="왼쪽Mozip로고"/>
+        </section>
 
-<body>
-<header><h1>Mozip</h1></header>
-<div id="main">Mozip 관리자 페이지 🤔
-    <div id="sidebar">관리자 메뉴 목록 😎
-        <nav>회원관리</nav>
-        <nav>모임관리</nav>
-        <nav>게시글관리</nav>
-    </div>
-    <div id='maintext'>Main Text</div>
-    <div id='mainimg'>Main image</div>
-</div>
-<footer>footer</footer>
-</body>
+        <section class="right">
+            <a th:href="@{/}" target="_blank" class="btn1">사용자페이지</a>
+        </section>
+    </header>
 </html>

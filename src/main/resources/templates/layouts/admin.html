@@ -3,19 +3,20 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <title th:if="${pageTitle != null}" th:text="${pageTitle}"></title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
-    <link rel="stylesheet" type="text/css" th:each="cssFile : ${addCss}" th:href="@{/css/{file}.css(file=${cssFile})}">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/admin/style.css}">
+    <link rel="stylesheet" type="text/css" th:each="cssFile : ${addCss}" th:href="@{/css/admin/{file}.css(file=${cssFile})}">
     <th:block layout:fragment="addCss"></th:block>
-    <script th:src="@{/js/common.js}"></script>
-    <script th:each="jsFile : ${addScript}" th:src="@{/js/{file}.js(file=${jsFile})}"></script>
+    <script th:src="@{/js/admin/common.js}"></script>
+    <script th:each="jsFile : ${addScript}" th:src="@{/js/admin/{file}.js(file=${jsFile})}"></script>
     <th:block layout:fragment="addScript"></th:block>
 </head>
 
 <body>
-<header th:replace="~{outlines/header/admin}"></header>
-
-<main layout:fragment="content"></main>
-
-<footer th:replace="~{outlines/footer/main::common}"></footer>
+<header th:replace="~{outlines/header/admin::header}"></header>
+<main>
+    <aside th:replace="~{outlines/menus/admin::menus}"></aside>
+    <section layout:fragment="content"></section>
+</main>
 </body>
 </html>
