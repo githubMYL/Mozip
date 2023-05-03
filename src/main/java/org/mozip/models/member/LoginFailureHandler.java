@@ -43,7 +43,7 @@ public class LoginFailureHandler implements AuthenticationFailureHandler {
         }
         session.setAttribute("email", email);
 
-        String url = request.getContextPath() + "/member/login";
-        response.sendRedirect(url);
+        // String url = request.getContextPath() + "/member/login";
+        response.sendRedirect("/mozip");
     }
 }
