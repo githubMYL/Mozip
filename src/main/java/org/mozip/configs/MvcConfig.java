@@ -13,7 +13,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @RequiredArgsConstructor
 public class MvcConfig implements WebMvcConfigurer {
 
-
     @Bean
     public MessageSource messageSource() {
 
@@ -23,5 +22,3 @@ public class MvcConfig implements WebMvcConfigurer {
         return ms;
     }
 }
-
-

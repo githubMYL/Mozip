@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 @Transactional
 @RequiredArgsConstructor
 public class MyPageService {
+
+
     //회원 정보 수정
 
-    public void infoUpdate(){
+  public void infoUpdate(){
 
-    }
-
-
+  }
 }
