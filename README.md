@@ -22,24 +22,29 @@
 <h1>화면 설계서</h1>
 <br>
 
-![스크린샷 2023-05-03 161655.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161655.png)
+![스크린샷 2023-05-03 161655](https://user-images.githubusercontent.com/118729050/235856806-89814d4f-6dc0-47de-a5e7-631208720267.png)
 
-![스크린샷 2023-05-03 161703.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161703.png)
+![스크린샷 2023-05-03 161703](https://user-images.githubusercontent.com/118729050/235856816-f702ac76-fe66-49e0-a772-cb75a784ae56.png)
 
-![스크린샷 2023-05-03 161740.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161740.png)
+![스크린샷 2023-05-03 161740](https://user-images.githubusercontent.com/118729050/235856838-b84ae720-b078-4e49-8166-d3d59e38153f.png)
 
-![스크린샷 2023-05-03 161749.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161749.png)
+![스크린샷 2023-05-03 161749](https://user-images.githubusercontent.com/118729050/235855156-2ac42861-75fd-4b76-8da4-67889b987ce6.png)
 
-![스크린샷 2023-05-03 161754.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161754.png)
+![스크린샷 2023-05-03 161754](https://user-images.githubusercontent.com/118729050/235855515-196a2f73-9131-4923-80be-97d2728a9df9.png)
 
-![스크린샷 2023-05-03 161800.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161800.png)
+![스크린샷 2023-05-03 161800](https://user-images.githubusercontent.com/118729050/235856082-44d70702-9cdb-4201-a6d7-83988f8d89c6.png)
 
-![스크린샷 2023-05-03 161804.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161804.png)
+![스크린샷 2023-05-03 161804](https://user-images.githubusercontent.com/118729050/235856102-24fed0b1-ca4c-4d04-9a07-84354c460899.png)
 
-![스크린샷 2023-05-03 161809.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161809.png)
+![스크린샷 2023-05-03 161809](https://user-images.githubusercontent.com/118729050/235856137-ff7970fe-b41a-4dcf-82f8-38168d4047fa.png)
 
-![스크린샷 2023-05-03 161815.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161815.png)
+![스크린샷 2023-05-03 161815](https://user-images.githubusercontent.com/118729050/235856148-25ca01e1-1314-46f6-bbd2-73985e618b9f.png)
 
-![스크린샷 2023-05-03 161819.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161819.png)
+![스크린샷 2023-05-03 161819](https://user-images.githubusercontent.com/118729050/235856160-58ff092d-7b0d-467b-88de-17177a3b199f.png)
 
-![스크린샷 2023-05-03 161823.png](..%2F..%2F..%2F..%2F..%2F%BB%E7%C1%F8%2F%BD%BA%C5%A9%B8%B0%BC%A6%2F%BD%BA%C5%A9%B8%B0%BC%A6%202023-05-03%20161823.png)
+![스크린샷 2023-05-03 161823](https://user-images.githubusercontent.com/118729050/235856178-849baf67-6a76-4672-8087-0583c8f76715.png)
+
+
+
+
+
