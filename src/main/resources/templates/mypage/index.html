@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<main>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main}">
+<main layout:fragment="content">
     마이페이지
     <from method="post" th:action="@{/mypage/index}" autocomplete="off" th:object="${joinParam}">
         <dl>
             <dt>PROFILE</dt>
             <dd>
-                <input type="file" name="file">
+                <input type="file" name="file"><br>
                 <input type="text" placeholder="자기소개">
             </dd>
                 <button>정보수정</button>
@@ -18,13 +20,11 @@
                 <input type="file" name="file" >
             </dd>
         </dl>
+        <a th:href="@{/mypage/myadd}">모임생성</a>
+        <div>
+            <!-- 리스트 출력 -->
 
-        <dl>
-            <dt>모임 생성하기</dt>
-            <dd>
-                <input type="file" name="file" >
-            </dd>
-        </dl>
+        </div>
 
     </from>
 

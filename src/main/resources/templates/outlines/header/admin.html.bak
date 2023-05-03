@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <title>Mozip 관리자페이지 입니다🤔</title>
+</head>
+
+<body>
+<header><h1>Mozip</h1></header>
+<div id="main">Mozip 관리자 페이지 🤔
+    <div id="sidebar">관리자 메뉴 목록 😎
+        <nav>회원관리</nav>
+        <nav>모임관리</nav>
+        <nav>게시글관리</nav>
+    </div>
+    <div id='maintext'>Main Text</div>
+    <div id='mainimg'>Main image</div>
+</div>
+<footer>footer</footer>
+</body>
+</html>

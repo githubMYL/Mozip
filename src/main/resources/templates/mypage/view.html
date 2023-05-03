@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main}">
+<main layout:fragment="content">
+    <dl>
+        <dt th:text="#{mypage.subject}"></dt>
+        <dd th:text="${boardData.subject}"></dd>
+    </dl>
+    <dl>
+        <dt th:text="#{mypage.content}"></dt>
+        <dd th:utext="${boardData.content}"></dd>
+    </dl>
+    <a th:href="@{/mypage/index}" th:text="#{mypage.index}">목록으로</a>
+    <a th:href="@{/mypage/myadd}" th:text="#{mypage.myadd}">작성</a>
+    <a th:href="@{/mypage/update/{id}(id=${boardData.id})" th:text="#{mypage.update}">수정</a>
+
+</main>
+</html>
