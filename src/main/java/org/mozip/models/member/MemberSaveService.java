@@ -12,13 +12,23 @@ import org.springframework.stereotype.Service;
 public class MemberSaveService {
     private final MembersRepository repository;
     private final PasswordEncoder passwordEncoder;
+    private final MemberJoinValidator validator;
 
     public void save(JoinParam joinParam){
+
+        validator.validate(joinParam);
+
         Members member = JoinParam.of(joinParam);
 
         String hash = passwordEncoder.encode(joinParam.getMemberPw());
+        System.out.println("hash :" + hash);
         member.setMemberPw(hash);
 
         repository.saveAndFlush(member);
+    }
+
+    public Members getData(JoinParam param){
+
+        return repository.findByEmail(param.getEmail());
     }
 }
