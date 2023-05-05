@@ -1,15 +1,29 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<main>
-    마이페이지
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body>
     <from method="post" th:action="@{/mypage/index}" autocomplete="off" th:object="${joinParam}">
         <dl>
             <dt>PROFILE</dt>
             <dd>
                 <input type="file" name="file">
                 <input type="text" placeholder="자기소개">
+                <button>저장</button>
             </dd>
-                <button>정보수정</button>
+                <a href="#info_popup" class="btn_pop1"></a>
+                <button id="info_popup">정보수정</button>
+            <!--
+            <script>
+                var target = document.querySelectorAll('.btn_pop1');
+                var targetId;
+
+                target.addEventListener('click',function(){
+                    targetId = this.getAttribute('href');
+                    document.querySelector(targetId).style.display='block';
+                });
+            </script>
+            -->
+
         </dl>
 
         <dl>
@@ -27,5 +41,6 @@
         </dl>
 
     </from>
+</body>
 
-</main>
+</html>

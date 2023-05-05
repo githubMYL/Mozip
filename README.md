@@ -22,19 +22,29 @@
 <h1>화면 설계서</h1>
 <br>
 
-![스크린샷 2023-04-30 110016](https://user-images.githubusercontent.com/118729050/235332139-180a2857-f5d6-42b8-b834-2becc32f95a2.png)
+![스크린샷 2023-05-03 161655](https://user-images.githubusercontent.com/118729050/235856806-89814d4f-6dc0-47de-a5e7-631208720267.png)
 
-![스크린샷 2023-04-30 150602](https://user-images.githubusercontent.com/118729050/235338483-d3b3ccbc-0a56-47ea-96e2-c6997bbd4d85.png)
+![스크린샷 2023-05-03 161703](https://user-images.githubusercontent.com/118729050/235856816-f702ac76-fe66-49e0-a772-cb75a784ae56.png)
 
-![스크린샷 2023-04-30 150300](https://user-images.githubusercontent.com/118729050/235338425-f6a5ca3d-2d45-411c-9b7f-78f122da1553.png)
+![스크린샷 2023-05-03 161740](https://user-images.githubusercontent.com/118729050/235856838-b84ae720-b078-4e49-8166-d3d59e38153f.png)
 
-![스크린샷 2023-04-30 110220](https://user-images.githubusercontent.com/118729050/235332158-06f37e37-4c8c-4383-a5f5-f2ff06dc4da1.png)
+![스크린샷 2023-05-03 161749](https://user-images.githubusercontent.com/118729050/235855156-2ac42861-75fd-4b76-8da4-67889b987ce6.png)
 
-![스크린샷 2023-04-30 110229](https://user-images.githubusercontent.com/118729050/235332161-be14e092-edba-4865-8166-e13523371ece.png)
+![스크린샷 2023-05-03 161754](https://user-images.githubusercontent.com/118729050/235855515-196a2f73-9131-4923-80be-97d2728a9df9.png)
 
-![스크린샷 2023-04-30 110240](https://user-images.githubusercontent.com/118729050/235332164-9e784667-6995-40ed-9a5c-f1fda63a65fd.png)
+![스크린샷 2023-05-03 161800](https://user-images.githubusercontent.com/118729050/235856082-44d70702-9cdb-4201-a6d7-83988f8d89c6.png)
 
-![스크린샷 2023-04-30 142152](https://user-images.githubusercontent.com/118729050/235337122-d1ee2762-2e7e-41f7-af07-1c59d570d64c.png)
+![스크린샷 2023-05-03 161804](https://user-images.githubusercontent.com/118729050/235856102-24fed0b1-ca4c-4d04-9a07-84354c460899.png)
 
-![스크린샷 2023-04-30 110257](https://user-images.githubusercontent.com/118729050/235332169-d0f9238a-93b6-4e22-907c-ae9ddae9e6f0.png)
+![스크린샷 2023-05-03 161809](https://user-images.githubusercontent.com/118729050/235856137-ff7970fe-b41a-4dcf-82f8-38168d4047fa.png)
+
+![스크린샷 2023-05-03 161815](https://user-images.githubusercontent.com/118729050/235856148-25ca01e1-1314-46f6-bbd2-73985e618b9f.png)
+
+![스크린샷 2023-05-03 161819](https://user-images.githubusercontent.com/118729050/235856160-58ff092d-7b0d-467b-88de-17177a3b199f.png)
+
+![스크린샷 2023-05-03 161823](https://user-images.githubusercontent.com/118729050/235856178-849baf67-6a76-4672-8087-0583c8f76715.png)
+
+
+
+
 
