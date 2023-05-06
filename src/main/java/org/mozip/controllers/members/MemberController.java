@@ -16,10 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 public class MemberController {
 
+    private JoinParam joinParam;
     private final JoinValidator validator;
     private final MemberSaveService service;
 
-    private JoinParam joinParam;
     /** 회원가입 화면이동 */
     @GetMapping("/join")
     public String join(Model model){

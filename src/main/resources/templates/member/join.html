@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layouts/main}">
-    <main layout:fragment="content">
+<html xmlns:th="http://www.thymeleaf.org">
+    <main>
         <form method="post" th:action="@{/member/join}" autocomplete="off" th:object="${joinParam}">
             <dl>
                 <dt th:text="#{email}"></dt>
                 <dd>
-                    <input type="email" name="email" th:field="*{email}" placeholder="이메일 형식입니다.">
+                    <input type="email" name="email" th:field="*{email}" th:placeholder="#{emailForm}">
                     <div class="error" th:each="err : ${#fields.errors('email')}" th:text="${err}"></div>
                 </dd>
             </dl>

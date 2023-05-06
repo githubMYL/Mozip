@@ -37,7 +37,7 @@ p {margin : 0;}
     .left .top_menu{display:none;}
     #logo_menu .bar{position :relative;display:flex; font-size : 1rem; line-height : 40px; margin-left:20px; padding-left : 20px;}
     #logo_menu .submenu > li a{color : rgb(184, 182, 182);}
-    #logo_menu .bar:focus-within .submenu{width : 100px; position:absolute; background-color : rgba(10, 10,10,0.7); 
+    #logo_menu .bar:focus-within .submenu{width : 100px; position:absolute; background-color : rgba(10, 10,10,0.7);
                                         height : 280px; display:block; line-height : 40px; }
 }
 
@@ -48,7 +48,7 @@ p {margin : 0;}
 /** 메인 배너 영역 S*/
 #main_banner {width : 100%; height : 600px;background-image : url("../images/banner.png"); background-color:#dddddd; background-repeat : no-repeat; background-size : cover; background-position : 50% 50%; z-index : 10;}
 #main_banner .main_item{ position:relative; text-align: center; vertical-align: middle; top : 20%; font-size : 1.3rem;}
-#main_banner .main_item p span, 
+#main_banner .main_item p span,
 #main_banner .main_item p a{color : white; font-family: 'Quicksand', sans-serif; text-align:center;}
 #main_banner .main_item p a{display : inline-block; border : 1px solid rgba(255,255,255,0.3); margin: 15px 0; padding : 15px 30px;}
 #main_banner .JOIN_NOW{transition-duration : 0.5s; transition-property: background, color;}
@@ -64,7 +64,7 @@ p {margin : 0;}
 /** 메인 공지사항 영역 E */
 
 /** 메인 게시판 영역 S */
-#notice_board div .item{display:flex; justify-content: center; margin : 0px 15px; text-align:center; border-top : 1px solid #494949; border-bottom : 1px solid rgba(79,79,79,0.15);} 
+#notice_board div .item{display:flex; justify-content: center; margin : 0px 15px; text-align:center; border-top : 1px solid #494949; border-bottom : 1px solid rgba(79,79,79,0.15);}
 #notice_board li{padding:10px 7px;}
 #notice_board .no{width : 0px; flex-grow : 1;}
 #notice_board .title{width : 0px; flex-grow : 11.2;}

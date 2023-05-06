@@ -7,8 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.mozip.constants.MemberType;
 
-@Entity
-@Data @Builder
+@Data @Entity @Builder
 @NoArgsConstructor @AllArgsConstructor
 public class Members extends BaseEntity {
     @Id // 기본 키
