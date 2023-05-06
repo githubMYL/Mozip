@@ -2,18 +2,25 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/main}">
-<main layout:fragment="content">
-    <dl>
-        <dt th:text="#{mypage.subject}"></dt>
-        <dd th:text="${boardData.subject}"></dd>
-    </dl>
-    <dl>
-        <dt th:text="#{mypage.content}"></dt>
-        <dd th:utext="${boardData.content}"></dd>
-    </dl>
-    <a th:href="@{/mypage/index}" th:text="#{mypage.index}">목록으로</a>
-    <a th:href="@{/mypage/myadd}" th:text="#{mypage.myadd}">작성</a>
-    <a th:href="@{/mypage/update/{id}(id=${boardData.id})" th:text="#{mypage.update}">수정</a>
+<main layout:fragment="content" >
+
+    <form method="get">
+        <dl>
+            <dt th:text="#{mypage.view.subject}"></dt>
+            <dd th:text="${boardData.subject}"></dd>
+        </dl>
+        <dl>
+            <dt th:text="#{mypage.view.content}"></dt>
+            <dd th:text="${boardData.content}"></dd>
+        </dl>
+        <dl>
+            <dt th:text="#{mypage.view.regDt}"></dt>
+            <dd th:text="${boardData.regDt}"></dd>
+        </dl>
+        <a th:href="@{/mypage/index}">목록으로</a>
+        <a th:href="@{/mypage/update/{id}(id=${boardData.id})}">수정</a>
+    </form>
 
 </main>
+
 </html>

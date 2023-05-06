@@ -20,10 +20,17 @@
                 <input type="file" name="file" >
             </dd>
         </dl>
-        <a th:href="@{/mypage/myadd}">모임생성</a>
+        <div>
+            <a th:href="@{/mypage/myadd}">모임생성</a>
+        </div>
         <div>
             <!-- 리스트 출력 -->
-
+            <ul>
+                <li th:each="boardData : ${list}" th:object="${boardData}">
+                    <a th:href="@{/mypage/view/{id}(id=*{id})}" th:text="*{subject}"></a>
+                    <p th:text="*{content}"></p>
+                </li>
+            </ul>
         </div>
 
     </from>

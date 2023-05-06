@@ -5,7 +5,7 @@
 <main layout:fragment="content">
 
     <h1>모임생성</h1>
-    <form method="post" th:action="@{/mypage/save}" th:object="${mypageBoardForm}">
+    <form method="post" th:action="@{/mypage/save}" th:object="${boardData}">
         <th:block th:replace="~{mypage/addform::form}"></th:block>
         <button type="submit" th:text="#{mypage.myadd}"></button>
     </form>

@@ -13,7 +13,7 @@ import org.mozip.controllers.entities.BoardData;
 @NoArgsConstructor @AllArgsConstructor
 public class MypageBoardForm {
 
-    private Long Id;
+    private Long id;
     
     private String remode;  //수정시
     

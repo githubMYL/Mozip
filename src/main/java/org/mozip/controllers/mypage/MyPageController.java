@@ -26,7 +26,6 @@ public class MyPageController {
     private MemberInfoService infoService;
     @Autowired
     private BoardDataRepository repository;
-
     @Autowired
     private MypageInfoService mypageInfoService;
     @Autowired
@@ -56,11 +55,25 @@ public class MyPageController {
 
         MypageBoardForm mypageBoardForm = new MypageBoardForm();
         model.addAttribute("mypageBoardForm", mypageBoardForm);
-
+        model.addAttribute("addScript", new String[]{"ckeditor/ckeditor", "form"});
 
         return "mypage/myadd";
     }
 
+
+    //모임 생성 및 저장
+    @PostMapping("/save")
+    public String save(@Valid MypageBoardForm mypageBoardForm, Errors errors){
+
+        try {
+            saveService.save(mypageBoardForm, errors);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "redirect:/mypage/index";
+    }
+
+    //업데이트
     @GetMapping("/update/{id}")
     public String update(@PathVariable("id") Long id, Model model){
 
@@ -68,31 +81,12 @@ public class MyPageController {
 
         MypageBoardForm mypageBoardForm = new ModelMapper().map(boardData, MypageBoardForm.class);
         model.addAttribute("mypageBoardForm", mypageBoardForm);
+        model.addAttribute("addScript", new String[]{"ckeditor/ckeditor", "form"});
 
         return "mypage/update";
     }
-
-    //모임 생성 및 수정
-    @PostMapping("/save")
-    public String save(@Valid MypageBoardForm mypageBoardForm, Errors errors){
-        try{
-            saveService.save(mypageBoardForm);
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        if(errors.hasErrors()){
-            Long id = mypageBoardForm.getId();
-            if(id == null){
-                return "mypage/myadd";
-            }else{
-                return "mypage/update";
-            }
-        }
-        return "redirect:/mypage/list";
-    }
-
-    //모임 보기
+    
+    //모임 상세보기
     @GetMapping("/view/{id}")
     public String view(@PathVariable("id") Long id, Model model){
 
@@ -103,13 +97,14 @@ public class MyPageController {
     }
 
 
-    //모임 생성후 마이페이지로 이동 -> 모임 리스트
-    @GetMapping("/list") //index에 리스트 출력하게 수정해야함..
-    public String mylist(Model model){
+    //모임 생성후 마이페이지로 이동 -> 모임 생성 게시판목록
+    @GetMapping("/index")
+    public String list(Model model){
 
-        model.addAttribute("list", listService.mylist());
+        List<BoardData> list = listService.mylist();
+        model.addAttribute("list", list);
 
-        return "mypage/list";
+        return "mypage/index";
     }
 
     //모임 삭제
@@ -118,9 +113,8 @@ public class MyPageController {
         
         deleteService.delete(id);
 
-        return "redirect:/mypage/list";
+        return "redirect:/mypage/index";
     }
-
 
 
     //회원 정보 수정, 자기소개 게시글,

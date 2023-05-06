@@ -6,16 +6,19 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity @Data @Builder
-@AllArgsConstructor @NoArgsConstructor
-public class BoardData extends BaseEntity{
+@Data @Entity
+@Builder
+@NoArgsConstructor @AllArgsConstructor
+public class BoardData extends BaseEntity {
 
     @Id @GeneratedValue
-    private Long Id;
+    private Long id;
 
     @Column(nullable = false)
     private String subject;
 
+    @Lob
     @Column(nullable = false)
     private String content;
 }
+

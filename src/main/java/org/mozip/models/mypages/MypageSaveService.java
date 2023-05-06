@@ -16,32 +16,28 @@ public class MypageSaveService {
     private final BoardDataRepository repository;
     private final MypageSaveValidator saveValidator;
 
-    public void save(MypageBoardForm mypageBoardForm){
-
-        save(mypageBoardForm, null);
+    public void save(MypageBoardForm mypageBoardForm) {save(mypageBoardForm, null);
     }
 
-    public void save(MypageBoardForm mypageBoardForm, Errors errors){
-        if(errors != null && errors.hasErrors()){
+    public void save(MypageBoardForm mypageBoardForm, Errors errors) {
+        if (errors != null && errors.hasErrors()) {
             return;
         }
 
         saveValidator.check(mypageBoardForm);
 
         BoardData boardData = null;
-
-        //수정
-        String remode = mypageBoardForm.getRemode();
+        // 게시글 수정
+        String mode = mypageBoardForm.getRemode();
         Long id = mypageBoardForm.getId();
-        if(remode != null && remode.equals("update") && id != null){
+        if (mode != null && mode.equals("update") && id != null) {
             boardData = repository.findById(id).orElse(null);
             boardData.setSubject(mypageBoardForm.getSubject());
             boardData.setContent(mypageBoardForm.getContent());
         }
 
-        //추가
-        if(boardData == null){
-            boardData = mypageBoardForm.of(mypageBoardForm);
+        if (boardData == null) { // 게시글 추가
+            boardData = MypageBoardForm.of(mypageBoardForm);
         }
 
         repository.saveAndFlush(boardData);

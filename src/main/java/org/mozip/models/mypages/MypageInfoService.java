@@ -2,7 +2,6 @@ package org.mozip.models.mypages;
 
 
 import lombok.RequiredArgsConstructor;
-import org.modelmapper.ValidationException;
 import org.mozip.controllers.entities.BoardData;
 import org.mozip.repositories.BoardDataRepository;
 import org.springframework.stereotype.Service;
@@ -15,7 +14,7 @@ public class MypageInfoService {
     private final BoardDataRepository repository;
 
     public BoardData get(Long id){
-        BoardData data = repository.findById(id).get();
+        BoardData data = repository.findById(id).orElseThrow();
         return data;
     }
 
