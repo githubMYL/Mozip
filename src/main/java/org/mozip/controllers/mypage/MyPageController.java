@@ -44,7 +44,7 @@ public class MyPageController {
 
         JoinParam joinParam = new ModelMapper().map(member, JoinParam.class);
 
-        log.info(" member.toString() : " + member.toString());
+        //log.info(" member.toString() : " + member.toString());
         return "mypage/index";
     }
 
