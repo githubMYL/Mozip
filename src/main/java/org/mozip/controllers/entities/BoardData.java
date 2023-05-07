@@ -1,24 +1,24 @@
 package org.mozip.controllers.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity @Data @Builder
-@AllArgsConstructor @NoArgsConstructor
-public class BoardData {
+@Data @Entity
+@Builder
+@NoArgsConstructor @AllArgsConstructor
+public class BoardData extends BaseEntity {
 
     @Id @GeneratedValue
-    private Long Id;
+    private Long id;
 
     @Column(nullable = false)
     private String subject;
 
+    @Lob
     @Column(nullable = false)
     private String content;
 }
+

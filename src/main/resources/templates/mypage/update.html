@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main}">
+    <main layout:fragment="content">
+
+        <h1>수정</h1>
+        <form method="post" th:action="@{/mypage/save}" th:object="${mypageBoardForm}">
+            <input type="hidden" name="id" th:field="*{id}">
+            <input type="hidden" name="remode" value="update">
+            <th:block th:replace="~{mypage/addform::form}"></th:block>
+            <button type="submit" th:text="#{mypage.update}"></button>
+        </form>
+
+    </main>
+</html>
