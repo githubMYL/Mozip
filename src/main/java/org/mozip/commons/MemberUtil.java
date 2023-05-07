@@ -2,6 +2,8 @@ package org.mozip.commons;
 
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.mozip.controllers.entities.Members;
 import org.mozip.models.member.MemberInfo;
 import org.springframework.stereotype.Component;
 
@@ -30,5 +32,12 @@ public class MemberUtil {
         MemberInfo memberInfo = (MemberInfo) session.getAttribute("memberInfo");
 
         return memberInfo;
+    }
+
+    public Members getEntity() {
+        if (!isLogin())
+            return null;
+
+        return new ModelMapper().map(getMember(), Members.class);
     }
 }

@@ -1,6 +1,35 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <th:block th:fragment="form">
-        양식
+    <th:block th:fragment="form" th:object="${mozipForm}">
+        <input type="hidden" name="gid" th:field="*{gid}">
+        <dl th:if="*{mode == 'update'}">
+            <dt th:text="#{mypage.id}"></dt>
+            <dd>
+                <input type="hidden" name="id" th:field="*{id}">
+                <th:block th:text="*{id}"></th:block>
+            </dd>
+        </dl>
+
+        <dl>
+            <dt th:text="#{mypage.subject}"></dt>
+            <dd>
+                <input type="text" name="title" th:field="*{title}">
+                <div class="error" th:each="err : ${#fields.errors('title')}" th:text="${err}"></div>
+            </dd>
+        </dl>
+        <dl>
+            <dt th:text="#{mypage.photo}"></dt>
+            <dd></dd>
+        </dl>
+        <dl>
+            <dt th:text="#{mypage.content}"></dt>
+            <dd>
+                <textarea id="description" name="description" th:field="*{description}"></textarea>
+                <div>
+                    <button type="button" th:text="#{mypage.add.photo}"></button>
+                </div>
+                <div class="error" th:each="err : ${#fields.errors('description')}" th:text="${err}"></div>
+            </dd>
+        </dl>
     </th:block>
 </html>
