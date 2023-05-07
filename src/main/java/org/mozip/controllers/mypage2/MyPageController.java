@@ -64,7 +64,7 @@ public class MyPageController {
 
         commonFormProcess(model); // 공통 처리
 
-        Mozip mozip = infoService.get(id);
+        Mozip mozip = infoService.get(id, true);
 
 
         model.addAttribute("mozip", mozip);

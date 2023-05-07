@@ -26,8 +26,8 @@ public class SecurityConfig {
                 .logoutRequestMatcher(new AntPathRequestMatcher("/member/logout"))
                 .logoutSuccessUrl("/mozip");
         http.authorizeHttpRequests()
-                //.requestMatchers("/mozip/mypage/**", "/mozip/mypage2/**").authenticated()
-                //.requestMatchers("/mozip/admin/**").hasAuthority("ADMIN")
+                .requestMatchers("/mypage/**", "/mypage2/**").authenticated()
+                .requestMatchers("/mozip/admin/**").hasAuthority("ADMIN")
                 .anyRequest().permitAll();
         return http.build();
     }
