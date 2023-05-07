@@ -9,11 +9,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.mozip.controllers.entities.BaseEntity;
 import org.mozip.controllers.entities.Members;
 
 @Data @Builder
 @NoArgsConstructor @AllArgsConstructor
-public class JoinParam {
+public class JoinParam extends BaseEntity {
     @NotBlank @Email
     private String email;
     @NotBlank @Size(min = 8, max = 16)

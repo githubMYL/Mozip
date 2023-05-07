@@ -1,4 +1,4 @@
-package org.mozip.tests;
+package org.mozip.boardtests;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -28,7 +28,7 @@ public class ConnectTest {
     }
 
     @Test
-    @DisplayName("메인페이지에서 각페이지로 이동하면 성공")
+    @DisplayName("메인페이지에서 각 페이지로 이동하면 성공")
     public void loginConnection() throws Exception{
 
     }

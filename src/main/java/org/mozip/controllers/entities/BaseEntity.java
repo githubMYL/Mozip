@@ -28,6 +28,6 @@ public abstract class BaseEntity {
     private LocalDateTime modDt;
 
     // 삭제유무
-//    @Column(length = 1, nullable = false)
-//    private String delYn = "N";
+    @Column(length = 1, nullable = false)
+    private String delYn = "N";
 }
