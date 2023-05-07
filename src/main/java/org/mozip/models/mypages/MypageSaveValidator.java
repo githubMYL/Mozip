@@ -19,13 +19,13 @@ public class MypageSaveValidator implements Validator<MypageBoardForm>{
         String subject = mypageBoardForm.getSubject();
         String content = mypageBoardForm.getContent();
 
-        // 게시글 수정인 경우
+        // 수정인 경우
         if (remode != null && remode.equals("update")) {
-            if (id == null) { // 게시글 번호 필수 체크
+            if (id == null) { // 번호 필수 체크
                 nullCheck(id, new RuntimeException("잘못된 접근입니다."));
             }
 
-            // 게시글 등록 여부 체크
+            // 등록 여부 체크
             if (!repository.exists(id)) {
                 throw new RuntimeException("등록되지 않은 모임입니다.");
             }

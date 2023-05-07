@@ -27,7 +27,7 @@ public class MypageSaveService {
         saveValidator.check(mypageBoardForm);
 
         BoardData boardData = null;
-        // 게시글 수정
+        //수정
         String mode = mypageBoardForm.getRemode();
         Long id = mypageBoardForm.getId();
         if (mode != null && mode.equals("update") && id != null) {
@@ -36,7 +36,7 @@ public class MypageSaveService {
             boardData.setContent(mypageBoardForm.getContent());
         }
 
-        if (boardData == null) { // 게시글 추가
+        if (boardData == null) { //추가
             boardData = MypageBoardForm.of(mypageBoardForm);
         }
 
