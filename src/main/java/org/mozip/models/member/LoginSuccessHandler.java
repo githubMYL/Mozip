@@ -35,8 +35,15 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
             cookie.setMaxAge(60 * 60 * 24 * 365);
         }
 
-        //String url = request.getContextPath();
-        response.sendRedirect("/mozip");
+        /**
+         * 로그인 정보 세션 유지 - 간편하게 회원 정보 조회 목작
+         */
+
+        MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+        session.setAttribute("memberInfo", memberInfo);
+
+        String url = request.getContextPath() + "/mozip";
+        response.sendRedirect(url);
 
     }
 }
