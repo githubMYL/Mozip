@@ -14,7 +14,7 @@ public class MozipListService {
     private final MozipRepository mozipRepository;
 
     public Page<Mozip> gets(MozipSearch search) {
-        
+
 
         return null;
     }
