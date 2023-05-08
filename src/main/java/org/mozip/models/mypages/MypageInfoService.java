@@ -2,7 +2,7 @@ package org.mozip.models.mypages;
 
 
 import lombok.RequiredArgsConstructor;
-import org.mozip.controllers.entities.BoardData;
+import org.mozip.entities.BoardData;
 import org.mozip.repositories.BoardDataRepository;
 import org.springframework.stereotype.Service;
 

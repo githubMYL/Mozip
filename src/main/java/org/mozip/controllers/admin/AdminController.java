@@ -4,9 +4,9 @@ package org.mozip.controllers.admin;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
-import org.mozip.controllers.entities.BoardData;
+import org.mozip.entities.BoardData;
 
-import org.mozip.controllers.entities.Members;
+import org.mozip.entities.Members;
 import org.mozip.repositories.BoardDataRepository;
 import org.mozip.repositories.MembersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +33,7 @@ public class AdminController {
         return "admin";
     }
 
+    /**
     @GetMapping("/admin/boardlist")
     public void boardList(){
         //회원이 작성한 게시글 목록 전체 조회
@@ -62,5 +63,5 @@ public class AdminController {
 //
 //        boardDatas.stream().forEach(System.out::println);
 //    }
-
+*/
 }

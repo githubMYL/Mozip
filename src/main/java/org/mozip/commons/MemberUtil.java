@@ -3,7 +3,7 @@ package org.mozip.commons;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.mozip.controllers.entities.Members;
+import org.mozip.entities.Members;
 import org.mozip.models.member.MemberInfo;
 import org.springframework.stereotype.Component;
 

@@ -2,7 +2,6 @@ package org.mozip.models.mypages;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.mozip.controllers.entities.Members;
 import org.springframework.stereotype.Service;
 
 @Service

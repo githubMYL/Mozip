@@ -4,8 +4,8 @@ import jakarta.validation.Valid;
 import lombok.extern.java.Log;
 
 import org.modelmapper.ModelMapper;
-import org.mozip.controllers.entities.*;
 import org.mozip.controllers.members.JoinParam;
+import org.mozip.entities.BoardData;
 import org.mozip.models.member.*;
 import org.mozip.models.mypages.*;
 import org.mozip.repositories.BoardDataRepository;
@@ -85,7 +85,7 @@ public class MyPageController {
 
         return "mypage/update";
     }
-    
+
     //모임 상세보기
     @GetMapping("/view/{id}")
     public String view(@PathVariable("id") Long id, Model model){
@@ -110,7 +110,7 @@ public class MyPageController {
     //모임 삭제
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable("id") Long id){
-        
+
         deleteService.delete(id);
 
         return "redirect:/mypage/index";

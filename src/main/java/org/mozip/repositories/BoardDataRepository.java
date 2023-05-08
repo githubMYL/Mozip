@@ -1,10 +1,9 @@
 package org.mozip.repositories;
 
-import org.mozip.controllers.entities.BoardData;
+import org.mozip.entities.BoardData;
 import org.mozip.controllers.entities.QBoardData;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
-import org.springframework.stereotype.Repository;
 
 public interface BoardDataRepository extends JpaRepository<BoardData,Long>, QuerydslPredicateExecutor {
 
@@ -13,6 +12,6 @@ public interface BoardDataRepository extends JpaRepository<BoardData,Long>, Quer
         //등록 여부 체크
         
         QBoardData boardData = QBoardData.boardData;
-        return exists(boardData.id.eq(id));
+        return exists(boardData.Id.eq(id));
     }
 }

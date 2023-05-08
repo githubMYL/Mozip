@@ -1,7 +1,7 @@
 package org.mozip.models.member;
 
 import lombok.RequiredArgsConstructor;
-import org.mozip.controllers.entities.Members;
+import org.mozip.entities.Members;
 import org.mozip.repositories.MembersRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

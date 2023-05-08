@@ -10,7 +10,7 @@ import org.junit.platform.commons.util.StringUtils;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.mozip.controllers.entities.Members;
+import org.mozip.entities.Members;
 import org.mozip.controllers.members.JoinParam;
 import org.mozip.controllers.members.MemberController;
 import org.mozip.models.member.JoinValidationException;

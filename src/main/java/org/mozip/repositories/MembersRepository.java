@@ -1,8 +1,7 @@
 package org.mozip.repositories;
 
-import org.mozip.controllers.entities.Members;
-import org.mozip.controllers.entities.QMembers;
-import org.mozip.models.member.MemberInfo;
+import org.mozip.entities.Members;
+import org.mozip.entities.QMembers;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
