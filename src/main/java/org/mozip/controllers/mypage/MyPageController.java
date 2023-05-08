@@ -1,17 +1,18 @@
 package org.mozip.controllers.mypage;
 
 import jakarta.validation.Valid;
-import lombok.extern.java.Log;
-
 import org.modelmapper.ModelMapper;
 import org.mozip.controllers.members.JoinParam;
 import org.mozip.entities.BoardData;
-import org.mozip.models.member.*;
-import org.mozip.models.mypages.*;
+import org.mozip.models.member.MemberInfo;
+import org.mozip.models.member.MemberInfoService;
+import org.mozip.models.mypages.MypageDeleteService;
+import org.mozip.models.mypages.MypageInfoService;
+import org.mozip.models.mypages.MypageListService;
+import org.mozip.models.mypages.MypageSaveService;
 import org.mozip.repositories.BoardDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
@@ -85,7 +86,7 @@ public class MyPageController {
 
         return "mypage/update";
     }
-
+    
     //모임 상세보기
     @GetMapping("/view/{id}")
     public String view(@PathVariable("id") Long id, Model model){
@@ -110,7 +111,7 @@ public class MyPageController {
     //모임 삭제
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable("id") Long id){
-
+        
         deleteService.delete(id);
 
         return "redirect:/mypage/index";

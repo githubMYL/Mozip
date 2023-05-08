@@ -27,7 +27,7 @@ public class MemberInfoService implements UserDetailsService {
 
         List<GrantedAuthority> authorities = Arrays.asList(new SimpleGrantedAuthority(member.getType().toString()));
         return MemberInfo.builder()
-                //.memberNo(member.getMemberNo())
+                .memberNo(member.getMemberNo())
                 .email(member.getEmail())
                 .memberPw(member.getMemberPw())
                 .memberNick(member.getMemberNick())

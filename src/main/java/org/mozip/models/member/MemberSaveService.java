@@ -1,8 +1,8 @@
 package org.mozip.models.member;
 
 import lombok.RequiredArgsConstructor;
-import org.mozip.entities.Members;
 import org.mozip.controllers.members.JoinParam;
+import org.mozip.entities.Members;
 import org.mozip.repositories.MembersRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

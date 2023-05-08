@@ -9,7 +9,7 @@ import lombok.*;
 public class BoardData extends BaseEntity{
 
     @Id @GeneratedValue
-    private Long Id;        // 게시글번호
+    private Long id;        // 게시글번호
 
 
     @Column(nullable = false)

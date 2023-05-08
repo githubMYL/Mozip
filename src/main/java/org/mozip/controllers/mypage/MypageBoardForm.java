@@ -1,4 +1,5 @@
 package org.mozip.controllers.mypage;
+
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

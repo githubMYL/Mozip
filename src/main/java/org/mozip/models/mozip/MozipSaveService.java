@@ -2,8 +2,8 @@ package org.mozip.models.mozip;
 
 import lombok.RequiredArgsConstructor;
 import org.mozip.commons.MemberUtil;
-import org.mozip.entities.Mozip;
 import org.mozip.controllers.mypage2.MozipForm;
+import org.mozip.entities.Mozip;
 import org.mozip.repositories.MozipRepository;
 import org.springframework.stereotype.Service;
 
