@@ -44,10 +44,6 @@ public class LoginFailureHandler implements AuthenticationFailureHandler {
         session.setAttribute("email", email);
         session.setAttribute("memberPw", memberPw);
 
-        // String url = request.getContextPath() + "/member/login";
-
-        response.sendRedirect("/member/login");
-
         String url = request.getContextPath() + "/member/login";
         response.sendRedirect(url);
     }
