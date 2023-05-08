@@ -1,4 +1,4 @@
-package org.mozip.boardtests;
+package org.mozip.connectiontests;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

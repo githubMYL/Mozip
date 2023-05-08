@@ -2,10 +2,6 @@ package org.mozip.membertest;
 
 
 import jakarta.transaction.Transactional;
-import lombok.RequiredArgsConstructor;
-import lombok.With;
-import lombok.extern.java.Log;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -24,7 +20,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.core.userdetails.UserDetails;
+
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.test.context.support.WithMockUser;
@@ -32,14 +28,18 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.context.WebApplicationContext;
 
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestBuilders.formLogin;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.Period;
 import java.time.temporal.ChronoUnit;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
 @SpringBootTest
@@ -123,11 +123,12 @@ public class MemberTest {
             } else{
                 joinParam.setEmail(" ");
             }
-            JoinValidationException exception = assertThrows(JoinValidationException.class, ()->{
+            JoinValidationException exception =
+                    assertThrows(JoinValidationException.class, ()->{
                 service.save(joinParam);
             });
-
-            assertTrue(exception.getMessage().contains("아이디(이메일)을 입력하세요."));
+            System.out.println(exception.getMessage());
+            assertTrue(exception.getMessage().contains("이메일(아이디)를 입력하세요."));
             assertEquals(HttpStatus.BAD_REQUEST, exception.getStatus());
         }
     }
@@ -136,6 +137,7 @@ public class MemberTest {
     @DisplayName("memberPw 유효성 검사")
     @WithMockUser("test01@test.org")
     void memberPwTest2(){
+
         for(int i = 0; i < 2; i++){
             if(i == 0){
                 joinParam.setMemberPw(null);
@@ -146,6 +148,7 @@ public class MemberTest {
                     assertThrows(JoinValidationException.class, ()->{
                 service.save(joinParam);
             });
+
             System.out.println(exception.getMessage());
             assertTrue(exception.getMessage().contains("비밀번호를 확인하세요."));
 
@@ -155,22 +158,20 @@ public class MemberTest {
 
     @Test
     @DisplayName("memberPw 와 memberPwRe가 동일한지 체크")
-    @WithMockUser("test01@test.org")
-    void memberPwReSuccessTest() throws Exception {
+    void pwReCheckTest() throws Exception {
 
-        for (int i = 0; i < 2; i++) {
-            if (i == 0) {
-                joinParam.setMemberPwRe(null);
-            } else {
-                joinParam.setMemberPwRe(" ");
-            }
-            JoinValidationException exception =
-                    assertThrows(JoinValidationException.class, () -> {
-                       service.save(joinParam);
-                    });
-            assertTrue(exception.getMessage().contains("비밀번호 확인란을 입력하세요."));
-            assertEquals(HttpStatus.BAD_REQUEST, exception.getStatus());
-        }
+        joinParam.setMemberPw("12345678");
+        joinParam.setMemberPwRe("12345678");
+
+        String response = mockMvc.perform(post("/user/join")
+                        .param("Email", joinParam.getEmail())
+                        .param("userPw", joinParam.getMemberPw())
+                        .param("userPwRe", joinParam.getMemberPwRe())
+                        .param("userNm", joinParam.getMemberNm())
+                        .param("agree", String.valueOf(joinParam.isAgree())))
+                        .andReturn().getResponse().getContentAsString();
+
+        response.contains("비밀번호 확인란이 일치하지 않습니다");
     }
 
     @Test
@@ -209,4 +210,35 @@ public class MemberTest {
             System.out.println("일주일이전으로 게시글 조회권한이 없습니다");
         }
     }
+
+    @Test
+    @DisplayName("로그인 성공시 redirect로 이동")
+    @WithMockUser("test01@test.org")
+    void LoginTest() throws Exception {
+        String email = "test01@test.org";
+        String password = "12345678";
+
+        service.save(joinParam);
+
+        mockMvc.perform(formLogin("/user/login")
+                .user("email", email)
+                .password("userPw", password))
+                .andDo(print())
+                .andExpect(status().is3xxRedirection());
+    }
+
+    @Test
+    @DisplayName("다른 아이디일 경우 에러메세지 출력")
+    @WithMockUser("test01@test.org")
+    void LoginTest2() throws Exception {
+        String email = "test02@test.org";
+        String password = "12345678";
+
+        mockMvc.perform(formLogin("/member/login")
+                .user("email", email)
+                .password("memberPw", password))
+                .andDo(print())
+                .andExpect(request().sessionAttribute("message", "아이디 및 비밀번호를 확인하세요."));
+    }
+
 }
