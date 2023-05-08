@@ -6,10 +6,9 @@ public interface RequiredValidator {
             throw e;
         }
     }
-
     default void nullCheck(Object obj, RuntimeException e) {
         if (obj == null) {
             throw e;
         }
     }
-}
+}        

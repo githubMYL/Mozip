@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main}">
+<main layout:fragment="content">
+    <section th:object="${mozip}" class="detail_view">
+        <div class="title" th:text="*{title}"></div>
+        <div class="reg_info">
+            <div class="left"></div>
+            <div class="right">
+                <span th:if="*{member != null}" class="poster">[[*{member.memberNm}]]([[*{member.email}]])</span>
+                <span class="regDt" th:text="*{#temporals.format(regDt, 'yyyy.MM.dd HH:mm')}"></span>
+            </div>
+        </div>
+        <!--// reg_info -->
+        <div>이미지 출력</div>
+        <div class="description" th:utext="*{description}"></div>
+        <a th:href="@{/mypage2}" th:text="#{mypage.view}"></a>
+        <a th:href="@{/mypage2/update/{id}(id=*{id})}" th:text="#{mypage.update}"></a>
+    </section>
+</main>
+</html>

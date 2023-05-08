@@ -2,7 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
     <head>
+
         <title th:if="${pageTitle != null}" th:text="${pageTitle}"></title>        
+        <meta name="_csrf" th:content="${_csrf.token}">
+        <meta name="_csrf_header" th:content="${_csrf.headerName}">
+
         <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
         <link rel="stylesheet" type="text/css" th:href="@{/css/member/join.css}">
         <link rel="stylesheet" type="text/css" th:href="@{/css/main/header.css}">
@@ -17,7 +21,7 @@
     <body>
         <header th:replace="~{outlines/header/main::common}"></header>
 
-            <main layout:fragment="content"></main>
+        <main layout:fragment="content"></main>
 
         <footer th:replace="~{outlines/footer/main::common}"></footer>
     </body>

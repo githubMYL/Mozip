@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <link rel="stylesheet" type="text/css" th:href="@{/css/member/login.css}">
-        <title>MoZip</title>
-    </head>
-    <main>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main}">
+<main layout:fragment="content">
         <div class="error" th:if="${field == 'global' }" th:text="${message}"></div>
         <form method="post" th:action="@{/member/login}" autocomplete="off">
             <section id="loginSection">
