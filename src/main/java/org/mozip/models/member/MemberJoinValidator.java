@@ -48,7 +48,7 @@ public class MemberJoinValidator implements Validator, MobileValidator, EmailVal
 
         requiredCheck(email, new JoinValidationException("이메일(아이디)를 입력하세요."));
 
-        requiredCheck(memberPw, new JoinValidationException("비밀번호를 확인하세요."));
+        requiredCheck(memberPw, new JoinValidationException("아이디 및 비밀번호를 확인하세요."));
 
         requiredCheck(memberPwRe, new JoinValidationException("위에 비밀번호와 일치하지 않습니다"));
 
@@ -67,7 +67,7 @@ public class MemberJoinValidator implements Validator, MobileValidator, EmailVal
         if (mobile != null && !mobile.isBlank()) {
             if (!mobileCheck(mobile)) {
                 errors.rejectValue("mobile", "Validation.mobile");
-                throw new JoinValidationException("휴배전화번호 형식이 아닙니다.");
+                throw new JoinValidationException("휴대전화번호 형식이 아닙니다.");
             }
 
             mobile = mobile.replace("\\D", "");
