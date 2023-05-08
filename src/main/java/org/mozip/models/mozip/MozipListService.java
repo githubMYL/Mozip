@@ -2,8 +2,11 @@ package org.mozip.models.mozip;
 
 import com.querydsl.core.BooleanBuilder;
 import lombok.RequiredArgsConstructor;
+import org.mozip.commons.MemberUtil;
 import org.mozip.controllers.entities.Mozip;
+import org.mozip.controllers.entities.QMozip;
 import org.mozip.controllers.mypage2.MozipSearch;
+import org.mozip.models.member.MemberInfo;
 import org.mozip.repositories.MozipRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -18,29 +21,62 @@ import static org.springframework.data.domain.Sort.Order.desc;
 @RequiredArgsConstructor
 public class MozipListService {
 
+    private final MemberUtil memberUtil;
+
     private final MozipRepository mozipRepository;
 
-    public Page<Mozip> gets(MozipSearch search) {
+    public Page<Mozip> gets(MozipSearch search) { // 모든 목록
+        return gets(search, false);
+    }
+
+    public Page<Mozip> gets(MozipSearch search, boolean isMine) { // 로그인한 회원에 한정
+
         BooleanBuilder andBuilder = new BooleanBuilder();
+        QMozip mozip = QMozip.mozip;
+
+        if (isMine) {
+            if (!memberUtil.isLogin()) { // 미로그인 상태
+                return null;
+            }
+            // 목록을 로그인한 회원으로 한정 
+            MemberInfo memberInfo = memberUtil.getMember();
+            andBuilder.and(mozip.member.memberNo.eq(memberInfo.getMemberNo()));
+        }
+
 
         /** 검색 처리 S */
         String sopt = search.getSopt();
         String skey = search.getSkey();
         if (sopt != null && !sopt.isBlank() && skey != null && !skey.isBlank()) {
             if (sopt.equals("all")) { // 통합 검색 - 제목 + 내용 + 회원이메일 + 회원명
+                BooleanBuilder orBuilder = new BooleanBuilder();
+                orBuilder.or(mozip.title.contains(skey))
+                        .or(mozip.description.contains(skey))
+                        .or(mozip.member.email.contains(skey))
+                        .or(mozip.member.memberNm.contains(skey));
+                andBuilder.and(orBuilder);
 
             } else if (sopt.equals("title")) { // 제목
+                andBuilder.and(mozip.title.contains(skey));
 
             } else if (sopt.equals("description")) { // 내용
+                andBuilder.and(mozip.description.contains(skey));
 
             } else if (sopt.equals("title_description")) { // 제목 + 내용
+                BooleanBuilder orBuilder = new BooleanBuilder();
+                orBuilder.or(mozip.title.contains(skey))
+                        .or(mozip.description.contains(skey));
+                andBuilder.and(orBuilder);
 
             } else if (sopt.equals("email")) { // 회원 이메일
-                
-            } else if (sopt.equals("memberNm")) { // 회원명
-                
-            }
+                andBuilder.and(mozip.member.email.eq(skey));
 
+            } else if (sopt.equals("member")) { // 회원명 + 이메일
+                BooleanBuilder orBuilder = new BooleanBuilder();
+                orBuilder.or(mozip.member.email.contains(skey))
+                        .or(mozip.member.memberNm.contains(skey));
+                andBuilder.and(orBuilder);
+            }
         }
 
         /** 검색 처리 E */
