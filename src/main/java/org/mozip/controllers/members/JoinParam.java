@@ -9,8 +9,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.mozip.controllers.entities.BaseEntity;
-import org.mozip.controllers.entities.Members;
+import org.mozip.entities.BaseEntity;
+import org.mozip.entities.Members;
 
 @Data @Builder
 @NoArgsConstructor @AllArgsConstructor

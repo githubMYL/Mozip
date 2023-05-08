@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main}">
+    <main layout:fragment="content">
+        <form method="post" th:action="@{/mozip/mozipCreate}" autocomplete="off" th:object="${mainCreateParam}">
+            <dl>
+                이미지
+            </dl>
+            <dl>
+                <select th:field="*{code}">
+                    <option value="">카테고리 선택</option>
+                    <option th:each="category : ${categorys}" th:value="${category.key}" th:text="${category.value}"></option>
+                </select>
+            </dl>
+            <dl>
+                <th:span th:text="#{mName}"></th:span>
+                <input type="text" name="mName" th:field="*{mName}">
+                <div class="error" th:each="err : ${#fields.errors('mName')}" th:text="${err}"></div>
+            </dl>
+            <dl>
+                <dd>
+                    <input type="textarea"  name="mComment" th:field="*{mComment}" th:placeholder="#{mComment}">
+                    <div class="error" th:each="err : ${#fields.errors('mComment')}" th:text="${err}"></div>
+                </dd>
+            </dl>
+            <button type="submit">모임 생성하기</button>
+        </form>
+    </main>
+</html>

@@ -2,18 +2,31 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <header th:fragment="common">
         <main>
-            <th:block th:if="${memberNick == null}">
-                <form align="right">
-                    <button type="button" th:onclick="location.href='/member/join'">회원가입</button>
-                    <button type="button" th:onclick="location.href='/member/login'">로그인</button>
-                </form>
-            </th:block>
-            <th:block th:unless="${memberNick == null}">
-                <form align="right">
-                    ([[${memberNick}]])님 안녕하세요.
-                    <button type="button" th:onclick="location.href='/member/logout'">로그아웃</button>
-                </form>
-            </th:block>
+            <div class="wrap">
+                <h1 class="logo"><a href=""></a></h1>
+                <ul class="gnb">
+                    <li><a href="">링크입니다1</a></li>
+                    <li><a href="">링크입니다2</a></li>
+                    <li><a href="">링크입니다3</a></li>
+                    <li><a href="">링크입니다4</a></li>
+                </ul>
+
+                <div class="memberInfo">
+                    <th:block th:if="${memberNick == null}">
+                        <form align="right">                        
+                            <button type="button" class="btn-8" th:onclick="location.href='/member/join'"><span>회원가입</span></button>
+                            <button type="button" class="btn-8" th:onclick="location.href='/member/login'"><span>로그인</span></button>
+                        </form>
+                    </th:block>
+                    <th:block th:unless="${memberNick == null}">
+                        <form align="right">
+                            ([[${memberNick}]])님 안녕하세요.
+                            <button type="button" class="btn-8" th:onclick="location.href='/member/logout'"><span>로그아웃</span></button>
+                        </form>
+                    </th:block>
+                </div>
+            </div>
         </main>
     </header>
 </html>
+

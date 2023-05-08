@@ -1,7 +1,7 @@
 package org.mozip.models.member;
 
 import lombok.RequiredArgsConstructor;
-import org.mozip.controllers.entities.Members;
+import org.mozip.entities.Members;
 import org.mozip.repositories.MembersRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -27,7 +27,7 @@ public class MemberInfoService implements UserDetailsService {
 
         List<GrantedAuthority> authorities = Arrays.asList(new SimpleGrantedAuthority(member.getType().toString()));
         return MemberInfo.builder()
-                .memberNo(member.getMemberNo())
+                //.memberNo(member.getMemberNo())
                 .email(member.getEmail())
                 .memberPw(member.getMemberPw())
                 .memberNick(member.getMemberNick())

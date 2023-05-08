@@ -11,14 +11,27 @@
     <th:block layout:fragment="addCss"></th:block>
     <script th:src="@{/js/admin/common.js}"></script>
     <script th:each="jsFile : ${addScript}" th:src="@{/js/admin/{file}.js(file=${jsFile})}"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- <script>
+        $(document).ready(function(){
+            $(".memberMT_btn").click(function(){
+				$(".mainContent").append("click!!!<br/>");                
+			});         
+
+        })
+        
+    </script> -->
+
     <th:block layout:fragment="addScript"></th:block>
 </head>
 
-<body>
-<header th:replace="~{outlines/header/admin::header}"></header>
-<main>
-    <aside th:replace="~{outlines/menus/admin::menus}"></aside>
-    <section layout:fragment="content"></section>
-</main>
-</body>
+    <body>
+        <header th:replace="~{outlines/header/admin::header}"></header>
+        <main>
+            <aside th:replace="~{outlines/menus/admin::menus}"></aside>
+            <section layout:fragment="content" id="mainContent"></section>
+        </main>
+    </body>
 </html>
