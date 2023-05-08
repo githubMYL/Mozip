@@ -4,9 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import nonapi.io.github.classgraph.json.Id;
 import org.modelmapper.ModelMapper;
-import org.mozip.controllers.entities.BoardData;
+import org.mozip.entities.BoardData;
 
 @Data
 @Builder

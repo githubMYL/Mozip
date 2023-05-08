@@ -1,4 +1,4 @@
-package org.mozip.controllers.entities;
+package org.mozip.entities;
 
 import jakarta.persistence.*;
 

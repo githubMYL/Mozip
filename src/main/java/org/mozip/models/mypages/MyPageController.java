@@ -1,23 +1,15 @@
 package org.mozip.models.mypages;
 
-import jakarta.servlet.http.HttpSession;
 import lombok.extern.java.Log;
 
-import org.modelmapper.ModelMapper;
-import org.mozip.controllers.entities.BoardData;
-import org.mozip.controllers.entities.Members;
-import org.mozip.controllers.members.JoinParam;
+import org.mozip.entities.BoardData;
 import org.mozip.models.member.MemberInfo;
 import org.mozip.models.member.MemberInfoService;
 import org.mozip.repositories.BoardDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.lang.reflect.Member;
-import java.util.List;
 
 
 @Controller @Log

@@ -1,4 +1,4 @@
-package org.mozip.controllers.entities;
+package org.mozip.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;

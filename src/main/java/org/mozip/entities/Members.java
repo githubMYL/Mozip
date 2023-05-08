@@ -1,4 +1,4 @@
-package org.mozip.controllers.entities;
+package org.mozip.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.AssertTrue;
@@ -8,9 +8,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.mozip.constants.MemberType;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Data @Builder

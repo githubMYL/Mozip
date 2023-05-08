@@ -3,7 +3,7 @@ package org.mozip.models.mozip;
 import jakarta.persistence.EntityManager;
 import lombok.RequiredArgsConstructor;
 import org.mozip.commons.MemberUtil;
-import org.mozip.controllers.entities.Mozip;
+import org.mozip.entities.Mozip;
 import org.mozip.models.member.MemberInfo;
 import org.mozip.repositories.MozipRepository;
 import org.springframework.stereotype.Service;
