@@ -8,8 +8,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.eclipse.jdt.internal.compiler.batch.Main;
 import org.mozip.controllers.category.CateCode;
-import org.mozip.controllers.entities.MainList;
-import org.mozip.controllers.entities.Members;
+import org.mozip.entities.MainList;
+
+import org.mozip.entities.Members;
 import org.mozip.models.member.MemberInfo;
 import org.mozip.repositories.CategoryRepository;
 import org.mozip.repositories.MainCreateRepository;

@@ -1,11 +1,12 @@
 package org.mozip.repositories;
 
 import org.mozip.entities.BoardData;
-import org.mozip.controllers.entities.QBoardData;
+import org.mozip.entities.*;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
-public interface BoardDataRepository extends JpaRepository<BoardData,Long>, QuerydslPredicateExecutor {
+public interface BoardDataRepository extends JpaRepository<BoardData,Long>, QuerydslPredicateExecutor<BoardData> {
 
     //레포지토리 -> 서비스에서 이용
     default boolean exists(Long id) {

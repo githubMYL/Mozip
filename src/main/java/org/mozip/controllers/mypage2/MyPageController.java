@@ -5,7 +5,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.mozip.commons.Pagination;
-import org.mozip.controllers.entities.Mozip;
+import org.mozip.entities.Mozip;
 import org.mozip.models.mozip.MozipDeleteService;
 import org.mozip.models.mozip.MozipInfoService;
 import org.mozip.models.mozip.MozipListService;
