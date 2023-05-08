@@ -7,9 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import java.lang.reflect.Member;
 
 @Controller
 @RequestMapping("/mozip")
@@ -19,16 +16,16 @@ public class MainController {
     public String main(Model model){
 
         try{
+            // 로그인했을 경우 세션에서 Nick 가져오기
             Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
             MemberInfo memberInfo = (MemberInfo)principal;
             if(memberInfo != null){
                 String memberNick = memberInfo.getMemberNick();
-                System.out.println("memberNick ::::::::::::: " + memberInfo.getMemberNick());
                 model.addAttribute("memberNick", memberNick);
             }
-            return "mozip";
+            return "main/mozip";
         } catch(ClassCastException e){
-            return "mozip";
+            return "main/mozip";
         }
     }
 }

@@ -1,9 +1,11 @@
 package org.mozip.controllers.mypage2;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.mozip.entities.Mozip;
+import org.mozip.commons.Pagination;
+import org.mozip.controllers.entities.Mozip;
 import org.mozip.models.mozip.MozipDeleteService;
 import org.mozip.models.mozip.MozipInfoService;
 import org.mozip.models.mozip.MozipListService;
@@ -13,6 +15,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Controller("mypageController2")
 @RequestMapping("/mypage2")
@@ -32,9 +36,14 @@ public class MyPageController {
      * @return
      */
     @GetMapping
-    public String index(@ModelAttribute MozipSearch search, Model model) {
+    public String index(@ModelAttribute MozipSearch search, Model model, HttpServletRequest request) {
 
-        Page<Mozip> data = listService.gets(search);
+        Page<Mozip> data = listService.gets(search, true);
+        List<Mozip> items = data.getContent();
+        String url = request.getContextPath() + "/mypage2";
+        Pagination<Mozip> pagination = new Pagination<>(data, url);
+        model.addAttribute("items", items);
+        model.addAttribute("pagination", pagination);
 
         return "mypage2/index";
     }

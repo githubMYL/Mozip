@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-@Controller @Log
+//@Controller @Log
 @RequestMapping("/mypage")
 public class MyPageController {
     @Autowired
