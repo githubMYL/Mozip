@@ -24,6 +24,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         session.removeAttribute("field");
         session.removeAttribute("message");
 
+        // session.setAttribute(userId, userId);
         /** 쿠키저장 */
         String saveEmail = request.getParameter("saveEmail");
         String email = request.getParameter("email");

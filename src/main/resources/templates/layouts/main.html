@@ -7,7 +7,7 @@
         <meta name="_csrf" th:content="${_csrf.token}">
         <meta name="_csrf_header" th:content="${_csrf.headerName}">
 
-        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/main/style.css}">
         <link rel="stylesheet" type="text/css" th:href="@{/css/member/join.css}">
         <link rel="stylesheet" type="text/css" th:href="@{/css/main/header.css}">
 
@@ -23,6 +23,6 @@
 
         <main layout:fragment="content"></main>
 
-        <footer th:replace="~{outlines/footer/main::common}"></footer>
+        <!-- <footer th:replace="~{outlines/footer/main::common}"></footer> -->
     </body>
 </html>
