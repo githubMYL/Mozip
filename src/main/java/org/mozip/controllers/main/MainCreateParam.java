@@ -5,8 +5,9 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import org.modelmapper.ModelMapper;
-import org.mozip.controllers.entities.MainList;
-import org.mozip.controllers.entities.Members;
+
+import org.mozip.entities.MainList;
+import org.mozip.entities.Members;
 import org.mozip.controllers.members.JoinParam;
 
 @Data

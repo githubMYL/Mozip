@@ -1,4 +1,4 @@
-package org.mozip.controllers.entities;
+package org.mozip.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,10 +6,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.mozip.controllers.category.CateCode;
+import org.mozip.entities.BaseEntity;
+import org.mozip.entities.Members;
 
 @Data @Entity @Builder
 @NoArgsConstructor @AllArgsConstructor
-public class MainList extends BaseEntity{
+public class MainList extends BaseEntity {
 
     @Id // 기본키
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
