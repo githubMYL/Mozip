@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="form" th:object="${mypageBoardForm}">
+    <dl>
+        <dt th:text="#{mypage.subject}"></dt>
+        <dd>
+            <input type="text" name="subject" th:field="*{subject}">
+            <div th:each="err : ${#fields.errors('subject')}" th:text="${err}"></div>
+        </dd>
+    </dl>
+    <dl>
+        <dt th:text="#{mypage.content}"></dt>
+        <dd>
+            <textarea id="content" name="content" th:field="*{content}"></textarea>
+            <div th:each="err : ${#fields.errors('content')}" th:text="${err}"></div>
+        </dd>
+    </dl>
+</th:block>
+</html>

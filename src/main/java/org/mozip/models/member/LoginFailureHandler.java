@@ -25,11 +25,11 @@ public class LoginFailureHandler implements AuthenticationFailureHandler {
         session.removeAttribute("field");
         session.removeAttribute("message");
         session.removeAttribute("email");
+
         try {
             if(email == null || email.isBlank()) {
                 throw new LoginValidationException(bundle.getString("NotBlank.email"), "email");
             }
-
             if(memberPw == null || memberPw.isBlank()) {
                 throw new LoginValidationException(bundle.getString("NotBlank.memberPw"), "memberPw");
             }
@@ -42,8 +42,14 @@ public class LoginFailureHandler implements AuthenticationFailureHandler {
             session.setAttribute("message", message);
         }
         session.setAttribute("email", email);
+        session.setAttribute("memberPw", memberPw);
 
+<<<<<<< HEAD
+        // String url = request.getContextPath() + "/member/login";
+        response.sendRedirect("/member/login");
+=======
         String url = request.getContextPath() + "/member/login";
         response.sendRedirect(url);
+>>>>>>> 144a6cb1824e09c1ec1452afbec2c7ef0623b5af
     }
 }

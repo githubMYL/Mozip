@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<header th:fragment="common">
-    <h1>헤더!!!</h1>
-</header>
+    <header th:fragment="common">
+        <main>
+            <th:block th:if="${memberNick == null}">
+                <form align="right">
+                    <button type="button" th:onclick="location.href='/member/join'">회원가입</button>
+                    <button type="button" th:onclick="location.href='/member/login'">로그인</button>
+                </form>
+            </th:block>
+            <th:block th:unless="${memberNick == null}">
+                <form align="right">
+                    ([[${memberNick}]])님 안녕하세요.
+                    <button type="button" th:onclick="location.href='/member/logout'">로그아웃</button>
+                </form>
+            </th:block>
+        </main>
+    </header>
 </html>
