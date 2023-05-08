@@ -12,9 +12,7 @@ import java.util.List;
 @Entity @Data @Builder
 @AllArgsConstructor @NoArgsConstructor
 public class CateCode {
-
     @Id
-    private Long codeNo;
     private String code;
     private String codeName;
 

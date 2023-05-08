@@ -8,7 +8,7 @@
                 이미지
             </dl>
             <dl>
-                <select th:name="cateCd">
+                <select th:field="*{code}">
                     <option value="">카테고리 선택</option>
                     <option th:each="category : ${categorys}" th:value="${category.key}" th:text="${category.value}"></option>
                 </select>

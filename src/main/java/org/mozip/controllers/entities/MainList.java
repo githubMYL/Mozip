@@ -26,6 +26,4 @@ public class MainList extends BaseEntity{
     @OneToOne
     @JoinColumn(name = "code")
     private CateCode cateCode;
-
-
 }

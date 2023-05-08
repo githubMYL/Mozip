@@ -11,9 +11,7 @@ import org.mozip.constants.MemberType;
 @NoArgsConstructor @AllArgsConstructor
 public class Members extends BaseEntity {
     @Id // 기본 키
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Long memberNo; // 회원번호
-    @Column(length=40, unique = true, nullable = false)
+    @Column(length=40)
     private String email; // 아이디(이메일)
     @Column(length=65, nullable = false)
     private String memberPw; // 비밀번호
