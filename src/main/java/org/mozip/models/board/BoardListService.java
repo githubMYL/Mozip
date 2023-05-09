@@ -33,6 +33,43 @@ public class BoardListService {
             andBuilder.and(boardData.member.memberNo.eq(memberInfo.getMemberNo()));
         }
 
+        /** 검색 조건 처리 S */
+        String sopt = search.getSopt();
+        String skey = search.getSkey();
+        if (sopt != null && !sopt.isBlank() && skey != null && !skey.isBlank()) {
+            if (sopt.equals("all")) { // 통합 검색 - 제목 + 내용 + 회원이메일 + 회원명
+                BooleanBuilder orBuilder = new BooleanBuilder();
+                orBuilder.or(boardData.subject.contains(skey))
+                        .or(boardData.content.contains(skey))
+                        .or(boardData.member.email.contains(skey))
+                        .or(boardData.member.memberNm.contains(skey));
+                andBuilder.and(orBuilder);
+
+            } else if (sopt.equals("subject")) { // 제목
+                andBuilder.and(boardData.subject.contains(skey));
+
+            } else if (sopt.equals("content")) { // 내용
+                andBuilder.and(boardData.content.contains(skey));
+
+            } else if (sopt.equals("subject_content")) { // 제목 + 내용
+                BooleanBuilder orBuilder = new BooleanBuilder();
+                orBuilder.or(boardData.subject.contains(skey))
+                        .or(boardData.content.contains(skey));
+                andBuilder.and(orBuilder);
+
+            } else if (sopt.equals("email")) { // 회원 이메일
+                andBuilder.and(boardData.member.email.eq(skey));
+
+            } else if (sopt.equals("member")) { // 회원명 + 이메일
+                BooleanBuilder orBuilder = new BooleanBuilder();
+                orBuilder.or(boardData.member.email.contains(skey))
+                        .or(boardData.member.memberNm.contains(skey));
+                andBuilder.and(orBuilder);
+            }
+        }
+        /** 검색 조건 처리 E */
+
+        /** 페이징 및 정렬 처리 S */
         int page = search.getPage();
         int limit = search.getLimit();
         page = page < 1 ? 1 : page;
@@ -48,6 +85,8 @@ public class BoardListService {
                 sort2 = Sort.by(asc(sorts[0]));
             }
         }
+        /** 페이징 및 정렬 처리 E */
+
         Pageable pageable = PageRequest.of(page, limit, sort2);
         Page<BoardData> data = boardDataRepository.findAll(andBuilder, pageable);
 
