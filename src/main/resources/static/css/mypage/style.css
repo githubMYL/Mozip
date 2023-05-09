@@ -1,5 +1,5 @@
 /** 모임 등록 양식 */
 #thumbs { display: flex; }
 #thumbs .thumb { position: relative; width: 60px; height: 60px; margin-right: 5px; margin-bottom: 5px; border: 1px solid #d5d5d5; }
-#thumbs .thumb > i { background: #000; color: #fff; position: absolute; top: 0; right: 0; cursor: pointer; padding: 2px; font-size: 12px; }
+#thumbs .thumb > a { background: #000; color: #fff; position: absolute; top: 0; right: 0; cursor: pointer; padding: 2px; font-size: 12px; }
 #thumbs .thumb > .inner { display: block;  border-radius: 5px; cursor: pointer; height: 58px; }

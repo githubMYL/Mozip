@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.mozip.commons.MemberUtil;
 import org.mozip.controllers.mypage2.MozipForm;
 import org.mozip.entities.Mozip;
+import org.mozip.models.file.FileUpdateSucessService;
 import org.mozip.repositories.MozipRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class MozipSaveService {
     private final MozipRepository repository;
+    private final FileUpdateSucessService updateSucessService;
     private final MemberUtil memberUtil;
 
     public void save(MozipForm mozipForm) {
@@ -36,5 +38,8 @@ public class MozipSaveService {
 
         mozip = repository.saveAndFlush(mozip);
         mozipForm.setId(mozip.getId());
+
+        /** 등록 또는 수정 완료시 파일 업로드 완료 처리 */
+        updateSucessService.process(mozipForm.getGid());
     }
 }

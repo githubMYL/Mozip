@@ -62,16 +62,33 @@ function fileUploadCallback(files) {
             /** 이미지 본문 추가 E */
 
         } else { // 상단 메인 포토
-            const photoTag = `<span class='thumb'>
-                                    <i class='remove xi-close-min' data-file-no="${file.fileNo}"></i>
-                                    <span class='inner' data-url='${file.fileURL}' style="background:url('${file.fileURL}'); background-size:cover;"></span>
+            const photoTag = `<span class="thumb file_${file.fileNo}">
+                                    <a href="/file/delete/${file.fileNo}" target="ifrmProcess" onclick="return confirm('정말 삭제하시겠습니까?');">
+                                        <i class='remove xi-close-min'></i>
+                                     </a>
+
+                                    <span class='inner' style="background:url('${file.fileURL}'); background-size:cover;"></span>
                                </span>`;
             const dom = domParser.parseFromString(photoTag, "text/html");
             const span = dom.querySelector("span");
             thumbs.appendChild(span);
+            const inner = span.querySelector(".inner");
+            inner.onclick = function() {
+                const url = `/file/view/${file.fileNo}`;
+                let w = 300, h = 300;
+                const img = new Image();
+                img.src = file.fileURL;
+                img.onload = function() {
+                    if (img.width > 700) {
+                        w = 700;
+                        h = parseInt(img.width * w / img.height) + 150;
+                    }
+                    mozip.popup.open(url, "이미지 보기", w, h);
+                };
 
-            const remove = span.querySelector(".remove");
-            remove.addEventListener("click", mozip.fileManager.delete);
+
+
+            };
         }
     }
  }
@@ -82,5 +99,11 @@ function fileUploadCallback(files) {
 * @param fileNo : 삭제된 파일 번호
 */
 function fileDeleteCallback(fileNo) {
-    console.log(fileNo);
+   if (!fileNo) {
+        return;
+   }
+
+   const fileEl = document.querySelector(`.file_${fileNo}`);
+   if (fileEl) fileEl.parentElement.removeChild(fileEl);
+
 }
