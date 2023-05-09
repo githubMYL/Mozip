@@ -5,7 +5,9 @@
             <li>
                 <a href="/file/download/#[fileNo]">#[fileName]</a>
                 <i class="xi-arrow-up insert_editor" data-url="#[url]"></i>
-                <i class="xi-minus-min remove" data-file-no="#[fileNo]"></i>
+                <a href="/file/delete/#[fileNo]" target="ifrmProcess" onclick="return confirm('정말 삭제하시겠습니가?');">
+                    <i class="xi-minus-min remove"></i>
+                </a>
             </li>
         </script>
     </th:block>

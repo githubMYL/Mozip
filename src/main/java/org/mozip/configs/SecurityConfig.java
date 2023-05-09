@@ -29,6 +29,9 @@ public class SecurityConfig {
                .requestMatchers("/mypage/**", "/mypage2/**").authenticated()
                // .requestMatchers("/mozip/admin/**").hasAuthority("ADMIN")
                 .anyRequest().permitAll();
+
+        http.headers().frameOptions().sameOrigin(); // iframe은 동일 도메인에서만 접근 가능
+
         return http.build();
     }
 

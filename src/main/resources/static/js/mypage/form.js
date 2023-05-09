@@ -20,11 +20,16 @@ window.addEventListener("DOMContentLoaded", function() {
         const location = fileEl.fileLocation;
         const files = e.target.files;
         mozip.fileManager.uploads(files, gid, location, true);
+        fileEl.value = "";
     });
 
     /** 이미지 업로드 버튼 클릭 처리 e */
 });
 
+/**
+* 파일 업로드 콜백
+*
+*/
 function fileUploadCallback(files) {
     if (!files || files.length == 0) {
         return;
@@ -47,6 +52,15 @@ function fileUploadCallback(files) {
             const li = dom.querySelector("li");
             attachedFiles.appendChild(li);
 
+            /** 이미지 본문 추가 S */
+            const insertEditor = li.querySelector(".insert_editor");
+            insertEditor.addEventListener("click", function() {
+                const url = this.dataset.url;
+                const img = `<img src='${url}' />`;
+                CKEDITOR.instances.description.insertHtml(img);
+            });
+            /** 이미지 본문 추가 E */
+
         } else { // 상단 메인 포토
             const photoTag = `<span class='thumb'>
                                     <i class='remove xi-close-min' data-file-no="${file.fileNo}"></i>
@@ -61,3 +75,12 @@ function fileUploadCallback(files) {
         }
     }
  }
+
+/**
+* 파일 삭제 콜백 =
+*
+* @param fileNo : 삭제된 파일 번호
+*/
+function fileDeleteCallback(fileNo) {
+    console.log(fileNo);
+}
