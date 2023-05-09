@@ -1,7 +1,11 @@
 html{
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
+body{
+  margin: 0;
+  
+}
 #joinSection{
 
   justify-content: center;
@@ -25,6 +29,7 @@ h1{
 
   justify-content: center;
   display: flex;
+  /*! margin-top: 70px; */
 }
 h1 a{
 
