@@ -10,11 +10,13 @@ import org.springframework.stereotype.Service;
 public class FileInfoService {
 
     private final FileInfoRepository repository;
+    private final FileInfoSaveService saveService;
 
     public FileInfo get(Long fileNo) {
 
         FileInfo fileInfo = repository.findById(fileNo).orElseThrow(FileNotFoundException::new);
-
+        fileInfo.setFileURL(saveService.getFileURL(fileInfo.getFileNo()));
+        fileInfo.setFilePath(saveService.getFilePath(fileInfo.getFileNo()));
 
         return fileInfo;
     }
