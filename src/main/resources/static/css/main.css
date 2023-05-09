@@ -1,0 +1,459 @@
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    list-style: none;
+  }
+  html {
+    
+  height: 100%;
+  }
+  body {
+    
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  }
+section{
+  justify-content: center;
+  display: flex;
+  height: 100%;   
+  
+  margin: 100px 0;
+}
+
+/* 
+
+  page1 섹션 S
+
+*/
+
+  #page1{
+    
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  }
+  .wrap {
+    
+  width: 1200px;
+  }
+  .wrap .slider {
+    
+  padding: 50px;
+  height: auto;
+  border: 3px solid #ccc;
+  margin: 30px;
+  border-radius: 20px;
+  }
+  .groupLogo{
+    
+  text-align: center;
+  }
+  .silderT{
+
+  margin-top: 0;
+  }
+  .group{
+  display: flex;
+  justify-content: space-around;
+    
+  }
+
+  .wrap .group {
+    
+  
+  }
+  .wrap .group .left {
+    
+  border: 3px solid #ccc;
+  width: 50%;
+  margin: 30px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  transition: 0.5s;
+  }
+.wrap .group .left:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.pic{
+  height: 80%;
+  /*! padding: 20px; */
+  background-color: #ffd588;
+  margin: 0 auto;
+  width: 128px;
+}
+  .wrap .group .left .pic {
+    
+  
+  margin: 22px;
+  }
+
+.inter{
+    
+  width: 60%;
+  display: block;
+  padding: 0 15px;
+  }
+  .wrap .group .left .inter {
+    
+  width: 60%;
+  display: block;
+  padding: 0 15px;
+  }
+.inter1{
+  
+  background-color: #ffd588;
+  padding: 0;
+}
+  .wrap .group .left .inter .inter1 {
+    
+  }
+  .wrap .group .left .inter .inter1 p {
+    
+  margin-top: 0;
+  display: block;
+  }
+.inter2{
+  
+  padding: 0;
+}
+  .wrap .group .left .inter .inter2 {
+    
+  }
+  .wrap .group .left .inter .inter2 li {
+    
+  }
+  .wrap .group .left .inter .inter2 li a {
+    
+  }
+  .wrap .group .right {
+    
+  width: 50%;
+  border: 3px solid #ccc;
+  margin: 30px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+    transition: 0.5s;
+  }
+.wrap .group .right:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+  .wrap .group .right .pic {
+    
+  margin: 22px;
+  }
+  .wrap .group .right .pic .inter {
+    
+  }
+  .wrap .group .right .pic .inter .inter1 {
+    
+  }
+  .wrap .group .right .pic .inter .inter1 p {
+    
+  }
+  .wrap .group .right .pic .inter .inter2 {
+    
+  }
+  .wrap .group .right .pic .inter .inter2 li {
+    
+  }
+  .wrap .group .right .pic .inter .inter2 li a {
+    
+  }
+
+  .slidePoint{
+    background-color: rgba(0,0,0,0.6);
+    font-size: 0;
+    width: 40px;
+    height: 60px;
+    position: fixed;
+    bottom: 20px;
+    left: calc(50% - 20px);
+    border-radius: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #bcbaba;
+    animation-name: updown;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  .slidePoint::before{
+    content: "";
+    width: 8px;
+    height: 8px;
+    display: block;
+    border: 2px solid #fff;
+    border-top-color: rgb(255, 255, 255);
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-left-color: rgb(255, 255, 255);
+    border-left-style: solid;
+    border-left-width: 2px;
+    transform: rotate(45deg);
+    border-top: transparent;
+    border-left: transparent;
+    animation-name: down1;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  .slidePoint::after{
+    content: "";
+    width: 8px;
+    height: 8px;
+    display: block;
+    border: 2px solid #fff;
+    border-top-color: rgb(255, 255, 255);
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-left-color: rgb(255, 255, 255);
+    border-left-style: solid;
+    border-left-width: 2px;
+    transform: rotate(45deg);
+    border-top: transparent;
+    border-left: transparent;
+    animation-name: down1;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.1s;
+  }
+  @keyframes updown{
+    0%{
+      
+   }
+   50%{
+       transform: translateY(15px);
+   }
+   100%{
+       
+   }
+}
+
+@keyframes down1{
+    0%{ /* 시작 */
+       opacity: 1;
+    }
+    50%{
+/*         transform:translateY(10px) rotate(45deg); */
+       opacity: 0;
+    }
+    100%{ /* 종료 */
+       transform:translateY(0px) rotate(45deg);
+       opacity: 1;
+    }
+}
+
+
+  /* 슬라이드 */
+
+  .slide {
+    /* layout */
+    display: flex;
+    flex-wrap: nowrap;
+    /* 컨테이너의 내용물이 컨테이너 크기(width, height)를 넘어설 때 보이지 않도록 하기 위해 hidden을 준다. */
+    overflow: hidden;
+  
+    /* position */
+    /* slide_button의 position absolute가 컨테이너 안쪽에서 top, left, right offset이 적용될 수 있도록 relative를 준다. (기본값이 static인데, static인 경우 그 상위 컨테이너로 나가면서 현재 코드에선 html을 기준으로 offset을 적용시키기 때문) */
+    position: relative;
+  
+    /* size */
+    width: 100%;
+  
+    /* slide drag를 위해 DOM요소가 드래그로 선택되는것을 방지 */
+    user-select: none;
+  }
+  .slide_item {
+    /* layout */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    /* position - 버튼 클릭시 left offset값을 적용시키기 위해 */
+    position: relative;
+    left: 0px;
+  
+    /* size */
+    width: 100%;
+    height: 300px;
+    /* flex item의 flex-shrink는 기본값이 1이므로 컨테이너 크기에 맞게 줄어드는데, 슬라이드를 구현할 것이므로 줄어들지 않도록 0을 준다. */
+    flex-shrink: 0;
+  
+    /* transition */
+    transition: left 0.15s;
+  }
+  .slide_button {
+    /* layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    /* position */
+    position: absolute;
+    /* 버튼이 중앙에 위치하게 하기위해 계산 */
+    top: calc(50% - 16px);
+  
+    /* size */
+    width: 32px;
+    height: 32px;
+  
+    /* style */
+    border-radius: 100%;
+    background-color: #cccc;
+    cursor: pointer;
+  }
+  
+  .slide_prev_button {
+    left: 10px;
+  }
+  .slide_next_button {
+    right: 10px;
+  }
+  
+  /* 각 슬라이드가 변경되는 것을 시각적으로 확인하기 쉽도록 각 슬라이드별 색상 적용 */
+  .slide_item.item1 {
+    background-color: #d9ab3b;
+  }
+  .slide_item.item2 {
+    background-color: #43a42f;
+  }
+  .slide_item.item3 {
+    background-color: #9c05c6;
+  }
+  .slide_item.item4 {
+    background-color: burlywood;
+  }
+  .slide_item.item5 {
+    background-color: cornflowerblue;
+  }
+  
+  /* 페이지네이션 스타일 */
+  
+  .slide_pagination {
+    /* layout */
+    display: flex;
+    gap: 5px;
+  
+    /* position */
+    position: absolute;
+    bottom: 0;
+    /* left:50%, translateX(-50%)를 하면 가로 가운데로 위치시킬 수 있다. */
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 0;
+  }
+  .slide_pagination > li {
+    /* 현재 슬라이드가 아닌 것은 투명도 부여 */
+    color: #90cbee87;
+    cursor: pointer;
+    font-size: 25px;
+    scale: 1.5;
+  }
+  .slide_pagination > li.active {
+    /* 현재 슬라이드 색상은 투명도 없이 */
+    color: #5e7ace;
+  }
+  
+  .slide_item_duplicate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 0px;
+    width: 100%;
+    height: 300px;
+    flex-shrink: 0;
+    transition: left 0.15s;
+  }
+
+  /* 
+
+  page1 섹션 E
+
+*/
+
+/* 
+
+  page2 섹션 S
+
+*/
+
+#page2{
+    background-color: aliceblue;
+    }
+    #page2 .wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #page2 .wrap h2 {
+      font-size: 35px;
+    }
+    #page2 .wrap > p {
+      line-height: 1.5;
+      margin: 22px 0;
+      text-align: center;
+    }
+    #page2 .wrap > p span {
+    
+    }
+    #page2 .wrap ul {
+      display: flex;
+      width: 80%;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    #page2 .wrap ul li {
+      width: 25%;
+    }
+    #page2 .wrap ul li h3 {
+      width: 70%;
+      padding-right: 36%;
+      box-sizing: border-box;
+      height: 113px;
+      background-size: 56%;
+      background-repeat: no-repeat;
+      background-position-x: right;
+      margin-bottom: 30px;
+      font-size: 14px;
+      line-height: 1.3;
+    }
+    #page2 .wrap ul li:nth-child(1) h3 {
+      background-image: url(../img/main_icon_01_01.png);
+    }
+    #page2 .wrap ul li:nth-child(2) h3 {
+      background-image: url(../img/main_icon_02_01.png);
+    }
+    #page2 .wrap ul li:nth-child(3) h3 {
+      background-image: url(../img/main_icon_03_01.png),url(../img/main_icon_03_02.png);
+    }
+    #page2 .wrap ul li:nth-child(4) h3 {
+      background-image: url(../img/main_icon_04_01.png),url(../img/main_icon_04_04.png);
+    }
+    #page2 .wrap ul li p {
+      width: 65%;
+      text-align: right;
+      font-size: 15px;
+    }
+    #page2 .wrap ul li p strong {
+      font-size: 40px;
+    }
+
+
+/* 
+
+  page2 섹션 E
+
+*/

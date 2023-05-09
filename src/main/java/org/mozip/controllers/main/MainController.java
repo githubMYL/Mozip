@@ -22,12 +22,10 @@ public class MainController {
         MemberInfo memberInfo = memberUtil.getMember();
         if(memberInfo != null){
             String memberNick = memberInfo.getMemberNick();
-            System.out.println("memberNick ::::::::::::: " + memberInfo.getMemberNick());
             model.addAttribute("memberNick", memberNick);
         }
         model.addAttribute("addCss", new String[] {"main/style"});
 
         return "mozip";
-
     }
 }

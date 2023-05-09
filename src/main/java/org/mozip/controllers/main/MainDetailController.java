@@ -27,7 +27,6 @@ public class MainDetailController {
     private MainList mainList;
     private CateCode cateCode;
     private MainCreateParam mainCreateParam;
-    private final EntityManager em;
     private final CategoryRepository categoryRepository;
     private final MainCreateRepository mainCreateRepository;
     private final MemberUtil memberUtil;
