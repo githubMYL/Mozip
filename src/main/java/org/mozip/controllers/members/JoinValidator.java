@@ -38,7 +38,7 @@ public class JoinValidator implements Validator {
 
         // 1. 아이디 중복여부
         if(repository.memberExists(memberId)){
-            errors.rejectValue("memberId", "Validation.duplicate.memberId");
+            errors.rejectValue("email", "Validation.duplicate.memberId");
         }
 
         // 2. memberPw, memberPwRe 일치 여부

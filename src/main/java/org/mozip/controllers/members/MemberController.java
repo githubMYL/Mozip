@@ -26,13 +26,13 @@ public class MemberController {
         joinParam = new JoinParam();
 
         model.addAttribute("joinParam", joinParam);
+        model.addAttribute("addCss", new String[] {"member/join"});
         return "member/join";
     }
 
     /** 회원가입 저장 */
     @PostMapping("/join")
     public String joinPs(@Valid JoinParam joinParam, Errors errors){
-
         validator.validate(joinParam, errors);
 
         if(errors.hasErrors()){

@@ -5,13 +5,7 @@
         <meta name="_csrf" th:content="${_csrf.token}">
         <meta name="_csrf_header" th:content="${_csrf.headerName}">
         <title th:if="${pageTitle != null}" th:text="${pageTitle}"></title>
-<<<<<<< HEAD
         <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
-        <link rel="stylesheet" type="text/css" th:href="@{/css/member/join.css}">
-
-=======
-        <link rel="stylesheet" type="text/css" th:href="@{/css/main/style.css}">
->>>>>>> 144a6cb1824e09c1ec1452afbec2c7ef0623b5af
         <link rel="stylesheet" type="text/css" th:each="cssFile : ${addCss}" th:href="@{/css/{file}.css(file=${cssFile})}">
         <th:block layout:fragment="addCss"></th:block>
         <script th:src="@{/js/common.js}"></script>
