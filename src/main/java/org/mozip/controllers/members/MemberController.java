@@ -3,6 +3,7 @@ package org.mozip.controllers.members;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 
+import org.mozip.models.member.MemberJoinValidator;
 import org.mozip.models.member.MemberSaveService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 public class MemberController {
 
-    private final JoinValidator validator;
+    private final MemberJoinValidator validator;
     private final MemberSaveService service;
 
     private JoinParam joinParam;
