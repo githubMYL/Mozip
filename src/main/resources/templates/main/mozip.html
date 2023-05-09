@@ -7,7 +7,16 @@
             <title>MoZip</title>
         </head>
         <body>
-            메인화면..aaaaaaaaaaaa
+        <form method="get" th:action="@{/mypage2}" autocomplete="off" th:object="${mozipSearch}">
+            <select name="sopt" th:field="*{sopt}">
+                <option value="all">통합검색</option>
+                <option value="title">모임명</option>
+                <option value="description">모임설명</option>
+                <option value="title_description">모임명 + 모임설명</option>
+            </select>
+            <input type="text" name="skey" th:field="*{skey}" placeholder="검색 키워드 입력...">
+            <button type="submit">검색하기</button>
+        </form>
         </body>
     </main>
 </html>

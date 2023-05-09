@@ -30,4 +30,8 @@ public class MainController {
         return "mozip";
 
     }
+    public String mypageMove(Model model){
+
+        return "/mypage/index";
+    }
 }

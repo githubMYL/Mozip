@@ -3,23 +3,12 @@
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
     layout:decorate="~{layouts/main}">
     <main layout:fragment="content">
-        <form method="get" th:action="@{/mypage2}" autocomplete="off" th:object="${mozipSearch}">
-            <select name="sopt" th:field="*{sopt}">
-                <option value="all">통합검색</option>
-                <option value="title">모임명</option>
-                <option value="description">모임설명</option>
-                <option value="title_description">모임명 + 모임설명</option>
-            </select>
-            <input type="text" name="skey" th:field="*{skey}" placeholder="검색 키워드 입력...">
-            <button type="submit">검색하기</button>
-        </form>
         <ul>
            <li th:each="item : ${items}" th:object="${item}">
                <a th:href="@{/mypage2/view/{id}(id=*{id})}" th:text="*{title}"></a>
                [[*{member.memberNm}]]([[*{member.email}]])
            </li>
         </ul>
-
         <th:block th:replace="~{commons/pagination::pagination}"></th:block>
     </main>
 </html>

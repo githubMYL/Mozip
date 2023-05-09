@@ -1,40 +1,33 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">>
-<body th:object="${JoinParam}">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main}">
     <main layout:fragment="content">
-        <dl>
-            <dt>PROFILE</dt>
-            <dd>
+        <from method="GET" th:action="@{/mypage/index}" autocomplete="off" th:object="${joinParam}">
+            <dl>
+                <h1>PROFILE</h1>
+                <!--기본 이미지-->
                 <h2 th:text="${member.memberNick}">사용자 닉네임</h2>
 
-            </dd>
-                <a href="#info_popup" class="btn_pop1"></a>
-                <button id="info_popup">정보수정</button>
-        </dl>
+            </dl>
 
-        <dl>
-            <dt>LIST</dt>
-            <dd>
-                <input type="file" name="file" >
-            </dd>
-        </dl>
-        <div>
-            <a th:href="@{/mypage/myadd}">모임생성</a>
-        </div>
-        <div>
-            <!-- 리스트 출력 -->
-            <ul>
-                <li th:each="boardData : ${list}" th:object="${boardData}">
-                    <a th:href="@{/mypage/view/{id}(id=*{id})}" th:text="*{subject}"></a>
-                    <p th:text="*{content}"></p>
-                </li>
-            </ul>
-        </div>
+            <dl>
+                <dt>LIST</dt>
+            </dl>
+            <div>
+                <a th:object="${save}">모임 생성하기</a>
+            </div>
+            <div>
 
-    </from>
+                <ul>
+                    <li th:each="boardData : ${list}" th:object="${boardData}">
+                        <a th:href="@{/mypage/view/{id}(id=*{id})}" th:text="*{subject}"></a>
+                        <p th:text="*{content}"></p>
+                    </li>
+                </ul>
+            </div>
+
+        </from>
+    </body>
     </main>
-</body>
-
-
 </html>

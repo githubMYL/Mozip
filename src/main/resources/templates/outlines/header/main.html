@@ -11,6 +11,7 @@
             <th:block th:unless="${memberNick == null}">
                 <form align="right">
                     ([[${memberNick}]])님 안녕하세요.
+                    <button type="button" th:onclick="location.href='/mypage/${memberNick}'">마이페이지</button>
                     <button type="button" th:onclick="location.href='/member/logout'">로그아웃</button>
                 </form>
             </th:block>
