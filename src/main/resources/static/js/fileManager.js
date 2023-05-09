@@ -12,7 +12,6 @@ mozip.fileManager = {
 			}
 
             const { header, token } = commonLib.getCsrfToken();
-            console.log(header, token);
             const formData = new FormData();
 
             /** 업로드 파일 이미지 형식 체크 S */
@@ -59,6 +58,10 @@ mozip.fileManager = {
 		} catch (err) {
 			alert(err.message);
 		}
+	},
+	delete(e) {
+	    console.log(e);
+
 	}
 };
 
@@ -81,6 +84,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
             	const files = fileEl.files;
             	mozip.fileManager.uploads(files, gid, location, imageOnly == 'true');
+            	fileEl.value = "";
             }
 		});
 

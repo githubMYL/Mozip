@@ -127,7 +127,7 @@ public class MyPageController {
      */
     private void commonFormProcess(Model model) {
         // 공통 자바스크립트
-        String[] addScript = { "ckeditor/ckeditor", "fileUpload", "mypage/form",  };
+        String[] addScript = { "ckeditor/ckeditor", "fileManager", "mypage/form",  };
         model.addAttribute("addScript", addScript);
     }
 

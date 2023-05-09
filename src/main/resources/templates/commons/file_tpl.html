@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <th:block th:fragment="tpl">
+        <script type="text/html" id="file_tpl">
+            <li>
+                <a href="/file/download/#[fileNo]">#[fileName]</a>
+                <i class="xi-arrow-up insert_editor" data-url="#[url]"></i>
+                <i class="xi-minus-min remove" data-file-no="#[fileNo]"></i>
+            </li>
+        </script>
+    </th:block>
+</html>

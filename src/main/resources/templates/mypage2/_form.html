@@ -2,6 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <th:block th:fragment="form" th:object="${mozipForm}">
         <input type="hidden" name="gid" th:field="*{gid}">
+        <input type="file" id="file" multiple class="dn">
         <dl th:if="*{mode == 'update'}">
             <dt th:text="#{mypage.id}"></dt>
             <dd>
@@ -19,17 +20,23 @@
         </dl>
         <dl>
             <dt th:text="#{mypage.photo}"></dt>
-            <dd></dd>
+            <dd>
+                <div id="thumbs"></div>
+                <button type="button" class="attach_files" data-location="main_photo">이미지 추가</button>
+            </dd>
         </dl>
         <dl>
             <dt th:text="#{mypage.content}"></dt>
             <dd>
                 <textarea id="description" name="description" th:field="*{description}"></textarea>
-                <div>
-                    <button type="button" th:text="#{mypage.add.photo}"></button>
-                </div>
                 <div class="error" th:each="err : ${#fields.errors('description')}" th:text="${err}"></div>
+                <div>
+                    <button type="button" th:text="#{mypage.add.photo}" class="attach_files" data-location="editor"></button>
+                </div>
+                <ul id="attached_files"></ul>
+
             </dd>
         </dl>
+        <th:block th:replace="~{commons/file_tpl::tpl}"></th:block>
     </th:block>
 </html>
