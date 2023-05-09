@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -49,4 +50,17 @@ public class FileDeleteService {
 
     }
 
+    /**
+     * 그룹 ID로 삭제
+     *
+     * @param gid
+     */
+    public void delete(String gid) {
+        List<FileInfo> files = repository.findByGidOrderByRegDtAsc(gid);
+        if (files == null || files.size() == 0) {
+            return;
+        }
+
+        files.stream().forEach(f -> delete(f.getFileNo()));
+    }
 }
