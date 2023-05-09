@@ -45,6 +45,8 @@ public class MyPageController {
         model.addAttribute("items", items);
         model.addAttribute("pagination", pagination);
 
+        commonProcess(model);
+
         return "mypage2/index";
     }
 
@@ -60,6 +62,8 @@ public class MyPageController {
         MozipForm mozipForm = new MozipForm();
         model.addAttribute("mozipForm", mozipForm);
 
+        commonProcess(model);
+
         return "mypage2/register";
     }
 
@@ -70,7 +74,7 @@ public class MyPageController {
      */
     @GetMapping("/update/{id}")
     public String update(@PathVariable Long id, Model model) {
-
+        commonProcess(model);
         commonFormProcess(model); // 공통 처리
 
         Mozip mozip = infoService.get(id, true);
@@ -80,6 +84,8 @@ public class MyPageController {
         MozipForm mozipForm = new ModelMapper().map(mozip, MozipForm.class);
         mozipForm.setMode("update");
         model.addAttribute("mozipForm", mozipForm);
+
+
         return "mypage2/update";
     }
 
@@ -90,6 +96,7 @@ public class MyPageController {
      */
     @PostMapping("/save")
     public String save(@Valid MozipForm mozipForm, Errors errors, Model model) {
+        commonProcess(model);
         commonFormProcess(model); // 공통 처리
 
         saveValidator.validate(mozipForm, errors);
@@ -106,6 +113,7 @@ public class MyPageController {
 
     @GetMapping("/view/{id}")
     public String view(@PathVariable Long id, Model model) {
+        commonProcess(model);
         Mozip mozip = infoService.get(id);
         model.addAttribute("mozip", mozip);
 
@@ -121,6 +129,11 @@ public class MyPageController {
         // 공통 자바스크립트
         String[] addScript = { "ckeditor/ckeditor", "fileUpload", "mypage/form",  };
         model.addAttribute("addScript", addScript);
+    }
+
+    private void commonProcess(Model model) {
+        String[] addCss = { "mypage/style"};
+        model.addAttribute("addCss", addCss);
     }
 
     /**
