@@ -2,10 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/main}">
-    <head>
-        <title>MoZip</title>
-    </head>
-    <body>
-        <img src="/C:uploads">
-    </body>
+    <main layout:fragment="content">
+        <head>
+            <title>MoZip</title>
+        </head>
+        <body>
+            <ul>
+                <li th:each="mozip : ${mozips}" th:object="${mozip}">
+                    <!--span th:utext="*{profileImg}">모임사진</span-->
+                    <span th:text="*{title}">모임명</span>
+                    <span th:utext="*{description}">모임상세소개</span>
+                    <span>가입인원</span>
+                    <button>가입하기</button>
+                </li>
+            </ul>
+        </body>
+    </main>
 </html>
