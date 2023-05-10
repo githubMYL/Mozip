@@ -24,6 +24,24 @@ window.addEventListener("DOMContentLoaded", function() {
     });
 
     /** 이미지 업로드 버튼 클릭 처리 e */
+
+    /** 메인 이미지 클릭 처리 S */
+    const thumbs = document.querySelectorAll(".thumb.update .inner");
+    for (const thumb of thumbs) {
+        thumb.addEventListener("click", function() {
+            const fileNo = this.dataset.fileNo;
+            const fileURL = this.dataset.url
+            showImagePopup(fileNo, fileURL);
+        });
+
+    }
+    /** 메인 이미지 클릭 처리 E */
+    /** 이미지 본문 추가 S */
+    const insertEditors = document.getElementsByClassName("insert_editor");
+    for(const el of insertEditors) {
+        el.addEventListener("click", insertImage);
+    }
+    /** 이미지 본문 추가 E */
 });
 
 /**
@@ -54,11 +72,7 @@ function fileUploadCallback(files) {
 
             /** 이미지 본문 추가 S */
             const insertEditor = li.querySelector(".insert_editor");
-            insertEditor.addEventListener("click", function() {
-                const url = this.dataset.url;
-                const img = `<img src='${url}' />`;
-                CKEDITOR.instances.description.insertHtml(img);
-            });
+            insertEditor.addEventListener("click", insertImage);
             /** 이미지 본문 추가 E */
 
         } else { // 상단 메인 포토
@@ -74,24 +88,33 @@ function fileUploadCallback(files) {
             thumbs.appendChild(span);
             const inner = span.querySelector(".inner");
             inner.onclick = function() {
-                const url = `/file/view/${file.fileNo}`;
-                let w = 300, h = 300;
-                const img = new Image();
-                img.src = file.fileURL;
-                img.onload = function() {
-                    if (img.width > 700) {
-                        w = 700;
-                        h = parseInt(img.width * w / img.height) + 150;
-                    }
-                    mozip.popup.open(url, "이미지 보기", w, h);
-                };
-
-
-
+                showImagePopup(file.fileNo, file.fileURL);
             };
         }
     }
- }
+}
+
+function showImagePopup(fileNo, fileURL) {
+        const url = `/file/view/${fileNo}`;
+
+        let w = 300, h = 300;
+        const img = new Image();
+        img.src = fileURL;
+        img.onload = function() {
+            if (img.width > 700) {
+               w = 700;
+               h = parseInt(img.width * w / img.height) + 150;
+            }
+            mozip.popup.open(url, "이미지 보기", w, h);
+        };
+
+}
+
+function insertImage() {
+   const url = this.dataset.url;
+   const img = `<img src='${url}' />`;
+   CKEDITOR.instances.description.insertHtml(img);
+}
 
 /**
 * 파일 삭제 콜백 =
