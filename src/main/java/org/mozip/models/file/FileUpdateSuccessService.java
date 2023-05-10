@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class FileUpdateSucessService {
+public class FileUpdateSuccessService {
 
     private final FileInfoRepository repository;
     private final FileInfoService infoService;
