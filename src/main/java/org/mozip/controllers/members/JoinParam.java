@@ -30,6 +30,7 @@ public class JoinParam extends BaseEntity {
     @AssertTrue
     private boolean agree;
 
+
     public static Members of(JoinParam joinParam) {
         return new ModelMapper().map(joinParam, Members.class);
     }

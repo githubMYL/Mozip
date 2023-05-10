@@ -25,9 +25,9 @@ public class MemberController {
     @GetMapping("/join")
     public String join(Model model){
         joinParam = new JoinParam();
-
         model.addAttribute("joinParam", joinParam);
         model.addAttribute("addCss", new String[] {"member/join"});
+
         return "member/join";
     }
 
