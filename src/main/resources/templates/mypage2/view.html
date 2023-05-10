@@ -13,7 +13,12 @@
             </div>
         </div>
         <!--// reg_info -->
-        <div>이미지 출력</div>
+        <div th:if="*{mainPhotos != null}">
+            <div th:each="photo : *{mainPhotos}" th:object="${photo}">
+                <img th:src="*{fileURL}">
+            </div>
+            <!-- 이미지 출력 -->
+        </div>
         <div class="description" th:utext="*{description}"></div>
         <a th:href="@{/mypage2}" th:text="#{mypage.view}"></a>
         <a th:href="@{/mypage2/update/{id}(id=*{id})}" th:text="#{mypage.update}"></a>

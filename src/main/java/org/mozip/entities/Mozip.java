@@ -1,7 +1,12 @@
 package org.mozip.entities;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 
 @Entity
@@ -25,4 +30,10 @@ public class Mozip extends BaseEntity {
     @ManyToOne
     @JoinColumn(name="memberNo")
     private Members member;
+
+    @Transient
+    private List<FileInfo> mainPhotos;
+
+    @Transient
+    private List<FileInfo> editorPhotos;
 }

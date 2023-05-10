@@ -10,7 +10,6 @@
                 <th:block th:text="*{id}"></th:block>
             </dd>
         </dl>
-
         <dl>
             <dt th:text="#{mypage.subject}"></dt>
             <dd>
@@ -21,7 +20,17 @@
         <dl>
             <dt th:text="#{mypage.photo}"></dt>
             <dd>
-                <div id="thumbs"></div>
+                <div id="thumbs">
+                    <th:block th:if="*{mainPhotos != null}" th:each="file : *{mainPhotos}" th:object="${file}">
+                    <span class="thumb update" th:classappend="*{'file_' + fileNo}">
+                        <a th:href="@{/file/delete/{id}(id=*{fileNo})}" target="ifrmProcess" onclick="return confirm('정말 삭제하시겠습니까?');">
+                            <i class='remove xi-close-min'></i>
+                        </a>
+
+                        <span class='inner' th:style="*{'background:url(' + fileURL + ');background-size:cover;'}" th:data-file-no="*{fileNo}" th:data-url="*{fileURL}"></span>
+                    </span>
+                    </th:block>
+                </div>
                 <button type="button" class="attach_files" data-location="main_photo">이미지 추가</button>
             </dd>
         </dl>
@@ -30,11 +39,7 @@
             <dd>
                 <textarea id="description" name="description" th:field="*{description}"></textarea>
                 <div class="error" th:each="err : ${#fields.errors('description')}" th:text="${err}"></div>
-                <div>
-                    <button type="button" th:text="#{mypage.add.photo}" class="attach_files" data-location="editor"></button>
-                </div>
                 <ul id="attached_files"></ul>
-
             </dd>
         </dl>
         <th:block th:replace="~{commons/file_tpl::tpl}"></th:block>
