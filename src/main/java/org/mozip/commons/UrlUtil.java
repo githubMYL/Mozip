@@ -2,31 +2,52 @@ package org.mozip.commons;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
 public class UrlUtil {
-
     @Autowired
     private HttpServletRequest request;
 
-    public String getPageUrl(String url, int page) {
-        // 키=값&키=값
-        url += "?";
-        String qs = request.getQueryString(); // page=2...
-        if (qs != null && !qs.isBlank()) {
-            qs = Arrays.stream(qs.split("&"))
-                            .filter(s -> !s.contains("page")).collect(Collectors.joining("&"));
+    private List<String> keys;
 
-            if (!qs.isBlank()) url += qs + "&";
+    public String getPageUrl(String url, int page){
+
+        if(url.contains("?")) {
+            String[] urls = url.split("\\?");
+            if (urls.length > 1) {
+                keys = Arrays.stream(urls[1].split("&")).map(s -> s.split("=")[0]).toList();
+            }
+            url += "&";
+        } else {
+            url += "?";
         }
 
-        url += "page="+page;
+        String qs = request.getQueryString();
+        if (qs != null && !qs.isBlank()){
+            qs = Arrays.stream(qs.split("&"))
+                    .filter(s-> !s.contains("page"))
+                    .filter(this::keyExists)
+                    .collect(Collectors.joining("&"));
 
+            if(!qs.isBlank()){
+                url += qs + "&";
+            }
+        }
+        url += "page=" + page;
         return url;
+    }
+
+    private boolean keyExists(String str) {
+        String key = str.split("=")[0];
+        if (keys != null && keys.contains(key)) {
+            return false;
+        }
+
+        return true;
     }
 }
