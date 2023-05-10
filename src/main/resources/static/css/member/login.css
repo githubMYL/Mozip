@@ -19,7 +19,7 @@ body{
 
   height: 100%;
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   margin: 0;
 }
 
@@ -34,8 +34,8 @@ body{
   div.wrap{
     width: 1200px;
     justify-content: center;
-    display: flex;
-    overflow: hidden;
+    /*! overflow: hidden; */
+    /*! display: flex; */
   }
 
   div.box{
@@ -43,6 +43,7 @@ body{
     z-index: 10;
     position: absolute;
     top: 20%;
+    left: 41%;
   }
 
   h1{

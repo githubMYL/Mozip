@@ -2,93 +2,99 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/main}">
-    <main layout:fragment="content">
-        <head>
-            <title>MoZip</title>
-        </head>
-        <body>
-            <section id="page1">
-                <div class="wrap">
+<main layout:fragment="content">
+    <head>
+        <title>MoZip</title>
+        <!-- <link rel="stylesheet" type="text/css" th:href="@{/css/main/style.css}">
+        <script th:src="@{/js/main/main.js}"></script> -->
+    </head>
+    <body>
 
-                    <div class="slider">
-                        <h2 class="silderT">내용을입력해주세요</h2>
-                        <div class="slide slide_wrap">
-                            <div class="slide_item item1">1</div>
-                            <div class="slide_item item2">2</div>
-                            <div class="slide_item item3">3</div>
-                            <div class="slide_item item4">4</div>
-                            <div class="slide_item item5">5</div>
-                            <div class="slide_prev_button slide_button">◀</div>
-                            <div class="slide_next_button slide_button">▶</div>
-                            <ul class="slide_pagination"></ul>
+        <section id="page1">
+            <div class="wrap">  
+    
+                <div class="slider">
+                    <h2 class="silderT">내용을입력해주세요</h2>               
+                    <div class="slide slide_wrap">
+                        <div class="slide_item item1">1</div>
+                        <div class="slide_item item2">2</div>
+                        <div class="slide_item item3">3</div>
+                        <div class="slide_item item4">4</div>
+                        <div class="slide_item item5">5</div>
+                        <div class="slide_prev_button slide_button">◀</div>
+                        <div class="slide_next_button slide_button">▶</div>
+                        <ul class="slide_pagination"></ul>
+                      </div>
+                      <script src="slide.js"></script>                
+                </div>
+    
+                <h2 class="groupLogo">Group</h2>
+                <div class="group">                
+                    <div class="left">
+                        <div class="pic">사진</div>
+                        <div class="inter">
+                            <ul class="inter1">
+                                <p>소모임명</p>
+                                <p>소모임 상세 소개</p>
+                            </ul>
                         </div>
-                        <script src="slide.js"></script>
                     </div>
-
-                    <h2 class="groupLogo">Group</h2>
-                    <div class="group">
-                        <div class="left">
-                            <div class="pic">사진</div>
-                            <div class="inter">
-                                <ul class="inter1">
-                                    <p>소모임명</p>
-                                    <p>소모임 상세 소개</p>
-                                </ul>
-                                <ul class="inter2">
-                                    <li><a href="">현재 가입인원</a></li>
-                                    <li><a href="">소모임가입하기</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="right">
-                            <div class="pic">사진</div>
-                            <div class="inter">
-                                <ul class="inter1">
-                                    <p>소모임명</p>
-                                    <p>소모임 상세 소개</p>
-                                </ul>
-                                <ul class="inter2">
-                                    <li><a href="">현재 가입인원</a></li>
-                                    <li><a href="">소모임가입하기</a></li>
-                                </ul>
-                            </div>
+                    <div class="right">
+                        <div class="pic">사진</div>
+                        <div class="inter">
+                            <ul class="inter1">
+                                <p>소모임명</p>
+                                <p>소모임 상세 소개</p>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="slidePoint">slidePoint</div>
-            </section>
+            </div> 
+            <div class="slidePoint">slidePoint</div>     
+        </section>
+    
+        <section id="page2">
+            <div class="wrap">
+                <h2>저희조는 새로운 가치를 창조합니다</h2>
+                <p>안녕하세요! 저희 팀은 열정 넘치는 인재들이 모인 멋진 팀입니다.<br>
+                    팀원들 간의 의사소통과 공유가 원활하게 이루어지고, 문제 발생 시 함께 해결하는 문화를 가지고 있습니다.</p>
+                <ul>
+                    <li>
+                        <h3>시작<span class="block"></span>
+                            입원부터<span class="block"></span>
+                            현재까지
+                        </h3>
+                        <p><strong>4</strong>개월</p>
+                    </li>
+                    <li>
+                        <h3>진출<span class="block"></span>국가</h3>
+                        <p><strong>62</strong>개국</p>
+                    </li>
+                    <li>
+                        <h3>글로벌<span class="block"></span> 
+                            프로젝트<span class="block"></span> 
+                            실적
+                        </h3>
+                        <p><strong>850</strong>건</p>
+                    </li>
+                    <li>
+                        <h3>지속가능경영<span class="block"></span> 월드지수<span class="block"></span> 편입</h3>
+                        <p><strong>12</strong>년 연속</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-            <section id="page2">
-                <div class="wrap">
-                    <h2>저희조는 새로운 가치를 창조합니다</h2>
-                    <p>안녕하세요! 저희 팀은 열정 넘치는 인재들이 모인 멋진 팀입니다.<br>
-                        팀원들 간의 의사소통과 공유가 원활하게 이루어지고, 문제 발생 시 함께 해결하는 문화를 가지고 있습니다.</p>
-                    <ul>
-                        <li>
-                            <h3>시작<span class="block"></span>
-                                입원부터<span class="block"></span>
-                                현재까지
-                            </h3>
-                            <p><strong>4</strong>개월</p>
-                        </li>
-                        <li>
-                            <h3>진출<span class="block"></span>국가</h3>
-                            <p><strong>62</strong>개국</p>
-                        </li>
-                        <li>
-                            <h3>글로벌<span class="block"></span>
-                                프로젝트<span class="block"></span>
-                                실적
-                            </h3>
-                            <p><strong>850</strong>건</p>
-                        </li>
-                        <li>
-                            <h3>지속가능경영<span class="block"></span> 월드지수<span class="block"></span> 편입</h3>
-                            <p><strong>12</strong>년 연속</p>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-        </body>
-    </main>
+    <!-- <ul>        
+        <li th:each="mozip : ${mozips}" th:object="${mozip}">
+            <img src="/uploads/2/2.png" />
+            <span th:text="*{title}">모임명</span>
+            <span th:utext="*{description}">모임상세소개</span>
+            <span>가입인원</span>
+            <button>가입하기</button>
+            <div>dkdkdkdk</div>
+        </li>
+    </ul> -->
+    </body>
+</main>
 </html>

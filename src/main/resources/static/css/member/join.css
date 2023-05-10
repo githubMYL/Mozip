@@ -76,7 +76,7 @@ dd::nth-child(1){
   
   display: block;
   position: relative;
-  width: 145%;
+  width: 130%;
   height: 29px;
   padding-right: 25px;
   line-height: 29px;
@@ -92,9 +92,9 @@ dd::nth-child(1){
 dd.agree{
 
   background-color: transparent;
-  width: 0;
   line-height: 1.7;
   border: none;
+  width: 1px;
 }
 .joinButton{
   background-color: #F6BB43;
