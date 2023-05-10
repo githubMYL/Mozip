@@ -10,15 +10,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.lang.reflect.Member;
 
 @Controller
-@RequestMapping("/mozip")
+@RequestMapping("/mozip/admin")
 public class AdminController {
 
     @Autowired
     private EntityManager em;
 
-    @GetMapping("/admin")
+    @GetMapping
     public String adminPage() {
         return "admin";
+    }
+
+    @GetMapping("/membersearch")
+    public String adminMemberSearch() {
+        return "admin/search";
     }
 
 //    @GetMapping("/admin/member")
