@@ -6,6 +6,8 @@
 
 a{
   
+  color: white;
+  font-size: x-large;
 }
 html{
 
@@ -53,6 +55,7 @@ main .listMemo ul li {
   align-items: center;
   display: flex;
   transition: 0.5s;
+  position: relative;
 }
 
 main .listMemo ul li:hover{
@@ -76,6 +79,13 @@ main .listMemo ul li a{
   margin-right: 20px;
   transition: 0.3s;
   color: darkgoldenrod;
+  position: absolute;
+  left: -2px;
+}
+main .listMemo ul li p{
+  
+  margin: 0px 60%;
+  color: #6e3c07;
 }
 
 main .listMemo div {
@@ -85,17 +95,30 @@ main .listMemo div th {
 
 }
 
-.link_add{
+div.link_add{
   
   width: 300px;
   text-align: center;
+  background-color: orange;
+  border-radius: 5px;
+  height: 38px;
+  padding: 2px;
   margin: 0 auto;
+  cursor: pointer;
 }
-.link_add a{
+div.link_add:hover {
   
-  color: orange;
+  color: burlywood;
 }
-.link_add:hover a{
-  
-  font-style: initial;
+
+div.link_add a{
+}
+
+div.link_add a{
+  text-align: center;
+  background-color: orange;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 0 auto;
+  font-size: x-large;
 }

@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/mypage/index.css}">
 </head>
     <main layout:fragment="content">
+        <!--
         <form method="get" th:action="@{/mypage2}" autocomplete="off" th:object="${mozipSearch}">
             <select name="sopt" th:field="*{sopt}">
                 <option value="all">통합검색</option>
@@ -16,17 +17,18 @@
             <input type="text" name="skey" th:field="*{skey}" placeholder="검색 키워드 입력...">
             <button type="submit">검색하기</button>
         </form>
+        -->
         <div class="listMemo">
             <ul>
                 <li th:each="item : ${items}" th:object="${item}">
                     <a class="a1" th:href="@{/mypage2/view/{id}(id=*{id})}" th:text="*{title}"></a>
-                    <p>[[*{member.memberNm}]]([[*{member.email}]])</p>
+                    <p th:text="*{description}"></p>
                 </li>
             </ul>
         </div>
         <div class="link_add">
             <a class="a2" th:href="@{/mypage2/add}" th:text="#{mypage.myadd}"></a>
         </div>
-        <th:block th:replace="~{commons/pagination::pagination}"></th:block>
+<!--        <th:block th:replace="~{commons/pagination::pagination}"></th:block>-->
     </main>
 </html>

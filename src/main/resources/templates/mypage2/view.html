@@ -9,16 +9,16 @@
             <div class="left"></div>
             <div class="right">
                 <span th:if="*{member != null}" class="poster">[[*{member.memberNm}]]([[*{member.email}]])</span>
-                <span class="regDt" th:text="*{#temporals.format(regDt, 'yyyy.MM.dd HH:mm')}"></span>
+                <!--<span class="regDt" th:text="*{#temporals.format(regDt, 'yyyy.MM.dd HH:mm')}"></span>-->
             </div>
         </div>
         <!--// reg_info -->
-        <div th:if="*{mainPhotos != null}">
+        <div th:if="*{mainPhotos != null}" class="potocip">
             <div th:each="photo : *{mainPhotos}" th:object="${photo}">
                 <img th:src="*{fileURL}">
             </div>
-            <!-- 이미지 출력 -->
         </div>
+        <!-- 이미지 출력 -->
         <div class="description" th:utext="*{description}"></div>
         <a th:href="@{/mypage2}" th:text="#{mypage.view}"></a>
         <a th:href="@{/mypage2/update/{id}(id=*{id})}" th:text="#{mypage.update}"></a>
