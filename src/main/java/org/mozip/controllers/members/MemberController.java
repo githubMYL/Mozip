@@ -24,8 +24,11 @@ public class MemberController {
     /** 회원가입 화면이동 */
     @GetMapping("/join")
     public String join(Model model){
+        commonProcess(model); // 공통 처리
+
         joinParam = new JoinParam();
         model.addAttribute("joinParam", joinParam);
+
         model.addAttribute("addCss", new String[] {"member/join"});
 
         return "member/join";
@@ -33,7 +36,9 @@ public class MemberController {
 
     /** 회원가입 저장 */
     @PostMapping("/join")
-    public String joinPs(@Valid JoinParam joinParam, Errors errors){
+    public String joinPs(@Valid JoinParam joinParam, Errors errors, Model model){
+        commonProcess(model); // 공통 처리
+
         validator.validate(joinParam, errors);
 
         if(errors.hasErrors()){
@@ -47,6 +52,11 @@ public class MemberController {
     @GetMapping("/login")
     public String login() {
         return "member/login";
+    }
+
+    private void commonProcess(Model model) {
+        model.addAttribute("addScript", new String[] {"fileManager", "member/join"});
+        model.addAttribute("addCss", new String[] {"member/join"});
     }
 
 }

@@ -174,4 +174,8 @@ dd.agree{
       transform: translate3d(0,5px,0);
     }
   }
-  
+
+
+/** 추가 CSS */
+.profileImage { border: 1px solid #d5d5d5; height: 150px; cursor: pointer; }
+.hauto { height: auto !important; }

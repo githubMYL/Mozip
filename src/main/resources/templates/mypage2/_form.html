@@ -21,7 +21,17 @@
         <dl>
             <dt th:text="#{mypage.photo}"></dt>
             <dd>
-                <div id="thumbs"></div>
+                <div id="thumbs">
+                    <th:block th:if="*{mainPhotos != null}" th:each="file : *{mainPhotos}" th:object="${file}">
+                    <span class="thumb update" th:classappend="*{'file_' + fileNo}">
+                        <a th:href="@{/file/delete/{id}(id=*{fileNo})}" target="ifrmProcess" onclick="return confirm('정말 삭제하시겠습니까?');">
+                            <i class='remove xi-close-min'></i>
+                        </a>
+
+                        <span class='inner' th:style="*{'background:url(' + fileURL + ');background-size:cover;'}" th:data-file-no="*{fileNo}" th:data-url="*{fileURL}"></span>
+                    </span>
+                    </th:block>
+                </div>
                 <button type="button" class="attach_files" data-location="main_photo">이미지 추가</button>
             </dd>
         </dl>
@@ -33,7 +43,17 @@
                 <div>
                     <button type="button" th:text="#{mypage.add.photo}" class="attach_files" data-location="editor"></button>
                 </div>
-                <ul id="attached_files"></ul>
+                <ul id="attached_files">
+                    <th:block th:if="*{editorPhotos != null}" th:each="file : *{editorPhotos}" th:object="${file}">
+                    <li th:class="*{'file_' + fileNo}">
+                        <a th:href="@{/file/download/{id}(id=*{fileNo})}" th:text="*{originalFilename}"></a>
+                        <i class="xi-arrow-up insert_editor" th:data-url="*{fileURL}"></i>
+                        <a th:href="@{/file/delete/{id}(id=*{fileNo})}" target="ifrmProcess" onclick="return confirm('정말 삭제하시겠습니가?');">
+                            <i class="xi-minus-min remove"></i>
+                        </a>
+                    </li>
+                    </th:block>
+                </ul>
 
             </dd>
         </dl>
