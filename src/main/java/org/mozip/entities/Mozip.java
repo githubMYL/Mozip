@@ -2,12 +2,15 @@ package org.mozip.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.mozip.repositories.MozipRepository;
 
 
 @Entity
 @Data @Builder
 @NoArgsConstructor @AllArgsConstructor
 public class Mozip extends BaseEntity {
+
+
 
     @Id @GeneratedValue
     private Long id; // 등록번호

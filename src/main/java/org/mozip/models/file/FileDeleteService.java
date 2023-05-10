@@ -14,7 +14,7 @@ import java.io.File;
 public class FileDeleteService {
 
     private final FileInfoService infoService;
-    private final MemberUtil memberUtill;
+    private final MemberUtil memberUtil;
 
     private final FileInfoRepository repository;
 
@@ -33,7 +33,7 @@ public class FileDeleteService {
         String createdBy = fileInfo.getCreatedBy();
 
         // 회원이 올린 파일이고 관리자가 아니고, 본인이 올린 파일이 아닌 경우
-        if (createdBy != null && !memberUtill.isAdmin() && !memberUtill.isMine(createdBy)) {
+        if (createdBy != null && !memberUtil.isAdmin() && !memberUtil.isMine(createdBy)) {
             throw new FileException("errors.file.notYours", HttpStatus.UNAUTHORIZED);
         }
 

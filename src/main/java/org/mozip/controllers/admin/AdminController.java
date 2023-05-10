@@ -26,6 +26,11 @@ public class AdminController {
         return "admin/search";
     }
 
+    @GetMapping("/membercustom")
+    public String adminCustom() {
+        return "admin/custom";
+    }
+
 //    @GetMapping("/admin/member")
 //    public void ex02(){
 //        Member member = em.find(Member.class, 1L);
