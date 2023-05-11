@@ -41,7 +41,7 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
         session.setAttribute("memberInfo", memberInfo);
 
-        String url = request.getContextPath() + "/mozip";
+        String url = request.getContextPath() + "/";
         response.sendRedirect(url);
 
     }
