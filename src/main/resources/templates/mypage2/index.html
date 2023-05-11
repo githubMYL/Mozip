@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-    layout:decorate="~{layouts/main}">
-    <main layout:fragment="content">
-        <ul>
-           <li th:each="item : ${items}" th:object="${item}">
-               <a th:href="@{/mypage2/view/{id}(id=*{id})}" th:text="*{title}"></a>
-               [[*{member.memberNm}]]([[*{member.email}]])
-           </li>
-        </ul>
-        <th:block th:replace="~{commons/pagination::pagination}"></th:block>
-    </main>
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main}">
+<main layout:fragment="content">
+    <th:block th:replace="~{main/_mozip_items::items}"></th:block>
+</main>
 </html>

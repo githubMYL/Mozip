@@ -42,9 +42,10 @@ public class MyPageController {
         List<Mozip> items = data.getContent();
         String url = request.getContextPath() + "/mypage2";
         Pagination<Mozip> pagination = new Pagination<>(data, url);
+
+        items.stream().forEach(System.out::println);
         model.addAttribute("items", items);
         model.addAttribute("pagination", pagination);
-
         commonProcess(model);
 
         return "mypage2/index";
@@ -141,7 +142,7 @@ public class MyPageController {
     }
 
     private void commonProcess(Model model) {
-        String[] addCss = { "mypage/style"};
+        String[] addCss = { "mypage/style", "mypage/index"};
         model.addAttribute("addCss", addCss);
     }
 

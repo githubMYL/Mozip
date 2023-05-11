@@ -36,12 +36,13 @@ window.addEventListener("DOMContentLoaded", function() {
 
     }
     /** 메인 이미지 클릭 처리 E */
+
     /** 이미지 본문 추가 S */
     const insertEditors = document.getElementsByClassName("insert_editor");
     for(const el of insertEditors) {
         el.addEventListener("click", insertImage);
     }
-    /** 이미지 본문 추가 E */
+
 });
 
 /**
@@ -115,6 +116,7 @@ function insertImage() {
    const img = `<img src='${url}' />`;
    CKEDITOR.instances.description.insertHtml(img);
 }
+
 
 /**
 * 파일 삭제 콜백 =

@@ -4,8 +4,11 @@ import com.querydsl.core.BooleanBuilder;
 import lombok.RequiredArgsConstructor;
 import org.mozip.commons.MemberUtil;
 import org.mozip.controllers.mypage2.MozipSearch;
+import org.mozip.entities.FileInfo;
 import org.mozip.entities.Mozip;
 import org.mozip.entities.QMozip;
+import org.mozip.models.file.FileInfoService;
+import org.mozip.models.file.FileListService;
 import org.mozip.models.member.MemberInfo;
 import org.mozip.repositories.MozipRepository;
 import org.springframework.data.domain.Page;
@@ -13,6 +16,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 import static org.springframework.data.domain.Sort.Order.asc;
 import static org.springframework.data.domain.Sort.Order.desc;
@@ -24,6 +29,8 @@ public class MozipListService {
     private final MemberUtil memberUtil;
 
     private final MozipRepository mozipRepository;
+    private final FileListService listService;
+
 
     public Page<Mozip> gets(MozipSearch search) { // 모든 목록
         return gets(search, false);
@@ -100,8 +107,31 @@ public class MozipListService {
         Pageable pageable = PageRequest.of(page - 1, limit, sort2);
 
         Page<Mozip> data = mozipRepository.findAll(andBuilder, pageable);
+        List<Mozip> items = data.getContent();
+        items.stream().peek(this::insertPhotos)
+                .forEach(this::stripTag);
         /** 페이징 + 정렬 처리 E */
 
         return data;
     }
+
+    private void insertPhotos(Mozip mozip) {
+        String gid = mozip.getGid();
+        List<FileInfo> mainPhotos = listService.gets(gid, "main_photo");
+        List<FileInfo> editorPhotos = listService.gets(gid, "editor");
+
+        mozip.setMainPhotos(mainPhotos);
+        mozip.setEditorPhotos(editorPhotos);
+    }
+
+    public void stripTag(Mozip mozip) {
+        String pattern = "<[^>]*>?";
+
+        String description = mozip.getDescription();
+        description = description.replaceAll(pattern, "").trim();
+
+        mozip.setDescription(description);
+
+    }
+
 }
