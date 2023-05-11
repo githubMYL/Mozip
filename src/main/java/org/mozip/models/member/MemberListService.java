@@ -4,14 +4,18 @@ import com.querydsl.core.BooleanBuilder;
 import lombok.RequiredArgsConstructor;
 import org.mozip.commons.MemberUtil;
 import org.mozip.controllers.admin.member.MemberSearch;
+import org.mozip.entities.FileInfo;
 import org.mozip.entities.Members;
 import org.mozip.entities.QMembers;
+import org.mozip.models.file.FileListService;
 import org.mozip.repositories.MembersRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 import static org.springframework.data.domain.Sort.Order.*;
 
@@ -20,7 +24,7 @@ import static org.springframework.data.domain.Sort.Order.*;
 public class MemberListService {
 
     private final MembersRepository membersRepository;
-
+    private final FileListService fileListService;
     private final MemberUtil memberUtil;
 
     public Page<Members> gets(MemberSearch search) {
@@ -87,10 +91,17 @@ public class MemberListService {
         }
         /** 페이징 및 정렬 처리 E*/
 
-        Pageable pageable = PageRequest.of(page, limit, sort2);
-        Page<Members> member = membersRepository.findAll(andBuilder, pageable);
+        Pageable pageable = PageRequest.of(page - 1, limit, sort2);
+        Page<Members> data = membersRepository.findAll(andBuilder, pageable);
 
-        return member;
+        data.getContent().stream().forEach(this::insertProfileImage);
 
+        return data;
+    }
+
+    private void insertProfileImage(Members member) {
+        List<FileInfo> files = fileListService.gets(member.getGid());
+        FileInfo profileImage = files != null && files.size() > 0 ? files.get(0) : null;
+        member.setProfileImage(profileImage);
     }
 }

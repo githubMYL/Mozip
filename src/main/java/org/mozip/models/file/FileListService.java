@@ -36,6 +36,9 @@ public class FileListService {
     }
 
     public List<FileInfo> gets(String gid, String location, boolean isAll, boolean success) {
+        if (gid == null) {
+            return null;
+        }
         QFileInfo fileInfo = QFileInfo.fileInfo;
         BooleanBuilder builder = new BooleanBuilder();
         builder.and(fileInfo.gid.eq(gid));
