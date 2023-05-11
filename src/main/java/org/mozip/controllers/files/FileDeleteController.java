@@ -4,8 +4,10 @@ import lombok.RequiredArgsConstructor;
 import org.mozip.models.file.FileDeleteService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/file/delete")
@@ -29,4 +31,11 @@ public class FileDeleteController {
         return "commons/execute_script";
     }
 
+
+    @ResponseBody
+    @GetMapping("/gid/{gid}")
+    public void deleteByGid(@PathVariable String gid) {
+        System.out.println("유입되나요?");
+        deleteService.delete(gid);
+    }
 }

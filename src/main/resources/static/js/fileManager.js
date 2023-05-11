@@ -59,8 +59,17 @@ mozip.fileManager = {
 			alert(err.message);
 		}
 	},
-	delete(e) {
-	    console.log(e);
+	/**
+	* 그룹 ID로 삭제
+	*
+	*/
+    delete(gid) {
+        if (!gid) {
+	        throw new Error("gid 누락");
+	    }
+
+	    const url = `/file/delete/gid/${gid}`;
+        return commonLib.ajaxLoad(url);
 
 	}
 };
@@ -87,9 +96,6 @@ window.addEventListener("DOMContentLoaded", function() {
             	fileEl.value = "";
             }
 		});
-
-
 	}
-
 //파일 선택 이벤트 처리 E
 })
