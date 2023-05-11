@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://wwww.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main}">
+  <main layout:fragment="content">
+    <form method="post" th:action="@{/board/save}" th:object="${boardForm}">
+      <th:block th:replace="~{board/_form::form}"></th:block>
+      <button type="submit">글 작성</button>
+    </form>
+  </main>
+</html>
