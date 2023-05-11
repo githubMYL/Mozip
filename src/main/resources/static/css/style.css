@@ -16,6 +16,7 @@ a { color:#222; text-decoration: none; }
 #layer_popup .layer_close { cursor: pointer; position: absolute; right: 25px; top: 15px; font-size: 1.8rem; }
 /** 레이어 팝업 E */
 
+
 /** 페이징 공통 S */
 .pagination { display: flex; justify-content: center; align-items: center; margin: 10px 0; }
 .pagination li { margin: 0 2px; }
@@ -33,3 +34,56 @@ a { color:#222; text-decoration: none; }
 .mozip_items .photo { width: 150px; height: 150px;  }
 .mozip_items .right { flex-grow: 1; padding: 10px; }
 /** 모집 목록 공통 E */
+
+
+/***  헤더 ***/
+
+header {
+    
+}
+header main {
+  
+}
+header main div.wrap {
+  
+margin: 0 auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+header main div.wrap h1.logo {
+  
+  margin: 0;
+}
+header main div.wrap h1.logo a {
+  
+}
+header main div.wrap ul.gnb {
+  
+text-decoration: none;
+display: flex;
+margin: 0;
+}
+header main div.wrap ul.gnb li {
+  
+align-items: center;
+display: flex;
+margin: 15px;
+}
+header main div.wrap ul.gnb li a {
+  
+padding: 20px 20px;
+}
+header main div.wrap form {
+  
+position: relative;
+top: 20%;
+}
+header main div.wrap form button {
+  
+}
+
+.memberInfo{
+
+display: flex;
+}

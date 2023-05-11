@@ -42,7 +42,8 @@ public class Members extends BaseEntity {
     @AssertTrue
     private boolean agree;
 
-    private String profileImg; // 이미지
+    @Transient
+    private FileInfo profileImage;
 
     @Enumerated(EnumType.STRING) // 권한설정
     @Column(length=20, nullable = false)

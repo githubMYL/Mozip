@@ -48,9 +48,9 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         if (auth != null &&
                 auth.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
             //System.out.println("당신은 관리자 입니다.");
-            url = request.getContextPath() + "/mozip/admin";
+            url = request.getContextPath() + "/admin";
         }else{
-            url = request.getContextPath() + "/mozip";
+            url = request.getContextPath() + "/";
         }
 
         response.sendRedirect(url);
