@@ -44,7 +44,6 @@ public class MyPageController {
         Pagination<Mozip> pagination = new Pagination<>(data, url);
         model.addAttribute("items", items);
         model.addAttribute("pagination", pagination);
-
         commonProcess(model);
 
         return "mypage2/index";

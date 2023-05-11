@@ -3,6 +3,7 @@
     <th:block th:fragment="form" th:object="${mozipForm}">
         <input type="hidden" name="gid" th:field="*{gid}">
         <input type="file" id="file" multiple class="dn">
+<<<<<<< HEAD
         <dl th:if="*{mode == 'update'}">
             <dt th:text="#{mypage.id}"></dt>
             <dd>
@@ -23,10 +24,33 @@
             <dd>
                 <div id="thumbs">
                     <th:block th:if="*{mainPhotos != null}" th:each="file : *{mainPhotos}" th:object="${file}">
+=======
+        <div class="gid_form">
+            <dl th:if="*{mode == 'update'}" class="dl_1">
+                <dt th:text="#{mypage.id}"></dt>
+                <dd>
+                    <input type="hidden" name="id" th:field="*{id}">
+                    <th:block th:text="*{id}"></th:block>
+                </dd>
+            </dl>
+            <dl class="dl_2">
+                <dt th:text="#{mypage.subject}"></dt>
+                <dd>
+                    <input type="text" name="title" th:field="*{title}">
+                    <div class="error" th:each="err : ${#fields.errors('title')}" th:text="${err}"></div>
+                </dd>
+            </dl>
+            <dl class="dl_3">
+                <dt th:text="#{mypage.photo}"></dt>
+                <dd>
+                    <div id="thumbs">
+                        <th:block th:if="*{mainPhotos != null}" th:each="file : *{mainPhotos}" th:object="${file}">
+>>>>>>> 349b9af586447e28351362ea60338a9a286c836a
                     <span class="thumb update" th:classappend="*{'file_' + fileNo}">
                         <a th:href="@{/file/delete/{id}(id=*{fileNo})}" target="ifrmProcess" onclick="return confirm('정말 삭제하시겠습니까?');">
                             <i class='remove xi-close-min'></i>
                         </a>
+<<<<<<< HEAD
 
                         <span class='inner' th:style="*{'background:url(' + fileURL + ');background-size:cover;'}" th:data-file-no="*{fileNo}" th:data-url="*{fileURL}"></span>
                     </span>
@@ -57,6 +81,23 @@
 
             </dd>
         </dl>
+=======
+                        <span class='inner' th:style="*{'background:url(' + fileURL + ');background-size:cover;'}" th:data-file-no="*{fileNo}" th:data-url="*{fileURL}"></span>
+                    </span>
+                        </th:block>
+                    </div>
+                    <button type="button" class="attach_files" data-location="main_photo">이미지 추가</button>
+                </dd>
+            </dl>
+            <dl class="dl_4">
+                <dt th:text="#{mypage.content}"></dt>
+                <dd>
+                    <textarea id="description" name="description" th:field="*{description}"></textarea>
+                    <div class="error" th:each="err : ${#fields.errors('description')}" th:text="${err}"></div>
+                </dd>
+            </dl>
+        </div>
+>>>>>>> 349b9af586447e28351362ea60338a9a286c836a
         <th:block th:replace="~{commons/file_tpl::tpl}"></th:block>
     </th:block>
 </html>

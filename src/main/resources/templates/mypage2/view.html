@@ -9,16 +9,25 @@
             <div class="left"></div>
             <div class="right">
                 <span th:if="*{member != null}" class="poster">[[*{member.memberNm}]]([[*{member.email}]])</span>
-                <span class="regDt" th:text="*{#temporals.format(regDt, 'yyyy.MM.dd HH:mm')}"></span>
+                <!--<span class="regDt" th:text="*{#temporals.format(regDt, 'yyyy.MM.dd HH:mm')}"></span>-->
             </div>
         </div>
         <!--// reg_info -->
+<<<<<<< HEAD
         <div th:if="*{mainPhotos != null}">
             <div th:each="photo : *{mainPhotos}" th:object="${photo}">
                 <img th:src="*{fileURL}">
             </div>
             이미지 출력
         </div>
+=======
+        <div th:if="*{mainPhotos != null}" class="potocip">
+            <div th:each="photo : *{mainPhotos}" th:object="${photo}">
+                <img th:src="*{fileURL}">
+            </div>
+        </div>
+        <!-- 이미지 출력 -->
+>>>>>>> 349b9af586447e28351362ea60338a9a286c836a
         <div class="description" th:utext="*{description}"></div>
         <a th:href="@{/mypage2}" th:text="#{mypage.view}"></a>
         <th:block th:if="*{editable}">

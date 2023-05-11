@@ -3,6 +3,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <header th:fragment="common">
         <main>
+<<<<<<< HEAD
             <div class="wrap">
 
                 <h1 class="logo"><a href=""></a></h1>
@@ -26,6 +27,21 @@
                     </form>
                 </th:block>
             </div>
+=======
+            <th:block th:if="${memberNick == null}">
+                <form align="right">
+                    <button type="button" th:onclick="location.href='/member/join'">회원가입</button>
+                    <button type="button" th:onclick="location.href='/member/login'">로그인</button>
+                </form>
+            </th:block>
+            <th:block th:unless="${memberNick == null}">
+                <form align="right">
+                    ([[${memberNick}]])님 안녕하세요.
+                    <button type="button" th:onclick="location.href='/mypage2'">마이페이지</button>
+                    <button type="button" th:onclick="location.href='/member/logout'">로그아웃</button>
+                </form>
+            </th:block>
+>>>>>>> 349b9af586447e28351362ea60338a9a286c836a
         </main>
     </header>
 </html>

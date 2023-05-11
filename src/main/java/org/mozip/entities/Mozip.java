@@ -1,12 +1,21 @@
 package org.mozip.entities;
 
 import jakarta.persistence.*;
+<<<<<<< HEAD
 
 import lombok.*;
 import org.mozip.repositories.MozipRepository;
 
 import java.util.List;
 
+=======
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+>>>>>>> 349b9af586447e28351362ea60338a9a286c836a
 
 
 @Entity
@@ -38,7 +47,10 @@ public class Mozip extends BaseEntity {
 
     @Transient
     private List<FileInfo> editorPhotos;
+<<<<<<< HEAD
 
     @Transient
     private boolean editable;
+=======
+>>>>>>> 349b9af586447e28351362ea60338a9a286c836a
 }
