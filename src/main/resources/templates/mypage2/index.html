@@ -19,12 +19,21 @@
         </form>
         -->
         <div class="listMemo">
-            <ul>
-                <li th:each="item : ${items}" th:object="${item}">
-                    <a class="a1" th:href="@{/mypage2/view/{id}(id=*{id})}" th:text="*{title}"></a>
-                    <p th:text="*{description}"></p>
-                </li>
-            </ul>
+            <div th:if="*{mainPhotos != null}">
+                <div th:each="photo : *{mainPhotos}" th:object="${photo}">
+                    <img th:src="*{fileNo}">
+                    <span th:utext="*{fileURL}"></span>
+                </div>
+            </div>
+            <div>
+                <ul>
+                    <li th:each="item : ${items}" th:object="${item}">
+                        <a class="a1" th:href="@{/mypage2/view/{id}(id=*{id})}" th:text="*{title}"></a>
+                        <p th:utext="*{description}"></p>
+                    </li>
+                </ul>
+            </div>
+
         </div>
         <div class="link_add">
             <a class="a2" th:href="@{/mypage2/add}" th:text="#{mypage.myadd}"></a>
