@@ -111,14 +111,12 @@ function showImagePopup(fileNo, fileURL) {
 
 }
 
-<<<<<<< HEAD
-=======
 function insertImage() {
    const url = this.dataset.url;
    const img = `<img src='${url}' />`;
    CKEDITOR.instances.description.insertHtml(img);
 }
->>>>>>> yonggyo2
+
 
 /**
 * 파일 삭제 콜백 =
