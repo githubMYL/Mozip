@@ -43,6 +43,8 @@ window.addEventListener("DOMContentLoaded", function() {
         el.addEventListener("click", insertImage);
     }
 
+    /** 이미지 본문 추가 E */
+
 });
 
 /**
@@ -110,6 +112,7 @@ function showImagePopup(fileNo, fileURL) {
         };
 
 }
+
 
 function insertImage() {
    const url = this.dataset.url;

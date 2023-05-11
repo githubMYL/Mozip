@@ -27,9 +27,9 @@ public class MemberController {
         commonProcess(model); // 공통 처리
 
         joinParam = new JoinParam();
-
         model.addAttribute("joinParam", joinParam);
 
+        model.addAttribute("addCss", new String[] {"member/join"});
 
         return "member/join";
     }

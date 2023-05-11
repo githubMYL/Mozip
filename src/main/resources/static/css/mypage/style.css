@@ -5,12 +5,12 @@
 #thumbs .thumb > .inner { display: block;  border-radius: 5px; cursor: pointer; height: 58px; }
 
 /** 마이페이지 작성 페이지 스타일 */
-/**
+
 *{
   margin: 1px;
   padding: 2px;
 }
-*/
+
 
 div.btns{
   text-align: center;

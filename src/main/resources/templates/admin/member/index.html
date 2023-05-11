@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/admin}">
+    <section layout:fragment="content">
+        <form method="get" th:action="@{/admin/member}" th:object="${memberSearch}">
+            <select name="sopt" th:field="*{sopt}">
+                <option value="all">통합검색</option>
+                <option value="email">이메일</option>
+                <option value="memberNm">회원명</option>
+                <option value="memberNick">닉네임</option>
+                <option value="email_memberNm">이메일+회원명</option>
+            </select>
+            <input type="text" name="skey" th:field="*{skey}">
+            <button type="submit">검색하기</button>
+        </form>
+        <form method="post" th:action="@{/admin/member}" autocomplete="off" target="ifrmProcess">
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            <input type="checkbox" id="checkall" value="true">
+                            <label for="checkall"></label>
+                        </th>
+                        <th>회원번호</th>
+                        <th>이메일</th>
+                        <th>회원명</th>
+                        <th>닉네임</th>
+                        <th>휴대전화번호</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="item, status : ${items}" th:object="${item}">
+                        <td>
+                            <input type="checkbox" name="memberNo" th:value="*{memberNo}" th:id="${'memberNo' + status.index}">
+                            <label th:for="${'memberNo' + status.index}"></label>
+                        </td>
+                        <td th:text="*{memberNo}"></td>
+                        <td th:text="*{email}"></td>
+                        <td th:text="*{memberNm}"></td>
+                        <td th:text="*{memberNick}"></td>
+                        <td th:text="*{mobile}"></td>
+                        <td>
+                            <a th:href="@{/admin/member/{id}(id=*{memberNo})}" class="btn2">관리하기</a>
+                        </td>
+                     </tr>
+                </tbody>
+            </table>
+
+            <th:block th:replace="~{commons/pagination::pagination}"></th:block>
+        </form>
+    </section>
+
+</html>
