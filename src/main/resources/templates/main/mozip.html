@@ -3,6 +3,11 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/main}">
     <main layout:fragment="content">
+
+        <div class="mozip_html">
+            <th:block th:replace="~{main/_mozip_items::items}"></th:block>
+        </div>
+
         <head>
             <title>MoZip</title>
         </head>
@@ -18,5 +23,6 @@
             <button type="submit">검색하기</button>
         </form>
         </body>
+
     </main>
 </html>

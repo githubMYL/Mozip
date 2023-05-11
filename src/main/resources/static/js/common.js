@@ -46,7 +46,6 @@ const commonLib = {
 
            xhr.onreadystatechange = () => {
                 if (xhr.status == 200 && xhr.readyState == XMLHttpRequest.DONE) {
-                    console.log(xhr.responseText);
                     resolve(xhr.responseText);
                 }
            };

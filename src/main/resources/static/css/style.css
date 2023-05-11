@@ -1,4 +1,13 @@
+/** 사이트 공통 S */
 .dn { display: none !important; }
+body { margin: 0; }
+ul { list-style: none; margin: 0; padding: 0; }
+li { display: block; }
+dl { display: flex; width: 100%; margin: 0; align-items: center; }
+dt { width: 130px;  }
+dd { width: calc(100% - 130px); padding: 0; margin: 0; }
+a { color:#222; text-decoration: none; }
+/** 사이트 공통 E */
 
 /** 레이어 팝업 S */
 #layer_dim { background:rgba(0,0,0, 0.7); position: fixed; top: 0; left: 0; width: 100%; height: 100%; cursor: pointer; z-index: 10; }
@@ -6,6 +15,26 @@
 #layer_popup .popup_title { border-bottom: 1px solid #000000;  margin-bottom: 20px; font-size: 1.15rem; font-weight: bold; padding: 0 5px 13px; }
 #layer_popup .layer_close { cursor: pointer; position: absolute; right: 25px; top: 15px; font-size: 1.8rem; }
 /** 레이어 팝업 E */
+
+
+/** 페이징 공통 S */
+.pagination { display: flex; justify-content: center; align-items: center; margin: 10px 0; }
+.pagination li { margin: 0 2px; }
+.pagination li a { display: block; padding: 0 5px; border: 1px solid #000; border-radius: 3px; text-align: center; font-size: 14px; }
+.pagination li.on a { background: #000; color: #fff; }
+
+/** 페이징 공통 E */
+
+/** 모집 목록 공통 S */
+.mozip_items { margin: 100px auto 10px auto; width: 700px; }
+.mozip_items li {  transition: 0.5s; border: 2px solid #ccc; border-radius: 5px; margin-bottom: 10px; }
+.mozip_items li > a { display: flex; min-height: 60px; }
+.mozip_items li > div { width: 0; }
+.mozip_items li:hover { scale: 1.1; color: #f6f8c2; background-color: #ffb939; border-color: #000; }
+.mozip_items .photo { width: 150px; height: 150px;  }
+.mozip_items .right { flex-grow: 1; padding: 10px; }
+/** 모집 목록 공통 E */
+
 
 /***  헤더 ***/
 

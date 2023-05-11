@@ -36,15 +36,15 @@ window.addEventListener("DOMContentLoaded", function() {
 
     }
     /** 메인 이미지 클릭 처리 E */
-<<<<<<< HEAD
+
     /** 이미지 본문 추가 S */
     const insertEditors = document.getElementsByClassName("insert_editor");
     for(const el of insertEditors) {
         el.addEventListener("click", insertImage);
     }
+
     /** 이미지 본문 추가 E */
-=======
->>>>>>> 349b9af586447e28351362ea60338a9a286c836a
+
 });
 
 /**
@@ -113,14 +113,13 @@ function showImagePopup(fileNo, fileURL) {
 
 }
 
-<<<<<<< HEAD
+
 function insertImage() {
    const url = this.dataset.url;
    const img = `<img src='${url}' />`;
    CKEDITOR.instances.description.insertHtml(img);
 }
-=======
->>>>>>> 349b9af586447e28351362ea60338a9a286c836a
+
 
 /**
 * 파일 삭제 콜백 =
