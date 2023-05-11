@@ -46,7 +46,7 @@ p {margin : 0;}
 /** 상단 로고, 메뉴 영역 E */
 
 /** 메인 배너 영역 S*/
-#main_banner {width : 100%; height : 600px;background-image : url("./images/banner.png"); background-color:#dddddd; background-repeat : no-repeat; background-size : cover; background-position : 50% 50%; z-index : 10;}
+#main_banner {width : 100%; height : 600px;background-image : url("../images/banner.png"); background-color:#dddddd; background-repeat : no-repeat; background-size : cover; background-position : 50% 50%; z-index : 10;}
 #main_banner .main_item{ position:relative; text-align: center; vertical-align: middle; top : 20%; font-size : 1.3rem;}
 #main_banner .main_item p span, 
 #main_banner .main_item p a{color : white; font-family: 'Quicksand', sans-serif; text-align:center;}
@@ -127,7 +127,7 @@ section{
     display: flex;
     justify-content: center;
     height: 100%;
-    padding-bottom: 70px;
+    margin-bottom: 100px;
     background-color: #FFF7D4;
     background-repeat: no-repeat;
     position: relative;
@@ -135,43 +135,23 @@ section{
 
 #page1:before{
   content: "";
-  background-image: url(./img/bee.png);
-  position: absolute;  
+  background-image: url(../img/bee.png);
+  position: absolute;
+  
   width: 150px;
   height: 150px;
   top: 0;
   right: 10%;
-  background-size: cover;  
-  animation-name: updown;
-  animation-duration: 1.2s;
-  animation-iteration-count: infinite;
-  transition: 1s;
+  background-size: cover;
 }
-
 #page1:after{
   content: "";
-  background-image: url(./img/bee.png);
+  background-image: url(../img/bee.png);
   position: absolute;
-  width: 150px;
-  height: 150px;
-  bottom: 20%;
-  left: 10%;
-  transform: rotateY(180deg);
-  background-size: cover;
-  
-  
 }
     .wrap {
       
     width: 1200px;
-     
-    }
-    .wrap .mainHello{
-       font-size: 32px; 
-       font-family: 'Jua', sans-serif;
-    }
-    .wrap h2 span{
-      font-size: 15px; 
     }
     .wrap .slider {
       
@@ -186,11 +166,6 @@ section{
     .groupLogo{
       
     text-align: center;
-    color: #FFF7D4;
-    background-color: #C07F00;
-    margin: 0 30px;
-    border-top: 5px solid #4C3D3D;
-    border-bottom: 5px solid #4C3D3D;
     }
     .silderT{
   
@@ -419,7 +394,6 @@ section{
     
       /* slide drag를 위해 DOM요소가 드래그로 선택되는것을 방지 */
       user-select: none;
-      border: 3px solid #4C3D3D;
     }
     .slide_item {
       /* layout */
@@ -471,7 +445,7 @@ section{
     /* 각 슬라이드가 변경되는 것을 시각적으로 확인하기 쉽도록 각 슬라이드별 색상 적용 */
     .slide_item.item1 {
       background-color: #d9ab3b;
-      background-image: url(./img/1.jpg); 
+      background-image: url(../img/1.jpg); 
       background-size: cover;
       background-position-y: center;
       background-repeat: no-repeat; 
@@ -479,7 +453,7 @@ section{
     }
     .slide_item.item2 {
       background-color: #43a42f;
-      background-image: url(./img/2.jpg); 
+      background-image: url(../img/2.jpg); 
       background-size: cover;
       background-position-y: center;
       background-repeat: no-repeat; 
@@ -487,7 +461,7 @@ section{
     }
     .slide_item.item3 {
       background-color: #9c05c6;
-      background-image: url(./img/3.jpg); 
+      background-image: url(../img/3.jpg); 
       background-size: cover;
       background-position-y: center;
       background-repeat: no-repeat; 
@@ -495,7 +469,7 @@ section{
     }
     .slide_item.item4 {
       background-color: burlywood;
-      background-image: url(./img/4.jpg); 
+      background-image: url(../img/4.jpg); 
       background-size: cover;
       background-position-y: center;
       background-repeat: no-repeat; 
@@ -503,7 +477,7 @@ section{
     }
     .slide_item.item5 {
       background-color: cornflowerblue;
-      background-image: url(./img/5.jpg); 
+      background-image: url(../img/5.jpg); 
       background-size: cover;
       background-position-y: center;
       background-repeat: no-repeat; 
@@ -571,7 +545,6 @@ section{
       }
       #page2 .wrap h2 {
         font-size: 35px;
-        color: #4C3D3D;
       }
       #page2 .wrap > p {
         line-height: 1.5;
@@ -603,16 +576,16 @@ section{
         line-height: 1.3;
       }
       #page2 .wrap ul li:nth-child(1) h3 {
-        background-image: url(./img/main_icon_01_01.png);
+        background-image: url(../img/main_icon_01_01.png);
       }
       #page2 .wrap ul li:nth-child(2) h3 {
-        background-image: url(./img/main_icon_02_01.png);
+        background-image: url(../img/main_icon_02_01.png);
       }
       #page2 .wrap ul li:nth-child(3) h3 {
-        background-image: url(./img/main_icon_03_01.png),url(./img/main_icon_03_02.png);
+        background-image: url(../img/main_icon_03_01.png),url(../img/main_icon_03_02.png);
       }
       #page2 .wrap ul li:nth-child(4) h3 {
-        background-image: url(./img/main_icon_04_01.png),url(./img/main_icon_04_04.png);
+        background-image: url(../img/main_icon_04_01.png),url(../img/main_icon_04_04.png);
       }
       #page2 .wrap ul li p {
         width: 65%;
@@ -648,7 +621,7 @@ section{
   }
 header main div.wrap h1.logo a:before{
   content: "";
-  background-image: url(./img/bee.png);
+  background-image: url(../img/bee.png);
   position: absolute;
   width: 50px;
   height: 50px;
@@ -665,14 +638,7 @@ header main div.wrap h1.logo a:before{
   background-size: cover;
   background-repeat: no-repeat;    
   position: relative;
-  transition:all 0.3s;
-  cursor: pointer;
   }
-
-header main div.wrap h1.logo:hover a{
-  transform: scale(1.1);
-  
-}
 
   header main div.wrap ul.gnb {    
   text-decoration: none;
@@ -813,7 +779,7 @@ header main div.wrap ul.gnb div li:hover a{
 }
 #work .wrap:before{
   content: "";  
-  background-image: url(./img/bb5.svg);
+  background-image: url(../img/bb5.svg);
   width: 350px;
   height: 350px;
   display: block;
@@ -823,7 +789,7 @@ header main div.wrap ul.gnb div li:hover a{
 }
 #work .wrap:after{
   content: "";  
-  background-image: url(./img/bb4.svg);
+  background-image: url(../img/bb4.svg);
   width: 350px;
   height: 350px;
   display: block;
@@ -942,16 +908,16 @@ header main div.wrap ul.gnb div li:hover a{
   height: 100%;
 }
 #work .wrap .spin:nth-of-type(1) li span{
-  background-image: url(./img/work-back1.png);
+  background-image: url(../img/work-back1.png);
 }
 #work .wrap .spin:nth-of-type(2) li span{
-  background-image: url(./img/work-back2.png);
+  background-image: url(../img/work-back2.png);
 }
 #work .wrap .spin:nth-of-type(3) li span{
-  background-image: url(./img/work-back3.png);
+  background-image: url(../img/work-back3.png);
 }
 #work .wrap .spin:nth-of-type(4) li span{
-  background-image: url(./img/work-back4.png);
+  background-image: url(../img/work-back4.png);
 }
 
 #work .wrap li p {  
@@ -981,7 +947,7 @@ header main div.wrap ul.gnb div li:hover a{
 }
 .wrap ul li .overcontents:before{
   content: "";
-  background-image: url(./img/click.svg);
+  background-image: url(../img/click.svg);
   width: 100px;
   height: 100px;
   position: absolute;
@@ -1026,7 +992,7 @@ header main div.wrap ul.gnb div li:hover a{
   opacity: 0;
 }
 .wrap ul li .overcontents span{
-  background-image: url(./img/work-back1.png);
+  background-image: url(../img/work-back1.png);
   opacity: 0.3;
   width: 100%;
   height: 100%;
@@ -1078,3 +1044,5 @@ header main div.wrap ul.gnb div li:hover a{
   position: absolute;
   bottom: 12%;
 }
+
+

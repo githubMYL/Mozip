@@ -8,21 +8,21 @@
         <title th:if="${pageTitle != null}" th:text="${pageTitle}"></title>
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
         <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/member/style.css}">
+        <link rel="stylesheet" type="text/css" href="/css/member/login.css">
         <link rel="stylesheet" type="text/css" th:each="cssFile : ${addCss}" th:href="@{/css/{file}.css(file=${cssFile})}">
         <th:block layout:fragment="addCss"></th:block>
         <script th:src="@{/js/layer.js}"></script>
         <script th:src="@{/js/common.js}"></script>
         <script th:each="jsFile : ${addScript}" th:src="@{/js/{file}.js(file=${jsFile})}"></script>
-        <th:block layout:fragment="addScript"></th:block>
+        <th:block layout:fragment="addScript"></th:block>        
+        <script th:src="@{/js/main/main.js}"></script>
     </head>
 
     <body>
         <header th:replace="~{outlines/header/main::common}"></header>
 
         <main layout:fragment="content"></main>
-
 <!--        <footer th:replace="~{outlines/footer/main::common}"></footer>-->
-
-        <iframe name="ifrmProcess" class="dn"></iframe>
     </body>
 </html>

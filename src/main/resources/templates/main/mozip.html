@@ -3,8 +3,167 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/main}">
 <main layout:fragment="content">
-    <div class="mozip_html">
-        <th:block th:replace="~{main/_mozip_items::items}"></th:block>
-    </div>
+    <head>
+        <title>MoZip</title>
+        <!-- <link rel="stylesheet" type="text/css" th:href="@{/css/main/style.css}">
+        <script th:src="@{/js/main/main.js}"></script> -->
+    </head>
+    <body>
+
+        <section id="page1">
+            <div class="wrap">
+                <h2 class="mainHello">어서오세요 저희조에...123</h2>
+                <div class="slider">
+                    <h2 class="silderT">베스트 사진</h2>               
+                    <div class="slide slide_wrap">
+                        <div class="slide_item item1">1</div>
+                        <div class="slide_item item2">2</div>
+                        <div class="slide_item item3">3</div>
+                        <div class="slide_item item4">4</div>
+                        <div class="slide_item item5">5</div>
+                        <div class="slide_prev_button slide_button">◀</div>
+                        <div class="slide_next_button slide_button">▶</div>
+                        <ul class="slide_pagination"></ul>
+                      </div>
+                      <script src="slide.js"></script>                
+                </div>
+    
+                <h2 class="groupLogo">Group</h2>
+                <div class="group">                
+                    <div class="left">
+                        <div class="pic">사진</div>
+                        <div class="inter">
+                            <ul class="inter1">
+                                <p>소모임명</p>
+                                <p>소모임 상세 소개</p>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="pic">사진</div>
+                        <div class="inter">
+                            <ul class="inter1">
+                                <p>소모임명</p>
+                                <p>소모임 상세 소개</p>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="slidePoint">slidePoint</div>     
+        </section>
+    
+        <section id="page2">
+            <div class="wrap">
+                <h2>저희조는 새로운 가치를 창조합니다</h2>
+                <p>안녕하세요! 저희 팀은 열정 넘치는 인재들이 모인 멋진 팀입니다.<br>
+                    팀원들 간의 의사소통과 공유가 원활하게 이루어지고, 문제 발생 시 함께 해결하는 문화를 가지고 있습니다.</p>
+                <ul>
+                    <li>
+                        <h3>시작<span class="block"></span>
+                            입원부터<span class="block"></span>
+                            현재까지
+                        </h3>
+                        <p><strong>4</strong>개월</p>
+                    </li>
+                    <li>
+                        <h3>진출<span class="block"></span>국가</h3>
+                        <p><strong>62</strong>개국</p>
+                    </li>
+                    <li>
+                        <h3>글로벌<span class="block"></span> 
+                            프로젝트<span class="block"></span> 
+                            실적
+                        </h3>
+                        <p><strong>850</strong>건</p>
+                    </li>
+                    <li>
+                        <h3>지속가능경영<span class="block"></span> 월드지수<span class="block"></span> 편입</h3>
+                        <p><strong>12</strong>년 연속</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- work 색션내용 -->
+        <section id="work" class="wheel">
+            <div class="workHover">
+                <div class="wrap">
+                    <hgroup>
+                    <h2 class="workT" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">WORK</h2>
+                    <p class="works" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="500">지금까지 걸어온 미래를 향한 도전의 길!<span class="block"></span>
+                        한번 만나 주시겠습니까?</p>
+                    </hgroup>
+                    <ul>
+                        <div class="spin" data-aos="flip-left" data-aos-duration="700" data-aos-delay="300">
+                            <li>
+                                <span><a href="">1개월차 이미지</a></span>
+                                <p class="name">루나브루 수제맥주</p>
+                                <div class="overcontents">
+                                    <h3 class="h3">루나브루 수제맥주</h3>
+                                    <p class="p">
+                                        작업범위 : index<br>
+                                        작업내용 : 리디자인+코딩,코딩<br>
+                                        작업기술 : 마크업.스타일, html, css<br>
+                                        작업기간 : 3~4일<br>
+                                        루나브루 홈페이지를 참조하여 만들었습니다.
+                                    </p>
+                                    <span class="inside"><a href="">1개월차 이미지</a></span>
+                            </li>
+                        </div>
+                        <div class="spin" data-aos="flip-left" data-aos-duration="700" data-aos-delay="500">
+                            <li>
+                                <span><a href="">2개월차 이미지</a></span>
+                                <p class="name">루나브루 리뉴얼</p>
+                                <div class="overcontents">
+                                    <h3 class="h3">루나브루 리뉴얼</h3>
+                                    <p class="p">
+                                        작업범위 : index<br>
+                                        작업내용 : 리디자인+코딩,코딩<br>
+                                        작업기술 : 마크업.스타일, html, css<br>
+                                        작업기간 : 1~2일<br>
+                                        루나브루 홈페이지를 리뉴얼 해보았습니다.
+                                    </p>
+                                    <span class="inside"><a href="">2개월차 이미지</a></span>
+                            </li>
+                        </div>
+                        <div class="spin" data-aos="flip-left" data-aos-duration="700" data-aos-delay="700">
+                            <li>
+                                <span><a href="">3개월차 이미지</a></span>
+                                <p class="name">리뉴얼반응형</p>
+                                <div class="overcontents">
+                                    <h3 class="h3">리뉴얼반응형</h3>
+                                    <p class="p">
+                                        작업범위 : index<br>
+                                        작업내용 : 리디자인+코딩,코딩<br>
+                                        작업기술 : 마크업.스타일, html, css<br>
+                                        작업기간 : 3~4일<br>
+                                        루나브루 홈페이지내용을 바탕으로 새로운 홈페이지를 제작하였습니다.
+                                    </p>
+                                    <span class="inside"><a href="">3개월차 이미지</a></span>
+                            </li>
+                        </div>
+                        <div class="spin" data-aos="flip-left" data-aos-duration="700" data-aos-delay="900">
+                            <li>
+                                <span><a href="">4개월차 이미지</a></span>
+                                <p class="name">현대건설</p>
+                                <div class="overcontents">
+                                    <h3 class="h3">현대건설</h3>
+                                    <p class="p">
+                                        작업범위 : index<br>
+                                        작업내용 : 리디자인+코딩,코딩<br>
+                                        작업기술 : 마크업.스타일, html, css, jquery...<br>
+                                        작업기간 : 4~5일<br>
+                                        현대건설홈페이지를 바탕으로 제작하였습니다.
+                                    </p>
+                                    <span class="inside"><a href="">4개월차 이미지</a></span>
+                            </li>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </body>
 </main>
 </html>
