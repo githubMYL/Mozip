@@ -4,20 +4,30 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/main}">
     <main layout:fragment="content">
-        <form method="post" th:action="@{/member/join}" autocomplete="off" th:object="${joinParam}">          
+        <form method="post" th:action="@{/member/join}" autocomplete="off" th:object="${joinParam}">
+
+        <form name="joinFrm" method="post" th:action="@{/member/join}" autocomplete="off" th:object="${joinParam}" enctype="multipart/form-data">
+            <input type="hidden" name="gid" th:field="*{gid}">
+
             <section id="joinSection">
                 <div class="wrap">
                     <div class="ocean">
                         <div class="wave"></div>
                         <div class="wave"></div>
-                    </div>                
+                    </div>
                     <div class="box">
                         <h1 class="logo"><a th:onclick="location.href='/mozip'">로고</a></h1>
                         <dl>
                             <dt th:text="#{email}"></dt>
                             <dd>
-                                <input type="email" class="inputInfo" name="email" th:field="*{email}" placeholder="이메일 형식입니다.">
+                                <input type="email" class="inputInfo" name="email" th:field="*{email}" th:placeholder="#{emailForm}">
                                 <div class="error" th:each="err : ${#fields.errors('email')}" th:text="${err}"></div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt th:text="#{profileImage}"></dt>
+                            <dd class="hauto">
+                                <div id="profileImage" class="profileImage"></div>
                             </dd>
                         </dl>
                         <dl>
@@ -66,7 +76,8 @@
                         <div class="btns">
                             <button class="joinButton" type="submit" th:text="#{member.action}" style="cursor:pointer;"></button>
 
-                        </div>                    
+                        </div>
+                        </div>
                     </div>
                 </div>
             </section>

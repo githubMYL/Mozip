@@ -8,13 +8,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class FileDeleteService {
 
     private final FileInfoService infoService;
-    private final MemberUtil memberUtill;
+    private final MemberUtil memberUtil;
 
     private final FileInfoRepository repository;
 
@@ -30,10 +31,11 @@ public class FileDeleteService {
 
         FileInfo fileInfo = infoService.get(fileNo);
 
+
         String createdBy = fileInfo.getCreatedBy();
 
         // 회원이 올린 파일이고 관리자가 아니고, 본인이 올린 파일이 아닌 경우
-        if (createdBy != null && !memberUtill.isAdmin() && !memberUtill.isMine(createdBy)) {
+        if (createdBy != null && !memberUtil.isAdmin() && !memberUtil.isMine(createdBy)) {
             throw new FileException("errors.file.notYours", HttpStatus.UNAUTHORIZED);
         }
 
@@ -49,4 +51,18 @@ public class FileDeleteService {
 
     }
 
+    /**
+     * 그룹 ID로 삭제
+     *
+     * @param gid
+     */
+    public void delete(String gid) {
+        System.out.println("GID : " + gid);
+        List<FileInfo> files = repository.findByGidOrderByRegDtAsc(gid);
+        if (files == null || files.size() == 0) {
+            return;
+        }
+
+        files.stream().forEach(f -> delete(f.getFileNo()));
+    }
 }
