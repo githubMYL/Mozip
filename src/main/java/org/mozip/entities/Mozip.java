@@ -36,4 +36,7 @@ public class Mozip extends BaseEntity {
 
     @Transient
     private List<FileInfo> editorPhotos;
+
+    @Transient
+    private boolean editable;
 }

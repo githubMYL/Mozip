@@ -121,6 +121,15 @@ public class MyPageController {
         return "mypage2/view";
     }
 
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Long id) {
+
+        deleteService.delete(id);
+
+        return "redirect:/mypage2";
+    }
+
     /**
      * 양식 공통 처리
      *

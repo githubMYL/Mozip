@@ -36,11 +36,13 @@ public class Members extends BaseEntity {
     @Column(length=45)
     private String memberNick; // 닉네임
 
-    @Column(length=11)
+    @Column(length=13)
     private String mobile; // 휴대전화번호
 
     @AssertTrue
     private boolean agree;
+
+    private String profileImg; // 이미지
 
     @Enumerated(EnumType.STRING) // 권한설정
     @Column(length=20, nullable = false)

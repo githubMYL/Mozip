@@ -31,6 +31,7 @@ public class FileDeleteService {
 
         FileInfo fileInfo = infoService.get(fileNo);
 
+
         String createdBy = fileInfo.getCreatedBy();
 
         // 회원이 올린 파일이고 관리자가 아니고, 본인이 올린 파일이 아닌 경우
@@ -56,6 +57,7 @@ public class FileDeleteService {
      * @param gid
      */
     public void delete(String gid) {
+        System.out.println("GID : " + gid);
         List<FileInfo> files = repository.findByGidOrderByRegDtAsc(gid);
         if (files == null || files.size() == 0) {
             return;

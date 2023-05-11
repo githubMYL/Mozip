@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.java.Log;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import java.io.IOException;
@@ -37,11 +38,21 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
         /**
          * 로그인 정보 세션 유지 - 간편하게 회원 정보 조회 목작
          */
-
         MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
         session.setAttribute("memberInfo", memberInfo);
 
-        String url = request.getContextPath() + "/mozip";
+        //System.out.println("세션값 확인:" + session.getAttribute("memberInfo"));
+        String url = "";
+
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null &&
+                auth.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ADMIN"))) {
+            //System.out.println("당신은 관리자 입니다.");
+            url = request.getContextPath() + "/mozip/admin";
+        }else{
+            url = request.getContextPath() + "/mozip";
+        }
+
         response.sendRedirect(url);
 
     }

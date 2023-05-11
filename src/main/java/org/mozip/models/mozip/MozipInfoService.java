@@ -35,13 +35,15 @@ public class MozipInfoService {
         if (mozip == null) {
             throw new MozipValidationException("BadRequest");
         }
+        // 수정, 삭제, 보기 가능 여부 - 관리자, 본인 소유 게시물
+        MemberInfo memberInfo = memberUtil.getMember();
+        if (memberUtil.isAdmin() || (memberUtil.isLogin() && memberInfo.getMemberNo() == mozip.getMember().getMemberNo())) {
+            mozip.setEditable(true);
+        }
 
         // 본인이 생성한 모임인지 체크
-        if (isMine) {
-            MemberInfo memberInfo = memberUtil.getMember();
-            if (!memberUtil.isLogin() || memberInfo.getMemberNo() != mozip.getMember().getMemberNo()) {
-                throw new MozipValidationException("mozip.notYours");
-            }
+        if (isMine && !mozip.isEditable()) {
+          throw new MozipValidationException("mozip.notYours");
         }
 
         em.detach(mozip);
