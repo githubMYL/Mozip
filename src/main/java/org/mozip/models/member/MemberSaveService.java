@@ -21,9 +21,8 @@ public class MemberSaveService {
         Members member = JoinParam.of(joinParam);
 
         String hash = passwordEncoder.encode(joinParam.getMemberPw());
-        System.out.println("hash :" + hash);
         member.setMemberPw(hash);
-
+        System.out.println(member);
         repository.saveAndFlush(member);
     }
 
