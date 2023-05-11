@@ -3,19 +3,18 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/main}">
     <main layout:fragment="content">
-        <from method="GET" th:action="@{/mypage/index}" autocomplete="off" th:object="${joinParam}">
-            <dl>
-                <h1>PROFILE</h1>
-                <!--기본 이미지-->
-                <h2 th:text="${member.memberNick}">사용자 닉네임</h2>
+        <body  th:object="${joinParam}">
+        <div>
+            <h1>PROFILE</h1>
 
-            </dl>
+        </div>
 
-            <dl>
-                <dt>LIST</dt>
-            </dl>
+                <dl>
+                    <h1>LIST</h1>
+                    <li th:each="boardData : ${list}"></li>
+                </dl>
             <div>
-                <a th:object="${save}">모임 생성하기</a>
+                <button th:object="${add}" >모임 생성하기</button>
             </div>
             <div>
 
@@ -27,7 +26,6 @@
                 </ul>
             </div>
 
-        </from>
     </body>
     </main>
 </html>
