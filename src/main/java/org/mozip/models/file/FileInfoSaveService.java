@@ -16,10 +16,10 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class FileInfoSaveService {
     private final FileInfoRepository repository;
+
     private final EntityManager em;
 
     private final HttpServletRequest request;
-
 
     @Value("${fileupload.path}")
     private String fileUploadPath;

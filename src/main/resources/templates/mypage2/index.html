@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/mypage/index.css}">
 </head>
     <main layout:fragment="content">
+<<<<<<< HEAD
         <!--
         <form method="get" th:action="@{/mypage2}" autocomplete="off" th:object="${mozipSearch}">
             <select name="sopt" th:field="*{sopt}">
@@ -39,5 +40,14 @@
             <a class="a2" th:href="@{/mypage2/add}" th:text="#{mypage.myadd}"></a>
         </div>
 <!--        <th:block th:replace="~{commons/pagination::pagination}"></th:block>-->
+=======
+        <ul>
+           <li th:each="item : ${items}" th:object="${item}">
+               <a th:href="@{/mypage2/view/{id}(id=*{id})}" th:text="*{title}"></a>
+               [[*{member.memberNm}]]([[*{member.email}]])
+           </li>
+        </ul>
+        <th:block th:replace="~{commons/pagination::pagination}"></th:block>
+>>>>>>> 45328bc35135c67208ce252c8331ae0a0f3d1667
     </main>
 </html>
