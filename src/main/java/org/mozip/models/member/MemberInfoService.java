@@ -34,6 +34,7 @@ public class MemberInfoService implements UserDetailsService {
 
         /** 프로필 이미지 S */
         List<FileInfo> files = fileListService.gets(member.getGid());
+
         FileInfo profileImage = files != null && files.size() > 0 ? files.get(0) : null;
         /** 프로필 이미지 E */
 
