@@ -5,7 +5,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.mozip.commons.MemberUtil;
-import org.mozip.controllers.category.CateCode;
+import org.mozip.entities.CateCode;
 import org.mozip.entities.MainList;
 import org.mozip.repositories.CategoryRepository;
 import org.mozip.repositories.MainCreateRepository;
@@ -27,7 +27,6 @@ public class MainDetailController {
     private MainList mainList;
     private CateCode cateCode;
     private MainCreateParam mainCreateParam;
-    private final EntityManager em;
     private final CategoryRepository categoryRepository;
     private final MainCreateRepository mainCreateRepository;
     private final MemberUtil memberUtil;
