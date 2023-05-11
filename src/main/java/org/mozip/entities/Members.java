@@ -12,10 +12,16 @@ import org.mozip.constants.MemberType;
 @Entity
 @Data @Builder
 @NoArgsConstructor @AllArgsConstructor
+@Table(indexes={
+        @Index(name="idx_gid", columnList = "gid")
+})
 public class Members extends BaseEntity {
     @Id // 기본 키
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long memberNo; // 회원번호
+
+    @Column(length=40)
+    private String gid;
 
     @Email
     @Column(length=40, unique = true, nullable = false)
@@ -36,7 +42,8 @@ public class Members extends BaseEntity {
     @AssertTrue
     private boolean agree;
 
-    private String profileImg; // 이미지
+    @Transient
+    private FileInfo profileImage;
 
     @Enumerated(EnumType.STRING) // 권한설정
     @Column(length=20, nullable = false)

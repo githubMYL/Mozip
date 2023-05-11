@@ -42,9 +42,10 @@ public class MyPageController {
         List<Mozip> items = data.getContent();
         String url = request.getContextPath() + "/mypage2";
         Pagination<Mozip> pagination = new Pagination<>(data, url);
+
+        items.stream().forEach(System.out::println);
         model.addAttribute("items", items);
         model.addAttribute("pagination", pagination);
-
         commonProcess(model);
 
         return "mypage2/index";
@@ -120,6 +121,15 @@ public class MyPageController {
         return "mypage2/view";
     }
 
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Long id) {
+
+        deleteService.delete(id);
+
+        return "redirect:/mypage2";
+    }
+
     /**
      * 양식 공통 처리
      *
@@ -132,7 +142,7 @@ public class MyPageController {
     }
 
     private void commonProcess(Model model) {
-        String[] addCss = { "mypage/style"};
+        String[] addCss = { "mypage/style", "mypage/index"};
         model.addAttribute("addCss", addCss);
     }
 

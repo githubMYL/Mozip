@@ -2,6 +2,7 @@ package org.mozip.models.member;
 
 import lombok.Builder;
 import lombok.Data;
+import org.mozip.entities.FileInfo;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -11,11 +12,17 @@ import java.util.Collection;
 @Builder
 public class MemberInfo implements UserDetails {
     private Long memberNo;
+
+    private String gid;
+
     private String email;
     private String memberPw;
     private String memberNick;
     private String memberNm;
     private String mobile;
+
+    private FileInfo profileImage;
+
     private Collection<GrantedAuthority> authorities; // 이넘클래스 권한
 
     @Override

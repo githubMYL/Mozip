@@ -1,40 +1,31 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">>
-<body th:object="${JoinParam}">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/main}">
     <main layout:fragment="content">
-        <dl>
-            <dt>PROFILE</dt>
-            <dd>
-                <h2 th:text="${member.memberNick}">사용자 닉네임</h2>
-
-            </dd>
-                <a href="#info_popup" class="btn_pop1"></a>
-                <button id="info_popup">정보수정</button>
-        </dl>
-
-        <dl>
-            <dt>LIST</dt>
-            <dd>
-                <input type="file" name="file" >
-            </dd>
-        </dl>
+        <body  th:object="${joinParam}">
         <div>
-            <a th:href="@{/mypage/myadd}">모임생성</a>
-        </div>
-        <div>
-            <!-- 리스트 출력 -->
-            <ul>
-                <li th:each="boardData : ${list}" th:object="${boardData}">
-                    <a th:href="@{/mypage/view/{id}(id=*{id})}" th:text="*{subject}"></a>
-                    <p th:text="*{content}"></p>
-                </li>
-            </ul>
+            <h1>PROFILE</h1>
+
         </div>
 
-    </from>
+                <dl>
+                    <h1>LIST</h1>
+                    <li th:each="boardData : ${list}"></li>
+                </dl>
+            <div>
+                <button th:object="${add}" >모임 생성하기</button>
+            </div>
+            <div>
+
+                <ul>
+                    <li th:each="boardData : ${list}" th:object="${boardData}">
+                        <a th:href="@{/mypage/view/{id}(id=*{id})}" th:text="*{subject}"></a>
+                        <p th:text="*{content}"></p>
+                    </li>
+                </ul>
+            </div>
+
+    </body>
     </main>
-</body>
-
-
 </html>

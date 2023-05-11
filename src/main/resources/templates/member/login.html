@@ -2,7 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/main}">
-    <main layout:fragment="content">
+<main layout:fragment="content">
+        <div class="error" th:if="${field == 'global' }" th:text="${message}"></div>
         <form method="post" th:action="@{/member/login}" autocomplete="off">
             <div class="error" th:if="${session.field == 'global'}" th:text="${session.message}"></div>
             <dl>

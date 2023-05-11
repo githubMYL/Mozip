@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-    <th:block th:fragment="form" th:object="${mozipForm}">
-        <input type="hidden" name="gid" th:field="*{gid}">
-        <input type="file" id="file" multiple class="dn">
-        <dl th:if="*{mode == 'update'}">
+<th:block th:fragment="form" th:object="${mozipForm}">
+    <input type="hidden" name="gid" th:field="*{gid}">
+    <input type="file" id="file" multiple class="dn">
+    <div class="gid_form">
+        <dl th:if="*{mode == 'update'}" class="dl_1">
             <dt th:text="#{mypage.id}"></dt>
             <dd>
                 <input type="hidden" name="id" th:field="*{id}">
                 <th:block th:text="*{id}"></th:block>
             </dd>
         </dl>
-
-        <dl>
+        <dl class="dl_2">
             <dt th:text="#{mypage.subject}"></dt>
             <dd>
                 <input type="text" name="title" th:field="*{title}">
                 <div class="error" th:each="err : ${#fields.errors('title')}" th:text="${err}"></div>
             </dd>
         </dl>
-        <dl>
+        <dl class="dl_3">
             <dt th:text="#{mypage.photo}"></dt>
             <dd>
-                <div id="thumbs"></div>
+                <div id="thumbs">
+                    <th:block th:if="*{mainPhotos != null}" th:each="file : *{mainPhotos}" th:object="${file}">
+                    <span class="thumb update" th:classappend="*{'file_' + fileNo}">
+                        <a th:href="@{/file/delete/{id}(id=*{fileNo})}" target="ifrmProcess" onclick="return confirm('정말 삭제하시겠습니까?');">
+                            <i class='remove xi-close-min'></i>
+                        </a>
+                        <span class='inner' th:style="*{'background:url(' + fileURL + ');background-size:cover;'}" th:data-file-no="*{fileNo}" th:data-url="*{fileURL}"></span>
+                    </span>
+                    </th:block>
+                </div>
                 <button type="button" class="attach_files" data-location="main_photo">이미지 추가</button>
             </dd>
         </dl>
-        <dl>
+        <dl class="dl_4">
             <dt th:text="#{mypage.content}"></dt>
             <dd>
                 <textarea id="description" name="description" th:field="*{description}"></textarea>
                 <div class="error" th:each="err : ${#fields.errors('description')}" th:text="${err}"></div>
-                <div>
-                    <button type="button" th:text="#{mypage.add.photo}" class="attach_files" data-location="editor"></button>
-                </div>
-                <ul id="attached_files"></ul>
-
             </dd>
         </dl>
-        <th:block th:replace="~{commons/file_tpl::tpl}"></th:block>
-    </th:block>
+    </div>
+    <th:block th:replace="~{commons/file_tpl::tpl}"></th:block>
+</th:block>
 </html>

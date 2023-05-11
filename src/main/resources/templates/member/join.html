@@ -3,8 +3,10 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/main}">
     <main layout:fragment="content">
-        <form method="post" th:action="@{/member/join}" autocomplete="off" th:object="${joinParam}">
-        <div class="error global" th:each="err : ${#fields.globalErrors()}" th:text="${err}"></div>
+      
+        <form name="joinFrm" method="post" th:action="@{/member/join}" autocomplete="off" th:object="${joinParam}" enctype="multipart/form-data">
+            <input type="hidden" name="gid" th:field="*{gid}">
+
             <section id="joinSection">
                 <div class="wrap">
                     <div class="ocean">
@@ -18,6 +20,12 @@
                             <dd>
                                 <input type="email" class="inputInfo" name="email" th:field="*{email}" th:placeholder="#{emailForm}">
                                 <div class="error" th:each="err : ${#fields.errors('email')}" th:text="${err}"></div>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt th:text="#{profileImage}"></dt>
+                            <dd class="hauto">
+                                <div id="profileImage" class="profileImage"></div>
                             </dd>
                         </dl>
                         <dl>
@@ -65,7 +73,7 @@
                         </div>
                         <div class="btns">
                             <button class="joinButton" type="submit" th:text="#{member.action}" style="cursor:pointer;"></button>
-                        </div>
+                        </div>                    
                     </div>
                 </div>
             </section>

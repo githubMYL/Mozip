@@ -12,11 +12,16 @@ import org.modelmapper.ModelMapper;
 import org.mozip.entities.BaseEntity;
 import org.mozip.entities.Members;
 
+import java.util.UUID;
+
 @Data @Builder
 @NoArgsConstructor @AllArgsConstructor
 public class JoinParam extends BaseEntity {
     @NotBlank @Email
     private String email;
+
+    private String gid = UUID.randomUUID().toString();
+
     @NotBlank @Size(min = 8, max = 16)
     private String memberPw;
     @NotBlank
@@ -29,6 +34,7 @@ public class JoinParam extends BaseEntity {
 
     @AssertTrue
     private boolean agree;
+
 
     public static Members of(JoinParam joinParam) {
         return new ModelMapper().map(joinParam, Members.class);

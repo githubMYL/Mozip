@@ -2,12 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/main}">
-    <main layout:fragment="content">
-        <head>
-            <title>MoZip</title>
-        </head>
-        <body>
-            메인화면..aaaaaaaaaaaa
-        </body>
-    </main>
+<main layout:fragment="content">
+    <div class="mozip_html">
+        <th:block th:replace="~{main/_mozip_items::items}"></th:block>
+    </div>
+</main>
 </html>

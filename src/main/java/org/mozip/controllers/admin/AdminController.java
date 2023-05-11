@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.lang.reflect.Member;
 
 @Controller
-@RequestMapping("/mozip/admin")
+@RequestMapping("/admin")
 public class AdminController {
 
     @Autowired
@@ -24,6 +24,11 @@ public class AdminController {
     @GetMapping("/membersearch")
     public String adminMemberSearch() {
         return "admin/search";
+    }
+
+    @GetMapping("/membercustom")
+    public String adminCustom() {
+        return "admin/custom";
     }
 
 //    @GetMapping("/admin/member")
