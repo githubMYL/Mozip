@@ -1,38 +1,39 @@
 html{
   overflow-x: hidden;
+  height: 100%;
 }
 
-body{
-  margin: 0;
-  
-}
 #joinSection{
-
   justify-content: center;
   display: flex;
   background: radial-gradient(ellipse at bottom, rgba(255, 254, 234, 0.1) 1%, rgba(255,254,234,0.9) 5%, #D0440E 100%);
+  /*! padding-top: 50px; */
+  position: relative;
 }
 
-div.wrap{
+#joinSection div.wrap{
   width: 1200px;
   justify-content: center;
+    overflow: hidden;
   display: flex;
-  overflow: hidden;
+  height: 100%;
 }
 
 div.box{
 
   z-index: 10;
+  width: 350px;
+  /*! justify-content: center; */
+  display: flex;
+  flex-direction: column;
 }
-
-h1{
-
+div.box h1{
+  
   justify-content: center;
   display: flex;
-  /*! margin-top: 70px; */
 }
-h1 a{
 
+h1 a{
   color: transparent;
   background-image: url(../img/MozipLogo.png);
   width: 250px;
@@ -41,21 +42,24 @@ h1 a{
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+h1:hover a{
+  transform: scale(1.1);
+  
 }
 
-form{
+
+.box dl{
 
 }
 
-dl{
-
-}
-
-dt{
+dl dt{
   align-items: center;
   display: flex;
 }
-dd{    
+dl dd{    
   display: block;
   position: relative;
   width: 100%;

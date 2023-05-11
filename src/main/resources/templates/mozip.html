@@ -7,14 +7,18 @@
         <title>MoZip</title>
         <!-- <link rel="stylesheet" type="text/css" th:href="@{/css/main/style.css}">
         <script th:src="@{/js/main/main.js}"></script> -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+        
     </head>
     <body>
 
         <section id="page1">
-            <div class="wrap">  
-    
+            <div class="wrap">
+                <h2 class="mainHello">어서오세요<br><span>저희조가 만든 홈페이지를 소개해 드리겠습니다.</span></h2>
                 <div class="slider">
-                    <h2 class="silderT">내용을입력해주세요</h2>               
+                    <h2 class="silderT">베스트 사진</h2>               
                     <div class="slide slide_wrap">
                         <div class="slide_item item1">1</div>
                         <div class="slide_item item2">2</div>
@@ -51,50 +55,9 @@
                 </div>
             </div> 
             <div class="slidePoint">slidePoint</div>     
-        </section>
-    
-        <section id="page2">
-            <div class="wrap">
-                <h2>저희조는 새로운 가치를 창조합니다</h2>
-                <p>안녕하세요! 저희 팀은 열정 넘치는 인재들이 모인 멋진 팀입니다.<br>
-                    팀원들 간의 의사소통과 공유가 원활하게 이루어지고, 문제 발생 시 함께 해결하는 문화를 가지고 있습니다.</p>
-                <ul>
-                    <li>
-                        <h3>시작<span class="block"></span>
-                            입원부터<span class="block"></span>
-                            현재까지
-                        </h3>
-                        <p><strong>4</strong>개월</p>
-                    </li>
-                    <li>
-                        <h3>진출<span class="block"></span>국가</h3>
-                        <p><strong>62</strong>개국</p>
-                    </li>
-                    <li>
-                        <h3>글로벌<span class="block"></span> 
-                            프로젝트<span class="block"></span> 
-                            실적
-                        </h3>
-                        <p><strong>850</strong>건</p>
-                    </li>
-                    <li>
-                        <h3>지속가능경영<span class="block"></span> 월드지수<span class="block"></span> 편입</h3>
-                        <p><strong>12</strong>년 연속</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
+        </section>  
+       
 
-    <!-- <ul>        
-        <li th:each="mozip : ${mozips}" th:object="${mozip}">
-            <img src="/uploads/2/2.png" />
-            <span th:text="*{title}">모임명</span>
-            <span th:utext="*{description}">모임상세소개</span>
-            <span>가입인원</span>
-            <button>가입하기</button>
-            <div>dkdkdkdk</div>
-        </li>
-    </ul> -->
     </body>
 </main>
 </html>

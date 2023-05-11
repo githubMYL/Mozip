@@ -2,12 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
         <link rel="stylesheet" type="text/css" th:href="@{/css/member/login.css}">
-        <link rel="stylesheet" type="text/css" th:href="@{/css/main/header.css}">
+        <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
         <title>MoZip</title>
     </head>
 
     <body>
-        <!--<header th:replace="~{outlines/header/main::common}"></header>-->
+        <header th:replace="~{outlines/header/main::common}"></header>
 
         <main>
             <div class="error" th:if="${field == 'global' }" th:text="${message}"></div>
@@ -35,7 +35,6 @@
                                 </dd>
                             </dl>
                             <button type="submit" th:text="#{member.login}"></button>
-                            <!-- <button type="button" th:onclick="location.href='/member/join'">회원가입</button> -->
                         </div>
                     </div>
                 </section>
