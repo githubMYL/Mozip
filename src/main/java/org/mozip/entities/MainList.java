@@ -5,9 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.mozip.controllers.category.CateCode;
-import org.mozip.entities.BaseEntity;
-import org.mozip.entities.Members;
 
 @Data @Entity @Builder
 @NoArgsConstructor @AllArgsConstructor
