@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <th:block th:fragment="form" th:object="${boardForm}">
+        <dl>
+            <dt>작성자</dt>
+            <dd>
+                <input type="text" name="regUser" th:field="*{regUser}">
+            </dd>
+        </dl>
+        <dl>
+            <dt>제목</dt>
+            <dd>
+                <input type="text" name="subject" th:field="*{subject}">
+            </dd>
+        </dl>
+        <dl>
+            <dt>내용</dt>
+            <dd>
+                <textarea name="content" th:field="*{content}"></textarea>
+            </dd>
+        </dl>
+    </th:block>
+</html>
